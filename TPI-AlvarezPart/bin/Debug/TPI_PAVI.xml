@@ -1,0 +1,292 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+TPI_PAVI
+</name>
+</assembly>
+<members>
+<member name="P:TPI_PAVI.My.Resources.Resources.ResourceManager">
+	<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member><member name="P:TPI_PAVI.My.Resources.Resources.Culture">
+	<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member><member name="P:TPI_PAVI.My.Resources.Resources.flechita">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:TPI_PAVI.My.Resources.Resources.flechitaVerde">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:TPI_PAVI.My.Resources.Resources.fondo">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:TPI_PAVI.My.Resources.Resources.ico_n_natacion">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:TPI_PAVI.My.Resources.Resources.swimmingunderwater">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:TPI_PAVI.My.Resources.Resources.swimmingunderwater__Custom_">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="T:TPI_PAVI.My.Resources.Resources">
+	<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.ClubesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.CodigosPostDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.EspecialidadDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.EspecXCompetDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.InscriptosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.NadadoresDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.NadaXEspeDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.ProfesoresDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.ProfXClubDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.ProfXEspecDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.TiposDocDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.TORNEOSDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.TorneosXAñoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.ClubesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.CodigosPostRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.EspecialidadRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.EspecXCompetRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.InscriptosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.NadadoresRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.NadaXEspeRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.ProfesoresRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.ProfXClubRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.ProfXEspecRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.TiposDocRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.TORNEOSRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.TorneosXAñoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.ClubesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.CodigosPostRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.EspecialidadRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.EspecXCompetRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.InscriptosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.NadadoresRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.NadaXEspeRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.ProfesoresRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.ProfXClubRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.ProfXEspecRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.TiposDocRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.TORNEOSRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet.TorneosXAñoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSetTableAdapters.ClubesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSetTableAdapters.CodigosPostTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSetTableAdapters.EspecialidadTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSetTableAdapters.EspecXCompetTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSetTableAdapters.InscriptosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSetTableAdapters.NadadoresTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSetTableAdapters.NadaXEspeTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSetTableAdapters.ProfesoresTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSetTableAdapters.ProfXClubTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSetTableAdapters.ProfXEspecTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSetTableAdapters.TiposDocTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSetTableAdapters.TORNEOSTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSetTableAdapters.TorneosXAñoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:TPI_PAVI.TPIPAVIDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(TPI_PAVI.TPIPAVIDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:TPI_PAVI.TPIPAVIDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(TPI_PAVI.TPIPAVIDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:TPI_PAVI.TPIPAVIDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(TPI_PAVI.TPIPAVIDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:TPI_PAVI.TPIPAVIDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:TPI_PAVI.TPIPAVIDataSetTableAdapters.TableAdapterManager.UpdateAll(TPI_PAVI.TPIPAVIDataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:TPI_PAVI.TPIPAVIDataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+</members>
+</doc>

@@ -1,0 +1,23 @@
+C:\Users\Gonzalo\Documents\UTN-FRC\3er Año\PAVI\Proyecto Integrador\TpIntegrador\TPI-AlvarezPart\TPI-AlvarezPart\bin\Debug\TPI-AlvarezPart.exe
+C:\Users\Gonzalo\Documents\UTN-FRC\3er Año\PAVI\Proyecto Integrador\TpIntegrador\TPI-AlvarezPart\TPI-AlvarezPart\bin\Debug\TPI-AlvarezPart.pdb
+C:\Users\Gonzalo\Documents\UTN-FRC\3er Año\PAVI\Proyecto Integrador\TpIntegrador\TPI-AlvarezPart\TPI-AlvarezPart\bin\Debug\TPI-AlvarezPart.xml
+C:\Users\Gonzalo\Documents\UTN-FRC\3er Año\PAVI\Proyecto Integrador\TpIntegrador\TPI-AlvarezPart\TPI-AlvarezPart\obj\x86\Debug\TPI_AlvarezPart.form_ABMProfesor.resources
+C:\Users\Gonzalo\Documents\UTN-FRC\3er Año\PAVI\Proyecto Integrador\TpIntegrador\TPI-AlvarezPart\TPI-AlvarezPart\obj\x86\Debug\TPI_AlvarezPart.Resources.resources
+C:\Users\Gonzalo\Documents\UTN-FRC\3er Año\PAVI\Proyecto Integrador\TpIntegrador\TPI-AlvarezPart\TPI-AlvarezPart\obj\x86\Debug\TPI-AlvarezPart.vbproj.GenerateResource.Cache
+C:\Users\Gonzalo\Documents\UTN-FRC\3er Año\PAVI\Proyecto Integrador\TpIntegrador\TPI-AlvarezPart\TPI-AlvarezPart\obj\x86\Debug\TPI-AlvarezPart.exe
+C:\Users\Gonzalo\Documents\UTN-FRC\3er Año\PAVI\Proyecto Integrador\TpIntegrador\TPI-AlvarezPart\TPI-AlvarezPart\obj\x86\Debug\TPI-AlvarezPart.xml
+C:\Users\Gonzalo\Documents\UTN-FRC\3er Año\PAVI\Proyecto Integrador\TpIntegrador\TPI-AlvarezPart\TPI-AlvarezPart\obj\x86\Debug\TPI-AlvarezPart.pdb
+C:\Users\Gonzalo\Documents\UTN-FRC\3er Año\PAVI\Proyecto Integrador\TpIntegrador\TPI-AlvarezPart\TPI-AlvarezPart\obj\x86\Debug\TPI_AlvarezPart.MenuOpciones.resources
+C:\Users\Gonzalo\Documents\UTN-FRC\3er Año\PAVI\Proyecto Integrador\TpIntegrador\TPI-AlvarezPart\TPI-AlvarezPart\obj\x86\Debug\TPI_AlvarezPart.frm_ABMnadadores.resources
+D:\Home\Software\Desarrollo\PAV\TPI-AlvarezPart\TPI-AlvarezPart\obj\x86\Debug\TPI-AlvarezPart.vbproj.GenerateResource.Cache
+D:\Home\Software\Desarrollo\PAV\TPI-AlvarezPart\TPI-AlvarezPart\bin\Debug\TPI_PAVI.exe
+D:\Home\Software\Desarrollo\PAV\TPI-AlvarezPart\TPI-AlvarezPart\bin\Debug\TPI_PAVI.pdb
+D:\Home\Software\Desarrollo\PAV\TPI-AlvarezPart\TPI-AlvarezPart\bin\Debug\TPI_PAVI.xml
+D:\Home\Software\Desarrollo\PAV\TPI-AlvarezPart\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.frm_ABMnadadores.resources
+D:\Home\Software\Desarrollo\PAV\TPI-AlvarezPart\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.form_ABMProfesor.resources
+D:\Home\Software\Desarrollo\PAV\TPI-AlvarezPart\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.MenuOpciones.resources
+D:\Home\Software\Desarrollo\PAV\TPI-AlvarezPart\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.Resources.resources
+D:\Home\Software\Desarrollo\PAV\TPI-AlvarezPart\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.exe
+D:\Home\Software\Desarrollo\PAV\TPI-AlvarezPart\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.xml
+D:\Home\Software\Desarrollo\PAV\TPI-AlvarezPart\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.pdb
+D:\Home\Software\Desarrollo\PAV\TPI-AlvarezPart\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.SplashScreen.resources
