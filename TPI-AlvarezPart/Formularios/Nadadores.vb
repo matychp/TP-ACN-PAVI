@@ -7,7 +7,6 @@
         aprobado
         rechazado
     End Enum
-    Dim codNad As Integer = 15
     Dim accion As estado = estado.insertar
 
     Dim cadena As String = "Data Source=localhost\SQLEXPRESS;Initial Catalog=TPIPAVI;Integrated Security=True"
@@ -89,7 +88,7 @@
         Dim consulta As String = ""
         Dim tabla As DataTable
         consulta = "select * from Nadadores"
-        consulta &= " where TipoDoc = " & Me.cmb_tipodoc.SelectedIndex
+        consulta &= " where TipoDoc = " & Me.cmb_tipodoc.SelectedValue
         consulta &= " and NroDoc = " & Me.msk_nrodoc.Text
         tabla = acceso.ejecutar(consulta)
 
@@ -170,18 +169,17 @@
     Private Function insertar() As termino
         Dim cmd As String = ""
         cmd = "insert into Nadadores ("
-        cmd &= "CodNad, Nombre, TipoDoc, NroDoc, Calle, Numero, CodPos, CodProf, CodClub)"
-        cmd &= " values ('" & codNad & "'"
-        cmd &= ", '" & Me.txt_apellido.Text & ", " & Me.txt_nombres.Text & "'"
-        cmd &= ",'" & Me.cmb_tipodoc.SelectedIndex & "'"
+        cmd &= "Apellido,  Nombre, TipoDoc, NroDoc, Calle, Numero, CodPos, CodProf, CodClub)"
+        cmd &= " values ('" & Me.txt_apellido.Text & "'"
+        cmd &= ", '" & Me.txt_nombres.Text & "'"
+        cmd &= ",'" & Me.cmb_tipodoc.SelectedValue & "'"
         cmd &= ",'" & Me.msk_nrodoc.Text & "'"
         cmd &= ",'" & Me.txt_calle.Text & "'"
         cmd &= ",'" & Me.txt_nrocalle.Text & "'"
-        cmd &= ",'" & Me.cmb_codpostal.SelectedIndex & "'"
+        cmd &= ",'" & Me.cmb_codpostal.SelectedValue & "'"
         cmd &= ",'" & Me.cmb_profesor.SelectedValue & "'"
-        cmd &= ",'" & Me.cmb_club.SelectedIndex & "')"
+        cmd &= ",'" & Me.cmb_club.SelectedValue & "')"
         acceso.ejecutarNonConsulta(cmd)
-        codNad += 1
         Return termino.aprobado
 
     End Function
@@ -189,14 +187,15 @@
     Private Function modificar() As termino
         Dim cmd As String = ""
         cmd = "Update Nadadores "
-        cmd &= "Set Nombre = '" & Me.txt_apellido.Text & ", " & Me.txt_nombres.Text & "'"
-        cmd &= ", TipoDoc = '" & Me.cmb_tipodoc.SelectedIndex & "'"
+        cmd &= "Set Nombre = '" & Me.txt_nombres.Text & "'"
+        cmd &= ", Apellido = '" & Me.txt_apellido.Text & "'"
+        cmd &= ", TipoDoc = '" & Me.cmb_tipodoc.SelectedValue & "'"
         ' cmd &= ", nroDoc = " & Me.msk_nrodoc.Text & "'" //UN NUMERO DE DOCUMENTO NO PUEDE SER MODIFICADO
         cmd &= ", Calle = '" & Me.txt_calle.Text & "'"
         cmd &= ", Numero = '" & Me.txt_nrocalle.Text & "'"
-        cmd &= ", CodPos = '" & Me.cmb_codpostal.SelectedIndex & "'"
+        cmd &= ", CodPos = '" & Me.cmb_codpostal.SelectedValue & "'"
         cmd &= ", CodProf = '" & Me.cmb_profesor.SelectedValue & "'"
-        cmd &= ", CodClub = '" & Me.cmb_club.SelectedIndex & "'"
+        cmd &= ", CodClub = '" & Me.cmb_club.SelectedValue & "'"
         cmd &= " where NroDoc = " & Me.msk_nrodoc.Text
 
         acceso.ejecutarNonConsulta(cmd)
@@ -232,7 +231,7 @@
 
         Dim txt_sql As String = ""
 
-        txt_sql = " SELECT  Nadadores.Nombre, Nadadores.CodNad, Nadadores.NroDoc, Nadadores.TipoDoc,"
+        txt_sql = " SELECT  Nadadores.Nombre, Nadadores.Apellido, Nadadores.CodNad, Nadadores.NroDoc, Nadadores.TipoDoc,"
         txt_sql += " Nadadores.Calle, Nadadores.Numero, Nadadores.CodProf, Nadadores.CodPos, Nadadores.CodClub "
         txt_sql += " FROM Nadadores "
 
@@ -259,6 +258,8 @@
     End Sub
 
     Private Sub form_ABMNadadores_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.NadaXEspe' Puede moverla o quitarla según sea necesario.
+        Me.NadaXEspeTableAdapter.Fill(Me.TPIPAVIDataSet.NadaXEspe)
         'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.TiposDoc' Puede moverla o quitarla según sea necesario.
         Me.TiposDocTableAdapter.Fill(Me.TPIPAVIDataSet.TiposDoc)
         'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.Clubes' Puede moverla o quitarla según sea necesario.
@@ -287,14 +288,14 @@
         Dim consulta As String = "select * from Nadadores where NroDoc = " & doc
         Dim tabla As New Data.DataTable
         tabla = acceso.ejecutar(consulta)
-        txt_apellido.Text = tabla.Rows(0)("Nombre")
+        txt_apellido.Text = tabla.Rows(0)("Apellido")
         txt_nombres.Text = tabla.Rows(0)("Nombre")
-        cmb_tipodoc.SelectedIndex = tabla.Rows(0)("TipoDoc")
+        cmb_tipodoc.SelectedValue = tabla.Rows(0)("TipoDoc")
         txt_calle.Text = tabla.Rows(0)("Calle")
         txt_nrocalle.Text = tabla.Rows(0)("Numero")
-        cmb_codpostal.SelectedIndex = tabla.Rows(0)("CodPos")
+        cmb_codpostal.SelectedValue = tabla.Rows(0)("CodPos")
         cmb_profesor.SelectedValue = tabla.Rows(0)("CodProf")
-        cmb_club.SelectedIndex = tabla.Rows(0)("CodClub")
+        cmb_club.SelectedValue = tabla.Rows(0)("CodClub")
         msk_nrodoc.Text = tabla.Rows(0)("NroDoc")
         For Each objeto As System.Windows.Forms.Control In Me.Controls
             If TypeOf objeto Is TextBox Then
@@ -316,7 +317,5 @@
         Me.accion = estado.modificar
     End Sub
 
-    Private Sub cmb_codpostal_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cmb_codpostal.SelectedIndexChanged
-
-    End Sub
+  
 End Class

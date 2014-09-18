@@ -7,6 +7,7 @@
         aprobado
         rechazado
     End Enum
+    Dim cod As String
     Dim accion As estado = estado.insertar
     Dim codEspecialidad As Integer = 15
     Dim cadena As String = "Data Source=localhost\SQLEXPRESS;Initial Catalog=TPIPAVI;Integrated Security=True"
@@ -28,8 +29,6 @@
     End Sub
 
     Private Sub cmd_nuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_nuevo.Click
-        txt_CodigoEspecialidad.Text = codEspecialidad
-        codEspecialidad += 1
         cmd_cancelar.Enabled = True
         cmd_guardar.Enabled = True
         cmd_nuevo.Enabled = False
@@ -41,9 +40,10 @@
     End Sub
 
     Private Sub Form_ABMEspecialidad_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.EspecialidadTableAdapter1.Fill(Me.TPIPAVIDataSet.Especialidad)
         For Each objeto As System.Windows.Forms.Control In Me.Controls
-        If TypeOf objeto Is TextBox Then
-            objeto.Enabled = False
+            If TypeOf objeto Is TextBox Then
+                objeto.Enabled = False
             End If
         Next
         msk_TiempoRecord.Enabled = False
@@ -51,17 +51,16 @@
         cmd_guardar.Enabled = False
     End Sub
 
-    Private Sub grd_ListaEspecialidades_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grd_ListaEspecialidades.CellContentClick
-        Dim cod As String = Me.grd_ListaEspecialidades.CurrentRow.Cells("CosEspeDataGridViewTextBoxColumn").Value
-        Dim consulta As String = "select * from Especialidad where CodEsp = " & cod
+    Private Sub grd_ListaEspecialidades_CellContentDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grd_ListaEspecialidades.CellContentDoubleClick
+        cod = Me.grd_ListaEspecialidades.CurrentRow.Cells("CodEspeDataGridViewTextBoxColumn").Value
+        Dim consulta As String = "select * from Especialidad where CodEspe = " & cod
         Dim tabla As New Data.DataTable
         tabla = acceso.ejecutar(consulta)
-        txt_CodigoEspecialidad.Text = tabla.Rows(0)("CodEspe")
         txt_NombreEspecialidad.Text = tabla.Rows(0)("Descripcion")
         msk_TiempoRecord.Text = tabla.Rows(0)("TiempoRecord")
 
         txt_NombreEspecialidad.Enabled = True
-        Me.msk_TiempoRecord.Enabled = False
+        Me.msk_TiempoRecord.Enabled = True
         Me.cmd_cancelar.Enabled = True
         Me.cmd_guardar.Enabled = True
         Me.cmd_nuevo.Enabled = False
@@ -70,11 +69,10 @@
     End Sub
     Private Function insertar() As termino
         Dim cmd As String = ""
-        cmd = "insert into Especialidad ("
-        cmd &= "CodEspe, Descripcion, TiempoRecord)"
-        cmd &= " values ('" & codEspecialidad & "'"
-        cmd &= ", '" & Me.txt_NombreEspecialidad.Text & "'"
-        cmd &= ",'" & Me.msk_TiempoRecord.Text & "')"
+        cmd = "insert into Especialidad "
+        cmd &= "(Descripcion, TiempoRecord) "
+        cmd &= " values('" & Me.txt_NombreEspecialidad.Text & "'"
+        cmd &= ", '" & Me.msk_TiempoRecord.Text & "')"
         acceso.ejecutarNonConsulta(cmd)
         Return termino.aprobado
     End Function
@@ -92,15 +90,15 @@
         Dim txt_sql As String = ""
 
         txt_sql = " SELECT  Especialidad.CodEspe, Especialidad.Descripcion, Especialidad.TiempoRecord"
-        txt_sql += " FROM Nadadores "
+        txt_sql += " FROM Especialidad "
         grd_ListaEspecialidades.DataSource = acceso.ejecutar(txt_sql)
     End Sub
     Private Function modificar() As termino
         Dim cmd As String = ""
         cmd = "Update Especialidad "
-        cmd &= "Set Descripcion = '" & Me.txt_NombreEspecialidad.Text & "'"
-        cmd &= ", TiempoRecord = " & Me.msk_TiempoRecord.Text
-        cmd &= " where CodEspe = '" & Me.txt_CodigoEspecialidad.Text & "'"
+        cmd &= " Set Descripcion = '" & Me.txt_NombreEspecialidad.Text & "'"
+        cmd &= ", TiempoRecord = '" & Me.msk_TiempoRecord.Text & "'"
+        cmd &= " where CodEspe = '" & cod & "'"
         acceso.ejecutarNonConsulta(cmd)
 
         Return termino.aprobado
@@ -109,8 +107,8 @@
     Private Function validar_existencia() As termino
         Dim consulta As String = ""
         Dim tabla As DataTable
-        consulta = "select * from Especialidad"
-        consulta &= " where CodEspe = " & txt_CodigoEspecialidad.Text
+        consulta = "select * from Especialidad "
+        consulta &= " where Descripcion = '" & Me.txt_NombreEspecialidad.Text & "'"
         tabla = acceso.ejecutar(consulta)
         If tabla.Rows.Count = 1 Then
             Return termino.rechazado
@@ -145,7 +143,7 @@
                     MessageBox.Show("La insersión se realizo exitosamente.", _
                                     "¡Importante!", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MessageBox.Show("Ya esta cargada una persona con ese documento", _
+                    MessageBox.Show("Ya esta cargada una especialidad con ese nombre", _
                                     "¡Importante!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Exit Sub
                 End If
@@ -164,7 +162,10 @@
         End If
         cmd_cancelar.Enabled = False
         cmd_guardar.Enabled = False
+        Me.msk_TiempoRecord.Text = ""
+        Me.txt_NombreEspecialidad.Text = ""
         Me.msk_TiempoRecord.Enabled = False
+        Me.txt_NombreEspecialidad.Enabled = False
         Me.cmd_eliminar.Enabled = True
         Me.cmd_nuevo.Enabled = True
     End Sub
@@ -172,14 +173,17 @@
     Private Sub cmd_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_cancelar.Click
         If MessageBox.Show("Está seguro que desea cancelar este registro", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
 
-
+            Me.txt_NombreEspecialidad.Text = ""
+            Me.msk_TiempoRecord.Text = ""
+            Me.msk_TiempoRecord.Enabled = False
             Me.cmd_cancelar.Enabled = False
             Me.cmd_guardar.Enabled = False
-            Me.txt_CodigoEspecialidad.Enabled = False
             Me.txt_NombreEspecialidad.Enabled = False
             Me.cmd_eliminar.Enabled = True
             Me.cmd_nuevo.Enabled = True
-            codEspecialidad -= 1
         End If
     End Sub
+
+
+
 End Class

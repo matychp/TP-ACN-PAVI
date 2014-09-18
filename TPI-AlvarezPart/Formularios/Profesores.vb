@@ -8,7 +8,6 @@
         rechazado
     End Enum
     Dim accion As estado = estado.insertar
-    Dim codProfesor As Integer = 15
     Dim cadena As String = "Data Source=localhost\SQLEXPRESS;Initial Catalog=TPIPAVI;Integrated Security=True"
     Dim acceso As New accesoBD With {._cadenaConexion = cadena, _
                                      ._tipoBaseDatos = accesoBD.BaseDatos.SqlServer}
@@ -76,7 +75,7 @@
         Dim consulta As String = ""
         Dim tabla As DataTable
         consulta = "select * from Profesores"
-        consulta &= " where TipoDoc = " & Me.cmb_tipodoc.SelectedIndex
+        consulta &= " where TipoDoc = " & Me.cmb_tipodoc.SelectedValue
         consulta &= " and NroDoc = " & Me.msk_nrodoc.Text
         tabla = acceso.ejecutar(consulta)
 
@@ -168,17 +167,16 @@
     Private Function insertar() As termino
         Dim cmd As String = ""
         cmd = "insert into Profesores ("
-        cmd &= "CodProf, Nombre, Calle, Numero, CodPos, TipoDoc, NroDoc)"
-        cmd &= "values (" & codProfesor & ", '" & Me.txt_apellido.Text & ", "
-        cmd &= Me.txt_nombres.Text & "'"
+        cmd &= "Apellido, Nombre, Calle, Numero, CodPos, TipoDoc, NroDoc)"
+        cmd &= " values ('" & Me.txt_apellido.Text & "', "
+        cmd &= "'" & Me.txt_nombres.Text & "'"
         cmd &= ",'" & Me.txt_calle.Text & "'"
         cmd &= ",'" & Me.txt_nrocalle.Text & "'"
-        cmd &= ",'" & Me.cmb_codpostal.SelectedIndex & "'"
-        cmd &= ",'" & Me.cmb_tipodoc.SelectedIndex & "'"
+        cmd &= ",'" & Me.cmb_codpostal.SelectedValue & "'"
+        cmd &= ",'" & Me.cmb_tipodoc.SelectedValue & "'"
         cmd &= ",'" & Me.msk_nrodoc.Text & "')"
-        acceso.ejecutarNonConsulta(cmd)
 
-        codProfesor += 1
+        acceso.ejecutarNonConsulta(cmd)
         Return termino.aprobado
 
     End Function
@@ -186,13 +184,13 @@
     Private Function modificar() As termino
         Dim cmd As String = ""
         cmd = "Update Profesores  "
-        cmd &= "Set Nombre = '" & Me.txt_apellido.Text & ", "
-        cmd &= Me.txt_nombres.Text & "'"
-        cmd &= ", TipoDoc = " & Me.cmb_tipodoc.SelectedIndex
+        cmd &= "Set Apellido = '" & Me.txt_apellido.Text & ", "
+        cmd &= "Nombre = '" & Me.txt_nombres.Text & "'"
+        cmd &= ", TipoDoc = " & Me.cmb_tipodoc.SelectedValue
         ' cmd &= ", nroDoc = " & Me.msk_nrodoc.Text & "'" //UN NUMERO DE DOCUMENTO NO PUEDE SER MODIFICADO
         cmd &= ", Calle = '" & Me.txt_calle.Text & "'"
         cmd &= ", Numero = '" & Me.txt_nrocalle.Text & "'"
-        cmd &= ", CodPos = " & Me.cmb_codpostal.SelectedIndex
+        cmd &= ", CodPos = " & Me.cmb_codpostal.SelectedValue
         cmd &= "where NroDoc = " & Me.msk_nrodoc.Text
 
         acceso.ejecutarNonConsulta(cmd)
@@ -228,7 +226,7 @@
 
         Dim txt_sql As String = ""
 
-        txt_sql = " SELECT  Profesores.CodProf, Profesores.Nombre, Profesores.Calle, Profesores.Numero, Profesores.CodPos,"
+        txt_sql = " SELECT  Profesores.CodProf, Profesores.Nombre, Profesores.Apellido, Profesores.Calle, Profesores.Numero, Profesores.CodPos,"
         txt_sql += " Profesores.TipoDoc, Profesores.NroDoc"
         txt_sql += " FROM Profesores"
 
@@ -245,14 +243,7 @@
         'Next
     End Sub
 
-    Private Sub carga_grilla(ByVal tabla As Data.DataTable)
-        Dim count As Integer = 0
-        For count = 0 To tabla.Rows.Count - 1
-            Me.grd_dgvProfesor.Rows.Add(tabla.Rows(count)("apellido"), _
-                               tabla.Rows(count)("nombres"), tabla.Rows(count)("tipodoc"), tabla.Rows(count)("nrodoc"), tabla.Rows(count)("calle") _
-                               , tabla.Rows(count)("nrocalle"), tabla.Rows(count)("cp"))
-        Next
-    End Sub
+  
 
     Private Sub cmd_eliminarProfesor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_eliminar.Click
         If MessageBox.Show("Está seguro que desea borrar ese registro", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
@@ -267,9 +258,9 @@
         'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet1.CodigosPost' Puede moverla o quitarla según sea necesario.
         Me.CodigosPostTableAdapter.Fill(Me.TPIPAVIDataSet1.CodigosPost)
         'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.TiposDoc' Puede moverla o quitarla según sea necesario.
-        Me.TiposDocTableAdapter.Fill(Me.TPIPAVIDataSet.TiposDoc)
+        Me.TiposDocTableAdapter.Fill(Me.TPIPAVIDataSet1.TiposDoc)
         'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.Profesores' Puede moverla o quitarla según sea necesario.
-        Me.ProfesoresTableAdapter.Fill(Me.TPIPAVIDataSet.Profesores)
+        Me.ProfesoresTableAdapter.Fill(Me.TPIPAVIDataSet1.Profesores)
         For Each objeto As System.Windows.Forms.Control In Me.Controls
             If TypeOf objeto Is TextBox Then
                 objeto.Enabled = False
@@ -289,7 +280,7 @@
         Dim tabla As New Data.DataTable
         tabla = acceso.ejecutar(consulta)
         msk_nrodoc.Text = tabla.Rows(0)("NroDoc")
-        txt_apellido.Text = tabla.Rows(0)("Nombre")
+        txt_apellido.Text = tabla.Rows(0)("Apellido")
         txt_nombres.Text = tabla.Rows(0)("Nombre")
         cmb_tipodoc.SelectedIndex = tabla.Rows(0)("TipoDoc")
         txt_calle.Text = tabla.Rows(0)("Calle")

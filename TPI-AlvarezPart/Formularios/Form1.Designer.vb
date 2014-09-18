@@ -22,19 +22,29 @@ Partial Class Form_ABMEspecialidad
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.EspecialidadTableAdapter1 = New TPI_PAVI.TPIPAVIDataSetTableAdapters.EspecialidadTableAdapter()
         Me.Lbl_Especialidad = New System.Windows.Forms.Label()
         Me.lbl_TiempoRecord = New System.Windows.Forms.Label()
         Me.msk_TiempoRecord = New System.Windows.Forms.MaskedTextBox()
         Me.txt_NombreEspecialidad = New System.Windows.Forms.TextBox()
-        Me.lbl_CodEspecialidad = New System.Windows.Forms.Label()
-        Me.txt_CodigoEspecialidad = New System.Windows.Forms.TextBox()
         Me.grd_ListaEspecialidades = New System.Windows.Forms.DataGridView()
+        Me.CodEspeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TiempoRecordDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EspecialidadBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TPIPAVIDataSet = New TPI_PAVI.TPIPAVIDataSet()
+        Me.EspecialidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.cmd_eliminar = New System.Windows.Forms.Button()
         Me.cmd_nuevo = New System.Windows.Forms.Button()
         Me.cmd_cancelar = New System.Windows.Forms.Button()
         Me.cmd_guardar = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.grd_ListaEspecialidades, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EspecialidadBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EspecialidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'EspecialidadTableAdapter1
@@ -44,59 +54,85 @@ Partial Class Form_ABMEspecialidad
         'Lbl_Especialidad
         '
         Me.Lbl_Especialidad.AutoSize = True
-        Me.Lbl_Especialidad.Location = New System.Drawing.Point(8, 51)
+        Me.Lbl_Especialidad.Location = New System.Drawing.Point(8, 12)
         Me.Lbl_Especialidad.Name = "Lbl_Especialidad"
-        Me.Lbl_Especialidad.Size = New System.Drawing.Size(107, 13)
+        Me.Lbl_Especialidad.Size = New System.Drawing.Size(110, 13)
         Me.Lbl_Especialidad.TabIndex = 9
-        Me.Lbl_Especialidad.Text = "Nombre Especialidad"
+        Me.Lbl_Especialidad.Text = "Nombre Especialidad:"
         '
         'lbl_TiempoRecord
         '
         Me.lbl_TiempoRecord.AutoSize = True
-        Me.lbl_TiempoRecord.Location = New System.Drawing.Point(35, 80)
+        Me.lbl_TiempoRecord.Location = New System.Drawing.Point(35, 67)
         Me.lbl_TiempoRecord.Name = "lbl_TiempoRecord"
-        Me.lbl_TiempoRecord.Size = New System.Drawing.Size(80, 13)
+        Me.lbl_TiempoRecord.Size = New System.Drawing.Size(83, 13)
         Me.lbl_TiempoRecord.TabIndex = 10
-        Me.lbl_TiempoRecord.Text = "Tiempo Record"
+        Me.lbl_TiempoRecord.Text = "Tiempo Record:"
         '
         'msk_TiempoRecord
         '
-        Me.msk_TiempoRecord.Location = New System.Drawing.Point(125, 76)
-        Me.msk_TiempoRecord.Mask = "00:00:00,00"
+        Me.msk_TiempoRecord.Location = New System.Drawing.Point(125, 64)
+        Me.msk_TiempoRecord.Mask = "00:00,00"
         Me.msk_TiempoRecord.Name = "msk_TiempoRecord"
-        Me.msk_TiempoRecord.Size = New System.Drawing.Size(75, 20)
+        Me.msk_TiempoRecord.Size = New System.Drawing.Size(48, 20)
         Me.msk_TiempoRecord.TabIndex = 2
         '
         'txt_NombreEspecialidad
         '
-        Me.txt_NombreEspecialidad.Location = New System.Drawing.Point(125, 48)
+        Me.txt_NombreEspecialidad.Location = New System.Drawing.Point(125, 9)
         Me.txt_NombreEspecialidad.Name = "txt_NombreEspecialidad"
         Me.txt_NombreEspecialidad.Size = New System.Drawing.Size(159, 20)
         Me.txt_NombreEspecialidad.TabIndex = 1
         '
-        'lbl_CodEspecialidad
-        '
-        Me.lbl_CodEspecialidad.AutoSize = True
-        Me.lbl_CodEspecialidad.Location = New System.Drawing.Point(12, 22)
-        Me.lbl_CodEspecialidad.Name = "lbl_CodEspecialidad"
-        Me.lbl_CodEspecialidad.Size = New System.Drawing.Size(103, 13)
-        Me.lbl_CodEspecialidad.TabIndex = 8
-        Me.lbl_CodEspecialidad.Text = "Codigo Especialidad"
-        '
-        'txt_CodigoEspecialidad
-        '
-        Me.txt_CodigoEspecialidad.Location = New System.Drawing.Point(125, 20)
-        Me.txt_CodigoEspecialidad.Name = "txt_CodigoEspecialidad"
-        Me.txt_CodigoEspecialidad.Size = New System.Drawing.Size(48, 20)
-        Me.txt_CodigoEspecialidad.TabIndex = 0
-        '
         'grd_ListaEspecialidades
         '
+        Me.grd_ListaEspecialidades.AllowUserToAddRows = False
+        Me.grd_ListaEspecialidades.AllowUserToDeleteRows = False
+        Me.grd_ListaEspecialidades.AutoGenerateColumns = False
         Me.grd_ListaEspecialidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grd_ListaEspecialidades.Location = New System.Drawing.Point(15, 120)
+        Me.grd_ListaEspecialidades.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodEspeDataGridViewTextBoxColumn, Me.DescripcionDataGridViewTextBoxColumn, Me.TiempoRecordDataGridViewTextBoxColumn})
+        Me.grd_ListaEspecialidades.DataSource = Me.EspecialidadBindingSource1
+        Me.grd_ListaEspecialidades.Location = New System.Drawing.Point(15, 90)
         Me.grd_ListaEspecialidades.Name = "grd_ListaEspecialidades"
-        Me.grd_ListaEspecialidades.Size = New System.Drawing.Size(397, 150)
+        Me.grd_ListaEspecialidades.ReadOnly = True
+        Me.grd_ListaEspecialidades.Size = New System.Drawing.Size(397, 180)
         Me.grd_ListaEspecialidades.TabIndex = 3
+        '
+        'CodEspeDataGridViewTextBoxColumn
+        '
+        Me.CodEspeDataGridViewTextBoxColumn.DataPropertyName = "CodEspe"
+        Me.CodEspeDataGridViewTextBoxColumn.HeaderText = "CodEspe"
+        Me.CodEspeDataGridViewTextBoxColumn.Name = "CodEspeDataGridViewTextBoxColumn"
+        Me.CodEspeDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DescripcionDataGridViewTextBoxColumn
+        '
+        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
+        Me.DescripcionDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'TiempoRecordDataGridViewTextBoxColumn
+        '
+        Me.TiempoRecordDataGridViewTextBoxColumn.DataPropertyName = "TiempoRecord"
+        Me.TiempoRecordDataGridViewTextBoxColumn.HeaderText = "TiempoRecord"
+        Me.TiempoRecordDataGridViewTextBoxColumn.Name = "TiempoRecordDataGridViewTextBoxColumn"
+        Me.TiempoRecordDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EspecialidadBindingSource1
+        '
+        Me.EspecialidadBindingSource1.DataMember = "Especialidad"
+        Me.EspecialidadBindingSource1.DataSource = Me.TPIPAVIDataSet
+        '
+        'TPIPAVIDataSet
+        '
+        Me.TPIPAVIDataSet.DataSetName = "TPIPAVIDataSet"
+        Me.TPIPAVIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'EspecialidadBindingSource
+        '
+        Me.EspecialidadBindingSource.DataMember = "Especialidad"
+        Me.EspecialidadBindingSource.DataSource = Me.TPIPAVIDataSet
         '
         'cmd_eliminar
         '
@@ -134,27 +170,41 @@ Partial Class Form_ABMEspecialidad
         Me.cmd_guardar.Text = "Guardar"
         Me.cmd_guardar.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.TPI_PAVI.My.Resources.Resources.ico_n_natacion
+        Me.PictureBox1.Location = New System.Drawing.Point(337, 9)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(75, 75)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 11
+        Me.PictureBox1.TabStop = False
+        '
         'Form_ABMEspecialidad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(424, 325)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.cmd_cancelar)
         Me.Controls.Add(Me.cmd_guardar)
         Me.Controls.Add(Me.cmd_nuevo)
         Me.Controls.Add(Me.cmd_eliminar)
         Me.Controls.Add(Me.grd_ListaEspecialidades)
-        Me.Controls.Add(Me.txt_CodigoEspecialidad)
-        Me.Controls.Add(Me.lbl_CodEspecialidad)
         Me.Controls.Add(Me.txt_NombreEspecialidad)
         Me.Controls.Add(Me.msk_TiempoRecord)
         Me.Controls.Add(Me.lbl_TiempoRecord)
         Me.Controls.Add(Me.Lbl_Especialidad)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "Form_ABMEspecialidad"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ABM Especialidades"
         CType(Me.grd_ListaEspecialidades, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EspecialidadBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EspecialidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -164,11 +214,16 @@ Partial Class Form_ABMEspecialidad
     Friend WithEvents lbl_TiempoRecord As System.Windows.Forms.Label
     Friend WithEvents msk_TiempoRecord As System.Windows.Forms.MaskedTextBox
     Friend WithEvents txt_NombreEspecialidad As System.Windows.Forms.TextBox
-    Friend WithEvents lbl_CodEspecialidad As System.Windows.Forms.Label
-    Friend WithEvents txt_CodigoEspecialidad As System.Windows.Forms.TextBox
     Friend WithEvents grd_ListaEspecialidades As System.Windows.Forms.DataGridView
     Friend WithEvents cmd_eliminar As System.Windows.Forms.Button
     Friend WithEvents cmd_nuevo As System.Windows.Forms.Button
     Friend WithEvents cmd_cancelar As System.Windows.Forms.Button
     Friend WithEvents cmd_guardar As System.Windows.Forms.Button
+    Friend WithEvents EspecialidadBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents TPIPAVIDataSet As TPI_PAVI.TPIPAVIDataSet
+    Friend WithEvents CodEspeDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DescripcionDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TiempoRecordDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents EspecialidadBindingSource1 As System.Windows.Forms.BindingSource
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class

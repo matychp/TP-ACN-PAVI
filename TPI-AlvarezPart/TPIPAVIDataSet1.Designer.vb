@@ -2314,6 +2314,8 @@ Partial Public Class TPIPAVIDataSet
         
         Private columnCodClub As Global.System.Data.DataColumn
         
+        Private columnApellido As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -2422,6 +2424,14 @@ Partial Public Class TPIPAVIDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ApellidoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnApellido
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2458,9 +2468,9 @@ Partial Public Class TPIPAVIDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddNadadoresRow(ByVal CodNad As Integer, ByVal Nombre As String, ByVal Calle As String, ByVal Numero As Integer, ByVal parentCodigosPostRowByfk_CodPosN As CodigosPostRow, ByVal parentTiposDocRowByfk_TipoDocN As TiposDocRow, ByVal NroDoc As Integer, ByVal parentProfesoresRowByfk_CodProfN As ProfesoresRow, ByVal parentClubesRowByfk_CodClubN As ClubesRow) As NadadoresRow
+        Public Overloads Function AddNadadoresRow(ByVal CodNad As Integer, ByVal Nombre As String, ByVal Calle As String, ByVal Numero As Integer, ByVal parentCodigosPostRowByfk_CodPosN As CodigosPostRow, ByVal parentTiposDocRowByfk_TipoDocN As TiposDocRow, ByVal NroDoc As Integer, ByVal parentProfesoresRowByfk_CodProfN As ProfesoresRow, ByVal parentClubesRowByfk_CodClubN As ClubesRow, ByVal Apellido As String) As NadadoresRow
             Dim rowNadadoresRow As NadadoresRow = CType(Me.NewRow,NadadoresRow)
-            Dim columnValuesArray() As Object = New Object() {CodNad, Nombre, Calle, Numero, Nothing, Nothing, NroDoc, Nothing, Nothing}
+            Dim columnValuesArray() As Object = New Object() {CodNad, Nombre, Calle, Numero, Nothing, Nothing, NroDoc, Nothing, Nothing, Apellido}
             If (Not (parentCodigosPostRowByfk_CodPosN) Is Nothing) Then
                 columnValuesArray(4) = parentCodigosPostRowByfk_CodPosN(0)
             End If
@@ -2510,6 +2520,7 @@ Partial Public Class TPIPAVIDataSet
             Me.columnNroDoc = MyBase.Columns("NroDoc")
             Me.columnCodProf = MyBase.Columns("CodProf")
             Me.columnCodClub = MyBase.Columns("CodClub")
+            Me.columnApellido = MyBase.Columns("Apellido")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2533,6 +2544,8 @@ Partial Public Class TPIPAVIDataSet
             MyBase.Columns.Add(Me.columnCodProf)
             Me.columnCodClub = New Global.System.Data.DataColumn("CodClub", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCodClub)
+            Me.columnApellido = New Global.System.Data.DataColumn("Apellido", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnApellido)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnCodNad}, true))
             Me.columnCodNad.AllowDBNull = false
             Me.columnCodNad.Unique = true
@@ -2544,6 +2557,8 @@ Partial Public Class TPIPAVIDataSet
             Me.columnNroDoc.AllowDBNull = false
             Me.columnCodProf.AllowDBNull = false
             Me.columnCodClub.AllowDBNull = false
+            Me.columnApellido.AllowDBNull = false
+            Me.columnApellido.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2975,6 +2990,8 @@ Partial Public Class TPIPAVIDataSet
         
         Private columnNroDoc As Global.System.Data.DataColumn
         
+        Private columnApellido As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -3067,6 +3084,14 @@ Partial Public Class TPIPAVIDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ApellidoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnApellido
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3103,9 +3128,9 @@ Partial Public Class TPIPAVIDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddProfesoresRow(ByVal CodProf As Integer, ByVal Nombre As String, ByVal Calle As String, ByVal Numero As Integer, ByVal parentCodigosPostRowByfk_CodPosP As CodigosPostRow, ByVal parentTiposDocRowByfk_TipoDocP As TiposDocRow, ByVal NroDoc As Integer) As ProfesoresRow
+        Public Overloads Function AddProfesoresRow(ByVal CodProf As Integer, ByVal Nombre As String, ByVal Calle As String, ByVal Numero As Integer, ByVal parentCodigosPostRowByfk_CodPosP As CodigosPostRow, ByVal parentTiposDocRowByfk_TipoDocP As TiposDocRow, ByVal NroDoc As Integer, ByVal Apellido As String) As ProfesoresRow
             Dim rowProfesoresRow As ProfesoresRow = CType(Me.NewRow,ProfesoresRow)
-            Dim columnValuesArray() As Object = New Object() {CodProf, Nombre, Calle, Numero, Nothing, Nothing, NroDoc}
+            Dim columnValuesArray() As Object = New Object() {CodProf, Nombre, Calle, Numero, Nothing, Nothing, NroDoc, Apellido}
             If (Not (parentCodigosPostRowByfk_CodPosP) Is Nothing) Then
                 columnValuesArray(4) = parentCodigosPostRowByfk_CodPosP(0)
             End If
@@ -3147,6 +3172,7 @@ Partial Public Class TPIPAVIDataSet
             Me.columnCodPos = MyBase.Columns("CodPos")
             Me.columnTipoDoc = MyBase.Columns("TipoDoc")
             Me.columnNroDoc = MyBase.Columns("NroDoc")
+            Me.columnApellido = MyBase.Columns("Apellido")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3166,6 +3192,8 @@ Partial Public Class TPIPAVIDataSet
             MyBase.Columns.Add(Me.columnTipoDoc)
             Me.columnNroDoc = New Global.System.Data.DataColumn("NroDoc", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNroDoc)
+            Me.columnApellido = New Global.System.Data.DataColumn("Apellido", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnApellido)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnCodProf}, true))
             Me.columnCodProf.AllowDBNull = false
             Me.columnCodProf.Unique = true
@@ -3175,6 +3203,8 @@ Partial Public Class TPIPAVIDataSet
             Me.columnCodPos.AllowDBNull = false
             Me.columnTipoDoc.AllowDBNull = false
             Me.columnNroDoc.AllowDBNull = false
+            Me.columnApellido.AllowDBNull = false
+            Me.columnApellido.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5326,6 +5356,17 @@ Partial Public Class TPIPAVIDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Apellido() As String
+            Get
+                Return CType(Me(Me.tableNadadores.ApellidoColumn),String)
+            End Get
+            Set
+                Me(Me.tableNadadores.ApellidoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property ClubesRow() As ClubesRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("fk_CodClubN")),ClubesRow)
@@ -5570,6 +5611,17 @@ Partial Public Class TPIPAVIDataSet
             End Get
             Set
                 Me(Me.tableProfesores.NroDocColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Apellido() As String
+            Get
+                Return CType(Me(Me.tableProfesores.ApellidoColumn),String)
+            End Get
+            Set
+                Me(Me.tableProfesores.ApellidoColumn) = value
             End Set
         End Property
         
@@ -8348,15 +8400,16 @@ Namespace TPIPAVIDataSetTableAdapters
             tableMapping.ColumnMappings.Add("NroDoc", "NroDoc")
             tableMapping.ColumnMappings.Add("CodProf", "CodProf")
             tableMapping.ColumnMappings.Add("CodClub", "CodClub")
+            tableMapping.ColumnMappings.Add("Apellido", "Apellido")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Nadadores] WHERE (([CodNad] = @Original_CodNad) AND ([Nombre] "& _ 
-                "= @Original_Nombre) AND ((@IsNull_Calle = 1 AND [Calle] IS NULL) OR ([Calle] = @"& _ 
-                "Original_Calle)) AND ((@IsNull_Numero = 1 AND [Numero] IS NULL) OR ([Numero] = @"& _ 
-                "Original_Numero)) AND ([CodPos] = @Original_CodPos) AND ([TipoDoc] = @Original_T"& _ 
-                "ipoDoc) AND ([NroDoc] = @Original_NroDoc) AND ([CodProf] = @Original_CodProf) AN"& _ 
-                "D ([CodClub] = @Original_CodClub))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Nadadores] WHERE (([CodNad] = @Original_CodNad) AND ([Nombre] = @Ori"& _ 
+                "ginal_Nombre) AND ((@IsNull_Calle = 1 AND [Calle] IS NULL) OR ([Calle] = @Origin"& _ 
+                "al_Calle)) AND ((@IsNull_Numero = 1 AND [Numero] IS NULL) OR ([Numero] = @Origin"& _ 
+                "al_Numero)) AND ([CodPos] = @Original_CodPos) AND ([TipoDoc] = @Original_TipoDoc"& _ 
+                ") AND ([NroDoc] = @Original_NroDoc) AND ([CodProf] = @Original_CodProf) AND ([Co"& _ 
+                "dClub] = @Original_CodClub) AND ([Apellido] = @Original_Apellido))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CodNad", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodNad", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Nombre", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Nombre", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -8369,15 +8422,15 @@ Namespace TPIPAVIDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NroDoc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NroDoc", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CodProf", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodProf", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CodClub", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodClub", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Apellido", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Apellido", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Nadadores] ([CodNad], [Nombre], [Calle], [Numero], [CodPos], ["& _ 
-                "TipoDoc], [NroDoc], [CodProf], [CodClub]) VALUES (@CodNad, @Nombre, @Calle, @Num"& _ 
-                "ero, @CodPos, @TipoDoc, @NroDoc, @CodProf, @CodClub);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT CodNad, Nombre, Ca"& _ 
-                "lle, Numero, CodPos, TipoDoc, NroDoc, CodProf, CodClub FROM Nadadores WHERE (Cod"& _ 
-                "Nad = @CodNad)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Nadadores] ([Nombre], [Calle], [Numero], [CodPos], [TipoDoc], [NroDo"& _ 
+                "c], [CodProf], [CodClub], [Apellido]) VALUES (@Nombre, @Calle, @Numero, @CodPos,"& _ 
+                " @TipoDoc, @NroDoc, @CodProf, @CodClub, @Apellido);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT CodNad, Nombre, Call"& _ 
+                "e, Numero, CodPos, TipoDoc, NroDoc, CodProf, CodClub, Apellido FROM Nadadores WH"& _ 
+                "ERE (CodNad = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CodNad", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodNad", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Nombre", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Nombre", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Calle", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Calle", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Numero", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Numero", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -8386,20 +8439,20 @@ Namespace TPIPAVIDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NroDoc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NroDoc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CodProf", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodProf", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CodClub", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodClub", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Apellido", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Apellido", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Nadadores] SET [CodNad] = @CodNad, [Nombre] = @Nombre, [Calle] = @C"& _ 
-                "alle, [Numero] = @Numero, [CodPos] = @CodPos, [TipoDoc] = @TipoDoc, [NroDoc] = @"& _ 
-                "NroDoc, [CodProf] = @CodProf, [CodClub] = @CodClub WHERE (([CodNad] = @Original_"& _ 
-                "CodNad) AND ([Nombre] = @Original_Nombre) AND ((@IsNull_Calle = 1 AND [Calle] IS"& _ 
-                " NULL) OR ([Calle] = @Original_Calle)) AND ((@IsNull_Numero = 1 AND [Numero] IS "& _ 
-                "NULL) OR ([Numero] = @Original_Numero)) AND ([CodPos] = @Original_CodPos) AND (["& _ 
-                "TipoDoc] = @Original_TipoDoc) AND ([NroDoc] = @Original_NroDoc) AND ([CodProf] ="& _ 
-                " @Original_CodProf) AND ([CodClub] = @Original_CodClub));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT CodNad, Nombre"& _ 
-                ", Calle, Numero, CodPos, TipoDoc, NroDoc, CodProf, CodClub FROM Nadadores WHERE "& _ 
-                "(CodNad = @CodNad)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [Nadadores] SET [Nombre] = @Nombre, [Calle] = @Calle, [Numero] = @Numero, "& _ 
+                "[CodPos] = @CodPos, [TipoDoc] = @TipoDoc, [NroDoc] = @NroDoc, [CodProf] = @CodPr"& _ 
+                "of, [CodClub] = @CodClub, [Apellido] = @Apellido WHERE (([CodNad] = @Original_Co"& _ 
+                "dNad) AND ([Nombre] = @Original_Nombre) AND ((@IsNull_Calle = 1 AND [Calle] IS N"& _ 
+                "ULL) OR ([Calle] = @Original_Calle)) AND ((@IsNull_Numero = 1 AND [Numero] IS NU"& _ 
+                "LL) OR ([Numero] = @Original_Numero)) AND ([CodPos] = @Original_CodPos) AND ([Ti"& _ 
+                "poDoc] = @Original_TipoDoc) AND ([NroDoc] = @Original_NroDoc) AND ([CodProf] = @"& _ 
+                "Original_CodProf) AND ([CodClub] = @Original_CodClub) AND ([Apellido] = @Origina"& _ 
+                "l_Apellido));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT CodNad, Nombre, Calle, Numero, CodPos, TipoDoc, NroDoc, Co"& _ 
+                "dProf, CodClub, Apellido FROM Nadadores WHERE (CodNad = @CodNad)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CodNad", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodNad", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Nombre", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Nombre", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Calle", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Calle", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Numero", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Numero", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -8408,6 +8461,7 @@ Namespace TPIPAVIDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NroDoc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NroDoc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CodProf", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodProf", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CodClub", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodClub", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Apellido", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Apellido", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CodNad", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodNad", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Nombre", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Nombre", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Calle", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Calle", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -8419,6 +8473,8 @@ Namespace TPIPAVIDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NroDoc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NroDoc", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CodProf", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodProf", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CodClub", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodClub", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Apellido", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Apellido", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CodNad", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "CodNad", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8434,8 +8490,8 @@ Namespace TPIPAVIDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT CodNad, Nombre, Calle, Numero, CodPos, TipoDoc, NroDoc, CodProf, CodClub F"& _ 
-                "ROM dbo.Nadadores"
+            Me._commandCollection(0).CommandText = "SELECT CodNad, Nombre, Calle, Numero, CodPos, TipoDoc, NroDoc, CodProf, CodClub, "& _ 
+                "Apellido FROM Nadadores"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -8495,7 +8551,7 @@ Namespace TPIPAVIDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_CodNad As Integer, ByVal Original_Nombre As String, ByVal Original_Calle As String, ByVal Original_Numero As Global.System.Nullable(Of Integer), ByVal Original_CodPos As Integer, ByVal Original_TipoDoc As Integer, ByVal Original_NroDoc As Integer, ByVal Original_CodProf As Integer, ByVal Original_CodClub As Integer) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_CodNad As Integer, ByVal Original_Nombre As String, ByVal Original_Calle As String, ByVal Original_Numero As Global.System.Nullable(Of Integer), ByVal Original_CodPos As Integer, ByVal Original_TipoDoc As Integer, ByVal Original_NroDoc As Integer, ByVal Original_CodProf As Integer, ByVal Original_CodClub As Integer, ByVal Original_Apellido As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_CodNad,Integer)
             If (Original_Nombre Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Nombre")
@@ -8521,6 +8577,11 @@ Namespace TPIPAVIDataSetTableAdapters
             Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_NroDoc,Integer)
             Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_CodProf,Integer)
             Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_CodClub,Integer)
+            If (Original_Apellido Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_Apellido")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(Original_Apellido,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -8540,28 +8601,32 @@ Namespace TPIPAVIDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal CodNad As Integer, ByVal Nombre As String, ByVal Calle As String, ByVal Numero As Global.System.Nullable(Of Integer), ByVal CodPos As Integer, ByVal TipoDoc As Integer, ByVal NroDoc As Integer, ByVal CodProf As Integer, ByVal CodClub As Integer) As Integer
-            Me.Adapter.InsertCommand.Parameters(0).Value = CType(CodNad,Integer)
+        Public Overloads Overridable Function Insert(ByVal Nombre As String, ByVal Calle As String, ByVal Numero As Global.System.Nullable(Of Integer), ByVal CodPos As Integer, ByVal TipoDoc As Integer, ByVal NroDoc As Integer, ByVal CodProf As Integer, ByVal CodClub As Integer, ByVal Apellido As String) As Integer
             If (Nombre Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Nombre")
             Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Nombre,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Nombre,String)
             End If
             If (Calle Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Calle,String)
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Calle,String)
             End If
             If (Numero.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Numero.Value,Integer)
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Numero.Value,Integer)
             Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.InsertCommand.Parameters(4).Value = CType(CodPos,Integer)
-            Me.Adapter.InsertCommand.Parameters(5).Value = CType(TipoDoc,Integer)
-            Me.Adapter.InsertCommand.Parameters(6).Value = CType(NroDoc,Integer)
-            Me.Adapter.InsertCommand.Parameters(7).Value = CType(CodProf,Integer)
-            Me.Adapter.InsertCommand.Parameters(8).Value = CType(CodClub,Integer)
+            Me.Adapter.InsertCommand.Parameters(3).Value = CType(CodPos,Integer)
+            Me.Adapter.InsertCommand.Parameters(4).Value = CType(TipoDoc,Integer)
+            Me.Adapter.InsertCommand.Parameters(5).Value = CType(NroDoc,Integer)
+            Me.Adapter.InsertCommand.Parameters(6).Value = CType(CodProf,Integer)
+            Me.Adapter.InsertCommand.Parameters(7).Value = CType(CodClub,Integer)
+            If (Apellido Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Apellido")
+            Else
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(Apellido,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -8582,7 +8647,6 @@ Namespace TPIPAVIDataSetTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update( _
-                    ByVal CodNad As Integer,  _
                     ByVal Nombre As String,  _
                     ByVal Calle As String,  _
                     ByVal Numero As Global.System.Nullable(Of Integer),  _
@@ -8591,6 +8655,7 @@ Namespace TPIPAVIDataSetTableAdapters
                     ByVal NroDoc As Integer,  _
                     ByVal CodProf As Integer,  _
                     ByVal CodClub As Integer,  _
+                    ByVal Apellido As String,  _
                     ByVal Original_CodNad As Integer,  _
                     ByVal Original_Nombre As String,  _
                     ByVal Original_Calle As String,  _
@@ -8599,28 +8664,34 @@ Namespace TPIPAVIDataSetTableAdapters
                     ByVal Original_TipoDoc As Integer,  _
                     ByVal Original_NroDoc As Integer,  _
                     ByVal Original_CodProf As Integer,  _
-                    ByVal Original_CodClub As Integer) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(CodNad,Integer)
+                    ByVal Original_CodClub As Integer,  _
+                    ByVal Original_Apellido As String,  _
+                    ByVal CodNad As Integer) As Integer
             If (Nombre Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Nombre")
             Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Nombre,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Nombre,String)
             End If
             If (Calle Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Calle,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Calle,String)
             End If
             If (Numero.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Numero.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Numero.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(CodPos,Integer)
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(TipoDoc,Integer)
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(NroDoc,Integer)
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(CodProf,Integer)
-            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(CodClub,Integer)
+            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(CodPos,Integer)
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(TipoDoc,Integer)
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(NroDoc,Integer)
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(CodProf,Integer)
+            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(CodClub,Integer)
+            If (Apellido Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Apellido")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Apellido,String)
+            End If
             Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_CodNad,Integer)
             If (Original_Nombre Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Nombre")
@@ -8646,6 +8717,12 @@ Namespace TPIPAVIDataSetTableAdapters
             Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_NroDoc,Integer)
             Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_CodProf,Integer)
             Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_CodClub,Integer)
+            If (Original_Apellido Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_Apellido")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_Apellido,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(21).Value = CType(CodNad,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -8674,6 +8751,7 @@ Namespace TPIPAVIDataSetTableAdapters
                     ByVal NroDoc As Integer,  _
                     ByVal CodProf As Integer,  _
                     ByVal CodClub As Integer,  _
+                    ByVal Apellido As String,  _
                     ByVal Original_CodNad As Integer,  _
                     ByVal Original_Nombre As String,  _
                     ByVal Original_Calle As String,  _
@@ -8682,8 +8760,9 @@ Namespace TPIPAVIDataSetTableAdapters
                     ByVal Original_TipoDoc As Integer,  _
                     ByVal Original_NroDoc As Integer,  _
                     ByVal Original_CodProf As Integer,  _
-                    ByVal Original_CodClub As Integer) As Integer
-            Return Me.Update(Original_CodNad, Nombre, Calle, Numero, CodPos, TipoDoc, NroDoc, CodProf, CodClub, Original_CodNad, Original_Nombre, Original_Calle, Original_Numero, Original_CodPos, Original_TipoDoc, Original_NroDoc, Original_CodProf, Original_CodClub)
+                    ByVal Original_CodClub As Integer,  _
+                    ByVal Original_Apellido As String) As Integer
+            Return Me.Update(Nombre, Calle, Numero, CodPos, TipoDoc, NroDoc, CodProf, CodClub, Apellido, Original_CodNad, Original_Nombre, Original_Calle, Original_Numero, Original_CodPos, Original_TipoDoc, Original_NroDoc, Original_CodProf, Original_CodClub, Original_Apellido, Original_CodNad)
         End Function
     End Class
     
@@ -9124,14 +9203,15 @@ Namespace TPIPAVIDataSetTableAdapters
             tableMapping.ColumnMappings.Add("CodPos", "CodPos")
             tableMapping.ColumnMappings.Add("TipoDoc", "TipoDoc")
             tableMapping.ColumnMappings.Add("NroDoc", "NroDoc")
+            tableMapping.ColumnMappings.Add("Apellido", "Apellido")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Profesores] WHERE (([CodProf] = @Original_CodProf) AND ([Nombr"& _ 
-                "e] = @Original_Nombre) AND ((@IsNull_Calle = 1 AND [Calle] IS NULL) OR ([Calle] "& _ 
-                "= @Original_Calle)) AND ((@IsNull_Numero = 1 AND [Numero] IS NULL) OR ([Numero] "& _ 
-                "= @Original_Numero)) AND ([CodPos] = @Original_CodPos) AND ([TipoDoc] = @Origina"& _ 
-                "l_TipoDoc) AND ([NroDoc] = @Original_NroDoc))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Profesores] WHERE (([CodProf] = @Original_CodProf) AND ([Nombre] = @"& _ 
+                "Original_Nombre) AND ((@IsNull_Calle = 1 AND [Calle] IS NULL) OR ([Calle] = @Ori"& _ 
+                "ginal_Calle)) AND ((@IsNull_Numero = 1 AND [Numero] IS NULL) OR ([Numero] = @Ori"& _ 
+                "ginal_Numero)) AND ([CodPos] = @Original_CodPos) AND ([TipoDoc] = @Original_Tipo"& _ 
+                "Doc) AND ([NroDoc] = @Original_NroDoc) AND ([Apellido] = @Original_Apellido))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CodProf", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodProf", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Nombre", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Nombre", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -9142,38 +9222,40 @@ Namespace TPIPAVIDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CodPos", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodPos", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TipoDoc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TipoDoc", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NroDoc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NroDoc", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Apellido", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Apellido", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Profesores] ([CodProf], [Nombre], [Calle], [Numero], [CodPos],"& _ 
-                " [TipoDoc], [NroDoc]) VALUES (@CodProf, @Nombre, @Calle, @Numero, @CodPos, @Tipo"& _ 
-                "Doc, @NroDoc);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT CodProf, Nombre, Calle, Numero, CodPos, TipoDoc, NroDoc F"& _ 
-                "ROM Profesores WHERE (CodProf = @CodProf)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Profesores] ([Nombre], [Calle], [Numero], [CodPos], [TipoDoc], [NroD"& _ 
+                "oc], [Apellido]) VALUES (@Nombre, @Calle, @Numero, @CodPos, @TipoDoc, @NroDoc, @"& _ 
+                "Apellido);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT CodProf, Nombre, Calle, Numero, CodPos, TipoDoc, NroDoc, Apel"& _ 
+                "lido FROM Profesores WHERE (CodProf = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CodProf", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodProf", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Nombre", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Nombre", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Calle", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Calle", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Numero", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Numero", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CodPos", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodPos", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TipoDoc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TipoDoc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NroDoc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NroDoc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Apellido", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Apellido", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Profesores] SET [CodProf] = @CodProf, [Nombre] = @Nombre, [Calle] ="& _ 
-                " @Calle, [Numero] = @Numero, [CodPos] = @CodPos, [TipoDoc] = @TipoDoc, [NroDoc] "& _ 
-                "= @NroDoc WHERE (([CodProf] = @Original_CodProf) AND ([Nombre] = @Original_Nombr"& _ 
-                "e) AND ((@IsNull_Calle = 1 AND [Calle] IS NULL) OR ([Calle] = @Original_Calle)) "& _ 
-                "AND ((@IsNull_Numero = 1 AND [Numero] IS NULL) OR ([Numero] = @Original_Numero))"& _ 
-                " AND ([CodPos] = @Original_CodPos) AND ([TipoDoc] = @Original_TipoDoc) AND ([Nro"& _ 
-                "Doc] = @Original_NroDoc));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT CodProf, Nombre, Calle, Numero, CodPos, TipoD"& _ 
-                "oc, NroDoc FROM Profesores WHERE (CodProf = @CodProf)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [Profesores] SET [Nombre] = @Nombre, [Calle] = @Calle, [Numero] = @Numero,"& _ 
+                " [CodPos] = @CodPos, [TipoDoc] = @TipoDoc, [NroDoc] = @NroDoc, [Apellido] = @Ape"& _ 
+                "llido WHERE (([CodProf] = @Original_CodProf) AND ([Nombre] = @Original_Nombre) A"& _ 
+                "ND ((@IsNull_Calle = 1 AND [Calle] IS NULL) OR ([Calle] = @Original_Calle)) AND "& _ 
+                "((@IsNull_Numero = 1 AND [Numero] IS NULL) OR ([Numero] = @Original_Numero)) AND"& _ 
+                " ([CodPos] = @Original_CodPos) AND ([TipoDoc] = @Original_TipoDoc) AND ([NroDoc]"& _ 
+                " = @Original_NroDoc) AND ([Apellido] = @Original_Apellido));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT CodProf, No"& _ 
+                "mbre, Calle, Numero, CodPos, TipoDoc, NroDoc, Apellido FROM Profesores WHERE (Co"& _ 
+                "dProf = @CodProf)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CodProf", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodProf", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Nombre", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Nombre", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Calle", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Calle", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Numero", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Numero", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CodPos", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodPos", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TipoDoc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TipoDoc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NroDoc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NroDoc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Apellido", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Apellido", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CodProf", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodProf", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Nombre", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Nombre", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Calle", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Calle", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -9183,6 +9265,8 @@ Namespace TPIPAVIDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CodPos", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CodPos", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TipoDoc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TipoDoc", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NroDoc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NroDoc", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Apellido", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Apellido", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CodProf", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "CodProf", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9198,8 +9282,8 @@ Namespace TPIPAVIDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT CodProf, Nombre, Calle, Numero, CodPos, TipoDoc, NroDoc FROM dbo.Profesore"& _ 
-                "s"
+            Me._commandCollection(0).CommandText = "SELECT CodProf, Nombre, Calle, Numero, CodPos, TipoDoc, NroDoc, Apellido FROM Pro"& _ 
+                "fesores"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -9259,7 +9343,7 @@ Namespace TPIPAVIDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_CodProf As Integer, ByVal Original_Nombre As String, ByVal Original_Calle As String, ByVal Original_Numero As Global.System.Nullable(Of Integer), ByVal Original_CodPos As Integer, ByVal Original_TipoDoc As Integer, ByVal Original_NroDoc As Integer) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_CodProf As Integer, ByVal Original_Nombre As String, ByVal Original_Calle As String, ByVal Original_Numero As Global.System.Nullable(Of Integer), ByVal Original_CodPos As Integer, ByVal Original_TipoDoc As Integer, ByVal Original_NroDoc As Integer, ByVal Original_Apellido As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_CodProf,Integer)
             If (Original_Nombre Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Nombre")
@@ -9283,6 +9367,11 @@ Namespace TPIPAVIDataSetTableAdapters
             Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_CodPos,Integer)
             Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_TipoDoc,Integer)
             Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_NroDoc,Integer)
+            If (Original_Apellido Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_Apellido")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_Apellido,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -9302,26 +9391,30 @@ Namespace TPIPAVIDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal CodProf As Integer, ByVal Nombre As String, ByVal Calle As String, ByVal Numero As Global.System.Nullable(Of Integer), ByVal CodPos As Integer, ByVal TipoDoc As Integer, ByVal NroDoc As Integer) As Integer
-            Me.Adapter.InsertCommand.Parameters(0).Value = CType(CodProf,Integer)
+        Public Overloads Overridable Function Insert(ByVal Nombre As String, ByVal Calle As String, ByVal Numero As Global.System.Nullable(Of Integer), ByVal CodPos As Integer, ByVal TipoDoc As Integer, ByVal NroDoc As Integer, ByVal Apellido As String) As Integer
             If (Nombre Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Nombre")
             Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Nombre,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Nombre,String)
             End If
             If (Calle Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Calle,String)
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Calle,String)
             End If
             If (Numero.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Numero.Value,Integer)
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Numero.Value,Integer)
             Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.InsertCommand.Parameters(4).Value = CType(CodPos,Integer)
-            Me.Adapter.InsertCommand.Parameters(5).Value = CType(TipoDoc,Integer)
-            Me.Adapter.InsertCommand.Parameters(6).Value = CType(NroDoc,Integer)
+            Me.Adapter.InsertCommand.Parameters(3).Value = CType(CodPos,Integer)
+            Me.Adapter.InsertCommand.Parameters(4).Value = CType(TipoDoc,Integer)
+            Me.Adapter.InsertCommand.Parameters(5).Value = CType(NroDoc,Integer)
+            If (Apellido Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Apellido")
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(Apellido,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -9341,26 +9434,46 @@ Namespace TPIPAVIDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal CodProf As Integer, ByVal Nombre As String, ByVal Calle As String, ByVal Numero As Global.System.Nullable(Of Integer), ByVal CodPos As Integer, ByVal TipoDoc As Integer, ByVal NroDoc As Integer, ByVal Original_CodProf As Integer, ByVal Original_Nombre As String, ByVal Original_Calle As String, ByVal Original_Numero As Global.System.Nullable(Of Integer), ByVal Original_CodPos As Integer, ByVal Original_TipoDoc As Integer, ByVal Original_NroDoc As Integer) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(CodProf,Integer)
+        Public Overloads Overridable Function Update( _
+                    ByVal Nombre As String,  _
+                    ByVal Calle As String,  _
+                    ByVal Numero As Global.System.Nullable(Of Integer),  _
+                    ByVal CodPos As Integer,  _
+                    ByVal TipoDoc As Integer,  _
+                    ByVal NroDoc As Integer,  _
+                    ByVal Apellido As String,  _
+                    ByVal Original_CodProf As Integer,  _
+                    ByVal Original_Nombre As String,  _
+                    ByVal Original_Calle As String,  _
+                    ByVal Original_Numero As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_CodPos As Integer,  _
+                    ByVal Original_TipoDoc As Integer,  _
+                    ByVal Original_NroDoc As Integer,  _
+                    ByVal Original_Apellido As String,  _
+                    ByVal CodProf As Integer) As Integer
             If (Nombre Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Nombre")
             Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Nombre,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Nombre,String)
             End If
             If (Calle Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Calle,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Calle,String)
             End If
             If (Numero.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Numero.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Numero.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(CodPos,Integer)
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(TipoDoc,Integer)
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(NroDoc,Integer)
+            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(CodPos,Integer)
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(TipoDoc,Integer)
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(NroDoc,Integer)
+            If (Apellido Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Apellido")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Apellido,String)
+            End If
             Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_CodProf,Integer)
             If (Original_Nombre Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Nombre")
@@ -9384,6 +9497,12 @@ Namespace TPIPAVIDataSetTableAdapters
             Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_CodPos,Integer)
             Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_TipoDoc,Integer)
             Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_NroDoc,Integer)
+            If (Original_Apellido Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_Apellido")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_Apellido,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(17).Value = CType(CodProf,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -9403,8 +9522,8 @@ Namespace TPIPAVIDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Nombre As String, ByVal Calle As String, ByVal Numero As Global.System.Nullable(Of Integer), ByVal CodPos As Integer, ByVal TipoDoc As Integer, ByVal NroDoc As Integer, ByVal Original_CodProf As Integer, ByVal Original_Nombre As String, ByVal Original_Calle As String, ByVal Original_Numero As Global.System.Nullable(Of Integer), ByVal Original_CodPos As Integer, ByVal Original_TipoDoc As Integer, ByVal Original_NroDoc As Integer) As Integer
-            Return Me.Update(Original_CodProf, Nombre, Calle, Numero, CodPos, TipoDoc, NroDoc, Original_CodProf, Original_Nombre, Original_Calle, Original_Numero, Original_CodPos, Original_TipoDoc, Original_NroDoc)
+        Public Overloads Overridable Function Update(ByVal Nombre As String, ByVal Calle As String, ByVal Numero As Global.System.Nullable(Of Integer), ByVal CodPos As Integer, ByVal TipoDoc As Integer, ByVal NroDoc As Integer, ByVal Apellido As String, ByVal Original_CodProf As Integer, ByVal Original_Nombre As String, ByVal Original_Calle As String, ByVal Original_Numero As Global.System.Nullable(Of Integer), ByVal Original_CodPos As Integer, ByVal Original_TipoDoc As Integer, ByVal Original_NroDoc As Integer, ByVal Original_Apellido As String) As Integer
+            Return Me.Update(Nombre, Calle, Numero, CodPos, TipoDoc, NroDoc, Apellido, Original_CodProf, Original_Nombre, Original_Calle, Original_Numero, Original_CodPos, Original_TipoDoc, Original_NroDoc, Original_Apellido, Original_CodProf)
         End Function
     End Class
     

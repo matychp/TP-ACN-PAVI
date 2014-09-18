@@ -65,4 +65,19 @@
     Private Sub cmd_especialidades_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_especialidades.Click
         Form_ABMEspecialidad.ShowDialog()
     End Sub
+    Private Sub cmd_tipoDoc_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_tipodocumento.Click
+        frm_abmTipoDocumento.ShowDialog()
+    End Sub
+
+    Private Sub cmd_clubafiliado_Click(sender As System.Object, e As System.EventArgs) Handles cmd_clubafiliado.Click
+        frm_ClubAfiliado.ShowDialog()
+    End Sub
+
+    Private Sub cmd_torneos_Click(sender As System.Object, e As System.EventArgs) Handles cmd_torneos.Click
+        frm_ABMTorneos.ShowDialog()
+    End Sub
+
+    Private Sub cmd_codpostal_Click(sender As System.Object, e As System.EventArgs) Handles cmd_codpostal.Click
+        Form_ABMCodigosPost.ShowDialog()
+    End Sub
 End Class
