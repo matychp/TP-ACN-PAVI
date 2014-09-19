@@ -73,3 +73,20 @@ C:\Users\Gonzalo\Documents\UTN-FRC\3er Año\PAVI\Proyecto Integrador\TpIntegrado
 C:\Users\Gonzalo\Documents\UTN-FRC\3er Año\PAVI\Proyecto Integrador\TpIntegrador\TPIPAVI-ConPKAuto\TPI-PAVI-ConTipoDoc\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.frm_ClubAfiliado.resources
 C:\Users\Gonzalo\Documents\UTN-FRC\3er Año\PAVI\Proyecto Integrador\TpIntegrador\TPIPAVI-ConPKAuto\TPI-PAVI-ConTipoDoc\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.Form_ABMCodigosPost.resources
 C:\Users\Gonzalo\Documents\UTN-FRC\3er Año\PAVI\Proyecto Integrador\TpIntegrador\TPIPAVI-ConPKAuto\TPI-PAVI-ConTipoDoc\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.frm_ABMTorneos.resources
+C:\Users\Matias\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.exe
+C:\Users\Matias\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.xml
+C:\Users\Matias\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.pdb
+C:\Users\Matias\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\bin\Debug\TPI_PAVI.exe
+C:\Users\Matias\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\bin\Debug\TPI_PAVI.pdb
+C:\Users\Matias\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\bin\Debug\TPI_PAVI.xml
+C:\Users\Matias\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.frm_ClubAfiliado.resources
+C:\Users\Matias\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.Form_ABMCodigosPost.resources
+C:\Users\Matias\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.Form_ABMEspecialidad.resources
+C:\Users\Matias\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.frm_ABMnadadores.resources
+C:\Users\Matias\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.form_ABMProfesor.resources
+C:\Users\Matias\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.MenuOpciones.resources
+C:\Users\Matias\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.frm_abmTipoDocumento.resources
+C:\Users\Matias\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.frm_ABMTorneos.resources
+C:\Users\Matias\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.Resources.resources
+C:\Users\Matias\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.SplashScreen.resources
+C:\Users\Matias\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI-PAVI.vbproj.GenerateResource.Cache

@@ -29,18 +29,20 @@ Partial Class SplashScreen
         '
         'progressBar
         '
-        Me.progressBar.Location = New System.Drawing.Point(13, 226)
+        Me.progressBar.BackColor = System.Drawing.Color.White
+        Me.progressBar.ForeColor = System.Drawing.Color.Black
+        Me.progressBar.Location = New System.Drawing.Point(13, 240)
         Me.progressBar.Name = "progressBar"
-        Me.progressBar.Size = New System.Drawing.Size(259, 23)
+        Me.progressBar.Size = New System.Drawing.Size(250, 23)
         Me.progressBar.TabIndex = 0
         '
         'PictureBox1
         '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox1.BackColor = System.Drawing.Color.White
         Me.PictureBox1.Image = Global.TPI_PAVI.My.Resources.Resources.ico_n_natacion
         Me.PictureBox1.Location = New System.Drawing.Point(13, 12)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(259, 207)
+        Me.PictureBox1.Size = New System.Drawing.Size(250, 208)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
@@ -49,11 +51,13 @@ Partial Class SplashScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 261)
+        Me.BackColor = System.Drawing.Color.White
+        Me.BackgroundImage = Global.TPI_PAVI.My.Resources.Resources.Background_SplashScreen
+        Me.ClientSize = New System.Drawing.Size(275, 275)
         Me.ControlBox = False
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.progressBar)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "SplashScreen"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "A.C.N."
