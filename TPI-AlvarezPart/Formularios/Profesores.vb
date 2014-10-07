@@ -16,6 +16,7 @@
         If MessageBox.Show("¿Está seguro que quiere salir del formulario?", "¡Importante!", _
         MessageBoxButtons.OKCancel, MessageBoxIcon.Question) = _
         Windows.Forms.DialogResult.OK Then
+            Me.cancelar()
             e.Cancel = False
         Else
             e.Cancel = True
@@ -135,9 +136,6 @@
                                 "¡Importante!", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             End If
-            Me.carga_grilla()
-            MessageBox.Show("Se grabó exitosamente", "Importante", _
-                            MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
         cmd_cancelar.Enabled = False
         cmd_guardar.Enabled = False
@@ -156,6 +154,8 @@
         Me.msk_nrodoc.Enabled = False
         Me.cmd_eliminar.Enabled = True
         Me.cmd_nuevo.Enabled = True
+
+        Me.carga_grilla()
     End Sub
 
     Private Function insertar() As termino
@@ -193,38 +193,40 @@
 
     End Function
 
-    Private Sub cmd_cancelarProfesor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_cancelar.Click
-        If MessageBox.Show("Está seguro que desea cancelar este registro", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
+    Private Sub cancelar()
+        cmd_cancelar.Enabled = False
+        cmd_guardar.Enabled = False
+        For Each objeto As System.Windows.Forms.Control In Me.Controls
+            If TypeOf objeto Is TextBox Then
+                objeto.Text = ""
+                objeto.Enabled = False
+            End If
+            If TypeOf objeto Is ComboBox Then
+                Dim actual As ComboBox = objeto
+                actual.SelectedIndex = -1
+                objeto.Enabled = False
+            End If
+        Next
+        Me.msk_nrodoc.Text = ""
+        Me.msk_nrodoc.Enabled = False
 
-            cmd_cancelar.Enabled = False
-            cmd_guardar.Enabled = False
-            For Each objeto As System.Windows.Forms.Control In Me.Controls
-                If TypeOf objeto Is TextBox Then
-                    objeto.Text = ""
-                    objeto.Enabled = False
-                End If
-                If TypeOf objeto Is ComboBox Then
-                    Dim actual As ComboBox = objeto
-                    actual.SelectedIndex = -1
-                    objeto.Enabled = False
-                End If
-            Next
-            Me.msk_nrodoc.Text = ""
-            Me.msk_nrodoc.Enabled = False
-        End If
         Me.cmd_eliminar.Enabled = True
         Me.cmd_nuevo.Enabled = True
     End Sub
 
-    Private Sub carga_grilla()
+    Private Sub cmd_cancelarProfesor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_cancelar.Click
+        If MessageBox.Show("Está seguro que desea cancelar este registro", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
+            Me.cancelar()
+        End If
+    End Sub
 
+    Private Sub carga_grilla()
         Dim txt_sql As String = ""
         Dim tabla As Data.DataTable
         txt_sql = " SELECT  Profesores.CodProf, Profesores.Nombre, Profesores.Apellido, Profesores.Calle, Profesores.Numero, CodigosPost.Nombre AS 'Codigo Postal',"
         txt_sql &= " TiposDoc.Nombre AS 'Tipo Documento', Profesores.NroDoc"
         txt_sql &= " FROM (Profesores LEFT JOIN TiposDoc ON Profesores.TipoDoc = TiposDoc.TipoDoc) "
         txt_sql &= "LEFT JOIN CodigosPost ON Profesores.CodPos = CodigosPost.CodPos"
-
 
         tabla = acceso.ejecutar(txt_sql)
         grd_dgvProfesor.DataSource = tabla
@@ -236,8 +238,6 @@
             Dim txt_sql As String = ""
             txt_sql = "delete from Profesores where NroDoc = " & Me.grd_dgvProfesor.CurrentRow.Cells("NroDoc").Value
             acceso.ejecutarNonConsulta(txt_sql)
-
-
         End If
     End Sub
 
@@ -285,9 +285,7 @@
         cmd_eliminar.Enabled = False
         cmd_guardar.Enabled = True
         cmd_cancelar.Enabled = True
-
         Me.msk_nrodoc.Enabled = False
-
         Me.accion = estado.modificar
     End Sub
 
@@ -301,8 +299,5 @@
         Catch ex As System.Exception
             System.Windows.Forms.MessageBox.Show(ex.Message)
         End Try
-
     End Sub
-
-
 End Class

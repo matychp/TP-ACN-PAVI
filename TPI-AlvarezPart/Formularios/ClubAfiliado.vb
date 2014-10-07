@@ -17,6 +17,7 @@
         If MessageBox.Show("¿Está seguro que quiere salir del formulario?", "¡Importante!", _
        MessageBoxButtons.OKCancel, MessageBoxIcon.Question) = _
        Windows.Forms.DialogResult.OK Then
+            cancelar()
             e.Cancel = False
         Else
             e.Cancel = True
@@ -82,7 +83,6 @@
         Me.accion = estado.insertar
     End Sub
 
-
     Private Sub cmd_guardarCLub_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_guardar.Click
         If Me.validar() = True Then
             If Me.accion = estado.insertar Then
@@ -102,9 +102,6 @@
 
             End If
             Me.carga_grilla()
-
-
-
             MessageBox.Show("Se grabó exitosamente", "Importante", _
                             MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
@@ -158,21 +155,9 @@
 
     Private Sub cmd_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_cancelar.Click
         If MessageBox.Show("Está seguro que desea cancelar este registro", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
-
-            Me.txt_nombre.Text = ""
-            Me.txt_calle.Text = ""
-            Me.txt_nroCalle.Text = ""
-            Me.txt_nombre.Enabled = False
-            Me.txt_calle.Enabled = False
-            Me.txt_nroCalle.Enabled = False
-            Me.cmd_cancelar.Enabled = False
-            Me.cmd_guardar.Enabled = False
-            Me.cmd_eliminar.Enabled = True
-            Me.cmd_nuevo.Enabled = True
+            cancelar()
         End If
     End Sub
-
-
 
     Private Sub grd_dgvClubes_CellContentDoubleClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grd_dgvClubes.CellContentDoubleClick
         codClub = Me.grd_dgvClubes.CurrentRow.Cells("CodClubDataGridViewTextBoxColumn").Value
@@ -206,5 +191,18 @@
             acceso.ejecutarNonConsulta(txt_sql)
             Me.carga_grilla()
         End If
+    End Sub
+
+    Private Sub cancelar()
+        Me.txt_nombre.Text = ""
+        Me.txt_calle.Text = ""
+        Me.txt_nroCalle.Text = ""
+        Me.txt_nombre.Enabled = False
+        Me.txt_calle.Enabled = False
+        Me.txt_nroCalle.Enabled = False
+        Me.cmd_cancelar.Enabled = False
+        Me.cmd_guardar.Enabled = False
+        Me.cmd_eliminar.Enabled = True
+        Me.cmd_nuevo.Enabled = True
     End Sub
 End Class

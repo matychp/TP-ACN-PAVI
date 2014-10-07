@@ -5,11 +5,18 @@
             OledbSqlServer
             SqlServer
             Oracle
-        End Enum
+    End Enum
+    Enum estadoProceso
+        proceso_ok
+        proceso_error
+    End Enum
         Dim CadenaConexion As String = ""
         Dim conexion As Object
         Dim cmd As Object
-        Dim tipoBaseDatos As BaseDatos
+    Dim tipoBaseDatos As BaseDatos
+    Dim estadoTransaccion As estadoProceso = estadoProceso.proceso_ok
+    Dim transaccion As New Object
+
 
         Public WriteOnly Property _cadenaConexion As String
             Set(value As String)
@@ -32,8 +39,6 @@
         End Sub
 
         Private Sub conectar()
-        ' Dim conexion As New Data.SqlClient.SqlConnection
-        ' Dim cmd As New Data.SqlClient.SqlCommand
         conexion.ConnectionString = Me.CadenaConexion
         Try
             conexion.Open()
@@ -44,6 +49,8 @@
 
         cmd.Connection = conexion
         cmd.CommandType = CommandType.Text
+        transaccion = conexion.BeginTransaction()
+        cmd.Transaction = transaccion
     End Sub
 
     Public Function ejecutar(ByVal sql As String) As Data.DataTable
@@ -54,9 +61,10 @@
             tabla.Load(Me.cmd.ExecuteReader())
         Catch e As Exception
             MessageBox.Show(e.Message, "Error en consulta.")
+            estadoTransaccion = estadoProceso.proceso_error
         End Try
 
-        conexion.Close()
+        desconectar()
         Return tabla
     End Function
 
@@ -67,9 +75,20 @@
             cmd.ExecuteNonQuery()
         Catch e As Exception
             MessageBox.Show(e.Message, "Error al intentar modificar la base de datos:")
+            estadoTransaccion = estadoProceso.proceso_error
         End Try
 
-        conexion.Close()
+        desconectar()
+    End Sub
+
+    Public Sub desconectar()
+        If estadoTransaccion = estadoProceso.proceso_ok Then
+            transaccion.Commit()
+            conexion.Close()
+        Else
+            transaccion.Rollback()
+            conexion.Close()
+        End If
     End Sub
     End Class
 

@@ -65,6 +65,8 @@ Partial Class form_ABMProfesor
         Me.txt_apellido = New System.Windows.Forms.TextBox()
         Me.lbl_nombresProfesor = New System.Windows.Forms.Label()
         Me.lbl_apellidoProfesor = New System.Windows.Forms.Label()
+        Me.TiposDocBindingSource6 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CodigosPostBindingSource5 = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.CodigosPostBindingSource4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TPIPAVIDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CodigosPostBindingSource3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,6 +86,8 @@ Partial Class form_ABMProfesor
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TPIPAVIDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProfesoresBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TiposDocBindingSource6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CodigosPostBindingSource5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_numeroCalleProfesor
@@ -115,9 +119,9 @@ Partial Class form_ABMProfesor
         '
         'cmb_codpostal
         '
-        Me.cmb_codpostal.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.CodigosPostBindingSource4, "Codpos", True))
         Me.cmb_codpostal.DataSource = Me.CodigosPostBindingSource3
         Me.cmb_codpostal.DisplayMember = "Nombre"
+        Me.cmb_codpostal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_codpostal.FormattingEnabled = True
         Me.cmb_codpostal.Location = New System.Drawing.Point(532, 78)
         Me.cmb_codpostal.Name = "cmb_codpostal"
@@ -132,6 +136,7 @@ Partial Class form_ABMProfesor
         '
         'TPIPAVIDataSet1
         '
+        Me.TPIPAVIDataSet1.DataSetName = "TPIPAVIDataSet"
         Me.TPIPAVIDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'CodigosPostBindingSource3
@@ -191,6 +196,7 @@ Partial Class form_ABMProfesor
         '
         'TPIPAVIDataSet
         '
+        Me.TPIPAVIDataSet.DataSetName = "TPIPAVIDataSet"
         Me.TPIPAVIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'cmd_nuevo
@@ -248,9 +254,9 @@ Partial Class form_ABMProfesor
         '
         'cmb_tipodoc
         '
-        Me.cmb_tipodoc.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.TiposDocBindingSource5, "TipoDoc", True))
         Me.cmb_tipodoc.DataSource = Me.TiposDocBindingSource4
         Me.cmb_tipodoc.DisplayMember = "Nombre"
+        Me.cmb_tipodoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_tipodoc.FormattingEnabled = True
         Me.cmb_tipodoc.Location = New System.Drawing.Point(123, 90)
         Me.cmb_tipodoc.Name = "cmb_tipodoc"
@@ -380,6 +386,16 @@ Partial Class form_ABMProfesor
         Me.lbl_apellidoProfesor.TabIndex = 18
         Me.lbl_apellidoProfesor.Text = "Apellido:"
         '
+        'TiposDocBindingSource6
+        '
+        Me.TiposDocBindingSource6.DataMember = "TiposDoc"
+        Me.TiposDocBindingSource6.DataSource = Me.TPIPAVIDataSet1
+        '
+        'CodigosPostBindingSource5
+        '
+        Me.CodigosPostBindingSource5.DataMember = "CodigosPost"
+        Me.CodigosPostBindingSource5.DataSource = Me.TPIPAVIDataSet1
+        '
         'form_ABMProfesor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -430,6 +446,8 @@ Partial Class form_ABMProfesor
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TPIPAVIDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProfesoresBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TiposDocBindingSource6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CodigosPostBindingSource5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -476,5 +494,7 @@ Partial Class form_ABMProfesor
     Friend WithEvents CodigosPostBindingSource3 As System.Windows.Forms.BindingSource
     Friend WithEvents TiposDocBindingSource5 As System.Windows.Forms.BindingSource
     Friend WithEvents TiposDocBindingSource4 As System.Windows.Forms.BindingSource
+    Friend WithEvents TiposDocBindingSource6 As System.Windows.Forms.BindingSource
+    Friend WithEvents CodigosPostBindingSource5 As System.Windows.Forms.BindingSource
 
 End Class

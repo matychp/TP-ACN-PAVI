@@ -17,6 +17,7 @@
         If MessageBox.Show("¿Está seguro que quiere salir del formulario?", "¡Importante!", _
         MessageBoxButtons.OKCancel, MessageBoxIcon.Question) = _
         Windows.Forms.DialogResult.OK Then
+            cancelar()
             e.Cancel = False
         Else
             e.Cancel = True
@@ -106,18 +107,9 @@
 
     Private Sub cmd_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_cancelar.Click
         If MessageBox.Show("Está seguro que desea cancelar este registro", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
-
-            Me.msk_CodPos.Text = ""
-            Me.msk_CodPos.Enabled = False
-            Me.cmd_cancelar.Enabled = False
-            Me.cmd_guardar.Enabled = False
-            Me.cmd_eliminar.Enabled = True
-            Me.cmd_nuevo.Enabled = True
+            cancelar()
         End If
     End Sub
-
-   
-
 
     Private Sub Form_ABMCodigosPost_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.CodigosPostTableAdapter.Fill(Me.TPIPAVIDataSet.CodigosPost)
@@ -167,7 +159,14 @@
         Me.accion = estado.insertar
     End Sub
 
-
+    Private Sub cancelar()
+        Me.msk_CodPos.Text = ""
+        Me.msk_CodPos.Enabled = False
+        Me.cmd_cancelar.Enabled = False
+        Me.cmd_guardar.Enabled = False
+        Me.cmd_eliminar.Enabled = True
+        Me.cmd_nuevo.Enabled = True
+    End Sub
 
 
 End Class

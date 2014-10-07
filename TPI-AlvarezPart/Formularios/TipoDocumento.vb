@@ -30,6 +30,7 @@
                            "¡Importante!", _
                             MessageBoxButtons.OKCancel, _
                             MessageBoxIcon.Question) = Windows.Forms.DialogResult.OK Then
+            cancelar()
             e.Cancel = False
         Else
             e.Cancel = True
@@ -200,18 +201,20 @@
 
     Private Sub cmd_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_cancelar.Click
         If MessageBox.Show("¿Está seguro que desea cancelar este registro?", "¡Atención!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
-
-            cmd_cancelar.Enabled = False
-            cmd_guardar.Enabled = False
-            For Each objeto As System.Windows.Forms.Control In Me.Controls
-                If TypeOf objeto Is TextBox Then
-                    objeto.Text = ""
-                    objeto.Enabled = False
-                End If
-            Next
+            cancelar()
         End If
+    End Sub
+
+    Private Sub cancelar()
+        cmd_cancelar.Enabled = False
+        cmd_guardar.Enabled = False
+        For Each objeto As System.Windows.Forms.Control In Me.Controls
+            If TypeOf objeto Is TextBox Then
+                objeto.Text = ""
+                objeto.Enabled = False
+            End If
+        Next
         Me.cmd_eliminar.Enabled = True
         Me.cmd_nuevo.Enabled = True
     End Sub
-
 End Class

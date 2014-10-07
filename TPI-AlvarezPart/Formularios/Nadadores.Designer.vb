@@ -78,6 +78,14 @@ Partial Class frm_ABMnadadores
         Me.txt_apellido = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ClubesBindingSource5 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ClubesBindingSource6 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ProfesoresBindingSource4 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TiposDocBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TiposDocBindingSource3 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ProfesoresBindingSource5 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ClubesBindingSource7 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ProfesoresBindingSource6 = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.CodigosPostBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CodigosPostBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -103,13 +111,21 @@ Partial Class frm_ABMnadadores
         CType(Me.ClubesBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProfesoresBindingSource3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProfesoresBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClubesBindingSource5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClubesBindingSource6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProfesoresBindingSource4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TiposDocBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TiposDocBindingSource3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProfesoresBindingSource5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClubesBindingSource7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProfesoresBindingSource6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmb_codpostal
         '
-        Me.cmb_codpostal.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.CodigosPostBindingSource1, "Codpos", True))
         Me.cmb_codpostal.DataSource = Me.CodigosPostBindingSource1
         Me.cmb_codpostal.DisplayMember = "Nombre"
+        Me.cmb_codpostal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_codpostal.FormattingEnabled = True
         Me.cmb_codpostal.Location = New System.Drawing.Point(507, 77)
         Me.cmb_codpostal.Name = "cmb_codpostal"
@@ -124,6 +140,7 @@ Partial Class frm_ABMnadadores
         '
         'TPIPAVIDataSet
         '
+        Me.TPIPAVIDataSet.DataSetName = "TPIPAVIDataSet"
         Me.TPIPAVIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'CodigosPostBindingSource
@@ -204,9 +221,9 @@ Partial Class frm_ABMnadadores
         '
         'cmb_tipodoc
         '
-        Me.cmb_tipodoc.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.TiposDocBindingSource1, "TipoDoc", True))
-        Me.cmb_tipodoc.DataSource = Me.TiposDocBindingSource1
+        Me.cmb_tipodoc.DataSource = Me.TiposDocBindingSource2
         Me.cmb_tipodoc.DisplayMember = "Nombre"
+        Me.cmb_tipodoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_tipodoc.FormattingEnabled = True
         Me.cmb_tipodoc.Location = New System.Drawing.Point(131, 72)
         Me.cmb_tipodoc.Name = "cmb_tipodoc"
@@ -400,14 +417,14 @@ Partial Class frm_ABMnadadores
         '
         'cmb_club
         '
-        Me.cmb_club.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.ClubesBindingSource4, "CodClub", True))
-        Me.cmb_club.DataSource = Me.ClubesBindingSource3
+        Me.cmb_club.DataSource = Me.ClubesBindingSource7
         Me.cmb_club.DisplayMember = "Nombre"
+        Me.cmb_club.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_club.FormattingEnabled = True
-        Me.cmb_club.Location = New System.Drawing.Point(438, 138)
+        Me.cmb_club.Location = New System.Drawing.Point(63, 138)
         Me.cmb_club.Name = "cmb_club"
-        Me.cmb_club.Size = New System.Drawing.Size(161, 21)
-        Me.cmb_club.TabIndex = 8
+        Me.cmb_club.Size = New System.Drawing.Size(250, 21)
+        Me.cmb_club.TabIndex = 7
         Me.cmb_club.ValueMember = "CodClub"
         '
         'ClubesBindingSource4
@@ -432,14 +449,14 @@ Partial Class frm_ABMnadadores
         '
         'cmb_profesor
         '
-        Me.cmb_profesor.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.ProfesoresBindingSource3, "CodProf", True))
-        Me.cmb_profesor.DataSource = Me.ProfesoresBindingSource2
+        Me.cmb_profesor.DataSource = Me.ProfesoresBindingSource6
         Me.cmb_profesor.DisplayMember = "Apellido"
+        Me.cmb_profesor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_profesor.FormattingEnabled = True
-        Me.cmb_profesor.Location = New System.Drawing.Point(63, 138)
+        Me.cmb_profesor.Location = New System.Drawing.Point(438, 138)
         Me.cmb_profesor.Name = "cmb_profesor"
-        Me.cmb_profesor.Size = New System.Drawing.Size(245, 21)
-        Me.cmb_profesor.TabIndex = 7
+        Me.cmb_profesor.Size = New System.Drawing.Size(161, 21)
+        Me.cmb_profesor.TabIndex = 8
         Me.cmb_profesor.ValueMember = "CodProf"
         '
         'ProfesoresBindingSource3
@@ -483,6 +500,46 @@ Partial Class frm_ABMnadadores
         Me.Label1.Size = New System.Drawing.Size(50, 13)
         Me.Label1.TabIndex = 22
         Me.Label1.Text = "Apellido: "
+        '
+        'ClubesBindingSource5
+        '
+        Me.ClubesBindingSource5.DataMember = "Clubes"
+        Me.ClubesBindingSource5.DataSource = Me.TPIPAVIDataSet
+        '
+        'ClubesBindingSource6
+        '
+        Me.ClubesBindingSource6.DataMember = "Clubes"
+        Me.ClubesBindingSource6.DataSource = Me.TPIPAVIDataSet
+        '
+        'ProfesoresBindingSource4
+        '
+        Me.ProfesoresBindingSource4.DataMember = "Profesores"
+        Me.ProfesoresBindingSource4.DataSource = Me.TPIPAVIDataSet
+        '
+        'TiposDocBindingSource2
+        '
+        Me.TiposDocBindingSource2.DataMember = "TiposDoc"
+        Me.TiposDocBindingSource2.DataSource = Me.TPIPAVIDataSet
+        '
+        'TiposDocBindingSource3
+        '
+        Me.TiposDocBindingSource3.DataMember = "TiposDoc"
+        Me.TiposDocBindingSource3.DataSource = Me.TPIPAVIDataSet
+        '
+        'ProfesoresBindingSource5
+        '
+        Me.ProfesoresBindingSource5.DataMember = "Profesores"
+        Me.ProfesoresBindingSource5.DataSource = Me.TPIPAVIDataSet
+        '
+        'ClubesBindingSource7
+        '
+        Me.ClubesBindingSource7.DataMember = "Clubes"
+        Me.ClubesBindingSource7.DataSource = Me.TPIPAVIDataSet
+        '
+        'ProfesoresBindingSource6
+        '
+        Me.ProfesoresBindingSource6.DataMember = "Profesores"
+        Me.ProfesoresBindingSource6.DataSource = Me.TPIPAVIDataSet
         '
         'frm_ABMnadadores
         '
@@ -544,6 +601,14 @@ Partial Class frm_ABMnadadores
         CType(Me.ClubesBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProfesoresBindingSource3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProfesoresBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClubesBindingSource5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClubesBindingSource6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProfesoresBindingSource4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TiposDocBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TiposDocBindingSource3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProfesoresBindingSource5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClubesBindingSource7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProfesoresBindingSource6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -603,4 +668,12 @@ Partial Class frm_ABMnadadores
     Friend WithEvents ClubesBindingSource4 As System.Windows.Forms.BindingSource
     Friend WithEvents ClubesBindingSource3 As System.Windows.Forms.BindingSource
     Friend WithEvents NadadoresBindingSource7 As System.Windows.Forms.BindingSource
+    Friend WithEvents ProfesoresBindingSource4 As System.Windows.Forms.BindingSource
+    Friend WithEvents ClubesBindingSource6 As System.Windows.Forms.BindingSource
+    Friend WithEvents ClubesBindingSource5 As System.Windows.Forms.BindingSource
+    Friend WithEvents TiposDocBindingSource2 As System.Windows.Forms.BindingSource
+    Friend WithEvents TiposDocBindingSource3 As System.Windows.Forms.BindingSource
+    Friend WithEvents ProfesoresBindingSource5 As System.Windows.Forms.BindingSource
+    Friend WithEvents ClubesBindingSource7 As System.Windows.Forms.BindingSource
+    Friend WithEvents ProfesoresBindingSource6 As System.Windows.Forms.BindingSource
 End Class

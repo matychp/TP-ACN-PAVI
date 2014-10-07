@@ -18,6 +18,7 @@
         If MessageBox.Show("¿Está seguro que quiere salir del formulario?", "¡Importante!", _
         MessageBoxButtons.OKCancel, MessageBoxIcon.Question) = _
         Windows.Forms.DialogResult.OK Then
+            cancelar()
             e.Cancel = False
         Else
             e.Cancel = True
@@ -140,12 +141,8 @@
                                 "¡Importante!", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             End If
-            Me.carga_grilla()
 
 
-
-            MessageBox.Show("Se grabó exitosamente", "Importante", _
-                            MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
         cmd_cancelar.Enabled = False
         cmd_guardar.Enabled = False
@@ -164,6 +161,8 @@
         Me.msk_nrodoc.Enabled = False
         Me.cmd_eliminar.Enabled = True
         Me.cmd_nuevo.Enabled = True
+
+        Me.carga_grilla()
     End Sub
 
     Private Function insertar() As termino
@@ -206,32 +205,15 @@
 
     Private Sub cmd_cancelarNadador_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_cancelar.Click
         If MessageBox.Show("Está seguro que desea cancelar este registro", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
-
-            cmd_cancelar.Enabled = False
-            cmd_guardar.Enabled = False
-            For Each objeto As System.Windows.Forms.Control In Me.Controls
-                If TypeOf objeto Is TextBox Then
-                    objeto.Text = ""
-                    objeto.Enabled = False
-                End If
-                If TypeOf objeto Is ComboBox Then
-                    Dim actual As ComboBox = objeto
-                    actual.SelectedIndex = -1
-                    objeto.Enabled = False
-                End If
-            Next
-            Me.msk_nrodoc.Text = ""
-            Me.msk_nrodoc.Enabled = False
+            cancelar()
         End If
-        Me.cmd_eliminar.Enabled = True
-        Me.cmd_nuevo.Enabled = True
     End Sub
 
     Private Sub carga_grilla()
 
         Dim txt_sql As String = ""
 
-   
+
         txt_sql = "SELECT        Nadadores.CodNad, Nadadores.Nombre, Nadadores.Apellido, Nadadores.Calle, Nadadores.Numero, Nadadores.NroDoc, Clubes.Nombre AS Club, Profesores.Apellido AS Profesor, TiposDoc.Nombre AS TipoDoc, "
         txt_sql &= " CodigosPost.Nombre AS CodPost "
         txt_sql &= " FROM Nadadores INNER JOIN "
@@ -272,7 +254,7 @@
         Me.CodigosPostTableAdapter.Fill(Me.TPIPAVIDataSet.CodigosPost)
         'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.Profesores' Puede moverla o quitarla según sea necesario.
         Me.ProfesoresTableAdapter.Fill(Me.TPIPAVIDataSet.Profesores)
-     
+
         For Each objeto As System.Windows.Forms.Control In Me.Controls
             If TypeOf objeto Is TextBox Then
                 objeto.Enabled = False
@@ -321,5 +303,22 @@
         Me.accion = estado.modificar
     End Sub
 
+    Private Sub cancelar()
+        cmd_cancelar.Enabled = False
+        cmd_guardar.Enabled = False
+        For Each objeto As System.Windows.Forms.Control In Me.Controls
+            If TypeOf objeto Is TextBox Then
+                objeto.Text = ""
+                objeto.Enabled = False
+            End If
+            If TypeOf objeto Is ComboBox Then
+                Dim actual As ComboBox = objeto
+                actual.SelectedIndex = -1
+                objeto.Enabled = False
+            End If
+        Next
+        Me.msk_nrodoc.Text = ""
+        Me.msk_nrodoc.Enabled = False
+    End Sub
   
 End Class

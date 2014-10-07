@@ -22,6 +22,7 @@
         If MessageBox.Show("¿Está seguro que quiere salir del formulario?", "¡Importante!", _
         MessageBoxButtons.OKCancel, MessageBoxIcon.Question) = _
         Windows.Forms.DialogResult.OK Then
+            cancelar()
             e.Cancel = False
         Else
             e.Cancel = True
@@ -172,18 +173,19 @@
 
     Private Sub cmd_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_cancelar.Click
         If MessageBox.Show("Está seguro que desea cancelar este registro", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
-
-            Me.txt_NombreEspecialidad.Text = ""
-            Me.msk_TiempoRecord.Text = ""
-            Me.msk_TiempoRecord.Enabled = False
-            Me.cmd_cancelar.Enabled = False
-            Me.cmd_guardar.Enabled = False
-            Me.txt_NombreEspecialidad.Enabled = False
-            Me.cmd_eliminar.Enabled = True
-            Me.cmd_nuevo.Enabled = True
+            cancelar()
         End If
     End Sub
 
-
+    Private Sub cancelar()
+        Me.txt_NombreEspecialidad.Text = ""
+        Me.msk_TiempoRecord.Text = ""
+        Me.msk_TiempoRecord.Enabled = False
+        Me.cmd_cancelar.Enabled = False
+        Me.cmd_guardar.Enabled = False
+        Me.txt_NombreEspecialidad.Enabled = False
+        Me.cmd_eliminar.Enabled = True
+        Me.cmd_nuevo.Enabled = True
+    End Sub
 
 End Class
