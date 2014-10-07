@@ -47,13 +47,11 @@
             Return False
         End If
 
-
         If Me.txt_calle.Text = "" Then
             MsgBox("La Calle esta vacio, debe completar el campo.", MsgBoxStyle.Critical, "¡Importante!")
             Me.txt_calle.Focus()
             Return False
         End If
-
 
         If Me.txt_nrocalle.Text = "" Then
             MsgBox("El Número de Calle esta vacio, debe completar el campo.", MsgBoxStyle.Critical, "¡Importante!")
@@ -85,7 +83,6 @@
             Return termino.aprobado
         End If
     End Function
-
 
     Private Sub carga_combo(ByRef combo As ComboBox, _
                            ByVal datos As Data.DataTable, _
@@ -139,9 +136,6 @@
 
             End If
             Me.carga_grilla()
-
-
-
             MessageBox.Show("Se grabó exitosamente", "Importante", _
                             MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
@@ -224,7 +218,6 @@
 
     Private Sub carga_grilla()
 
-   
         Dim txt_sql As String = ""
         Dim tabla As Data.DataTable
         txt_sql = " SELECT  Profesores.CodProf, Profesores.Nombre, Profesores.Apellido, Profesores.Calle, Profesores.Numero, CodigosPost.Nombre AS 'Codigo Postal',"
@@ -235,11 +228,7 @@
 
         tabla = acceso.ejecutar(txt_sql)
         grd_dgvProfesor.DataSource = tabla
-
-
     End Sub
-
-  
 
     Private Sub cmd_eliminarProfesor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_eliminar.Click
         If MessageBox.Show("Está seguro que desea borrar ese registro", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
