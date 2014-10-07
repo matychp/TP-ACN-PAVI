@@ -80,4 +80,8 @@
     Private Sub cmd_codpostal_Click(sender As System.Object, e As System.EventArgs) Handles cmd_codpostal.Click
         Form_ABMCodigosPost.ShowDialog()
     End Sub
+
+    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+        frm_NadadoresXEspecialidad.ShowDialog()
+    End Sub
 End Class

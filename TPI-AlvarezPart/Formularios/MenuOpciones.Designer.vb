@@ -35,6 +35,7 @@ Partial Class MenuOpciones
         Me.cmd_procesos = New System.Windows.Forms.Button()
         Me.cmd_listconsultas = New System.Windows.Forms.Button()
         Me.cmd_estadisticas = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -178,6 +179,15 @@ Partial Class MenuOpciones
         Me.cmd_estadisticas.Text = "Estadísticas"
         Me.cmd_estadisticas.UseVisualStyleBackColor = False
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(119, 266)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(101, 42)
+        Me.Button1.TabIndex = 11
+        Me.Button1.Text = "Nadadores X Especialidad"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'MenuOpciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -185,6 +195,7 @@ Partial Class MenuOpciones
         Me.BackgroundImage = Global.TPI_PAVI.My.Resources.Resources.fondo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(615, 626)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.cmd_abm)
         Me.Controls.Add(Me.cmd_estadisticas)
         Me.Controls.Add(Me.cmd_listconsultas)
@@ -220,4 +231,5 @@ Partial Class MenuOpciones
     Friend WithEvents cmd_listconsultas As System.Windows.Forms.Button
     Friend WithEvents cmd_estadisticas As System.Windows.Forms.Button
     Private WithEvents cmd_abm As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

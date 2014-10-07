@@ -112,6 +112,12 @@
     <Compile Include="Formularios\Nadadores.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\NadadoresXEspecialidad.Designer.vb">
+      <DependentUpon>NadadoresXEspecialidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\NadadoresXEspecialidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Profesores.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Nadadores.resx">
       <DependentUpon>Nadadores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\NadadoresXEspecialidad.resx">
+      <DependentUpon>NadadoresXEspecialidad.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Profesores.resx">
       <DependentUpon>Profesores.vb</DependentUpon>
