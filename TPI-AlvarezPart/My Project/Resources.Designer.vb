@@ -63,9 +63,9 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Background_SplashScreen() As System.Drawing.Bitmap
+        Friend ReadOnly Property flechita() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("Background_SplashScreen", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("flechita", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -73,19 +73,9 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property BotonRectangulo() As System.Drawing.Bitmap
+        Friend ReadOnly Property flechitaVerde() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("BotonRectangulo", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property BotonRectanguloFlecha() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("BotonRectanguloFlecha", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("flechitaVerde", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -106,6 +96,26 @@ Namespace My.Resources
         Friend ReadOnly Property ico_n_natacion() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("ico-n-natacion", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property swimmingunderwater() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("swimmingunderwater", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property swimmingunderwater__Custom_() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("swimmingunderwater (Custom)", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

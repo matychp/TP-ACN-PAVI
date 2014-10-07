@@ -27,20 +27,15 @@ Partial Class form_ABMProfesor
         Me.lbl_calleProfesor = New System.Windows.Forms.Label()
         Me.lbl_codPostalProfesor = New System.Windows.Forms.Label()
         Me.cmb_codpostal = New System.Windows.Forms.ComboBox()
-        Me.CodigosPostBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CodigosPostBindingSource4 = New System.Windows.Forms.BindingSource(Me.components)
         Me.TPIPAVIDataSet1 = New TPI_PAVI.TPIPAVIDataSet()
+        Me.CodigosPostBindingSource3 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CodigosPostBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CodigosPostBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.CodigosPostBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.txt_calle = New System.Windows.Forms.TextBox()
         Me.txt_nrocalle = New System.Windows.Forms.TextBox()
         Me.grd_dgvProfesor = New System.Windows.Forms.DataGridView()
-        Me.CodProfDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ApellidoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CalleDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NumeroDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodPosDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TipoDocDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NroDocDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProfesoresBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProfesoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TPIPAVIDataSet = New TPI_PAVI.TPIPAVIDataSet()
@@ -51,6 +46,10 @@ Partial Class form_ABMProfesor
         Me.Label1 = New System.Windows.Forms.Label()
         Me.msk_nrodoc = New System.Windows.Forms.MaskedTextBox()
         Me.cmb_tipodoc = New System.Windows.Forms.ComboBox()
+        Me.TiposDocBindingSource5 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TiposDocBindingSource4 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TiposDocBindingSource3 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TiposDocBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.TiposDocBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.TiposDocBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.lbl_tipoDoc = New System.Windows.Forms.Label()
@@ -62,34 +61,35 @@ Partial Class form_ABMProfesor
         Me.TiposDocTableAdapter = New TPI_PAVI.TPIPAVIDataSetTableAdapters.TiposDocTableAdapter()
         Me.CodigosPostTableAdapter = New TPI_PAVI.TPIPAVIDataSetTableAdapters.CodigosPostTableAdapter()
         Me.ProfesoresBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TiposDocBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TiposDocBindingSource3 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CodigosPostBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.txt_nombres = New System.Windows.Forms.TextBox()
         Me.txt_apellido = New System.Windows.Forms.TextBox()
         Me.lbl_nombresProfesor = New System.Windows.Forms.Label()
         Me.lbl_apellidoProfesor = New System.Windows.Forms.Label()
-        CType(Me.CodigosPostBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CodigosPostBindingSource4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TPIPAVIDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CodigosPostBindingSource3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CodigosPostBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CodigosPostBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CodigosPostBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grd_dgvProfesor, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProfesoresBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProfesoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TiposDocBindingSource5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TiposDocBindingSource4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TiposDocBindingSource3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TiposDocBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TiposDocBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TiposDocBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TPIPAVIDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProfesoresBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TiposDocBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TiposDocBindingSource3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CodigosPostBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_numeroCalleProfesor
         '
         Me.lbl_numeroCalleProfesor.AutoSize = True
-        Me.lbl_numeroCalleProfesor.Location = New System.Drawing.Point(270, 97)
+        Me.lbl_numeroCalleProfesor.Location = New System.Drawing.Point(451, 55)
         Me.lbl_numeroCalleProfesor.Name = "lbl_numeroCalleProfesor"
         Me.lbl_numeroCalleProfesor.Size = New System.Drawing.Size(47, 13)
         Me.lbl_numeroCalleProfesor.TabIndex = 2
@@ -98,7 +98,7 @@ Partial Class form_ABMProfesor
         'lbl_calleProfesor
         '
         Me.lbl_calleProfesor.AutoSize = True
-        Me.lbl_calleProfesor.Location = New System.Drawing.Point(100, 97)
+        Me.lbl_calleProfesor.Location = New System.Drawing.Point(451, 29)
         Me.lbl_calleProfesor.Name = "lbl_calleProfesor"
         Me.lbl_calleProfesor.Size = New System.Drawing.Size(33, 13)
         Me.lbl_calleProfesor.TabIndex = 2
@@ -107,7 +107,7 @@ Partial Class form_ABMProfesor
         'lbl_codPostalProfesor
         '
         Me.lbl_codPostalProfesor.AutoSize = True
-        Me.lbl_codPostalProfesor.Location = New System.Drawing.Point(446, 98)
+        Me.lbl_codPostalProfesor.Location = New System.Drawing.Point(451, 81)
         Me.lbl_codPostalProfesor.Name = "lbl_codPostalProfesor"
         Me.lbl_codPostalProfesor.Size = New System.Drawing.Size(75, 13)
         Me.lbl_codPostalProfesor.TabIndex = 3
@@ -115,25 +115,39 @@ Partial Class form_ABMProfesor
         '
         'cmb_codpostal
         '
-        Me.cmb_codpostal.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.CodigosPostBindingSource2, "Codpos", True))
-        Me.cmb_codpostal.DataSource = Me.CodigosPostBindingSource2
+        Me.cmb_codpostal.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.CodigosPostBindingSource4, "Codpos", True))
+        Me.cmb_codpostal.DataSource = Me.CodigosPostBindingSource3
         Me.cmb_codpostal.DisplayMember = "Nombre"
         Me.cmb_codpostal.FormattingEnabled = True
-        Me.cmb_codpostal.Location = New System.Drawing.Point(527, 94)
+        Me.cmb_codpostal.Location = New System.Drawing.Point(532, 78)
         Me.cmb_codpostal.Name = "cmb_codpostal"
-        Me.cmb_codpostal.Size = New System.Drawing.Size(111, 21)
+        Me.cmb_codpostal.Size = New System.Drawing.Size(85, 21)
         Me.cmb_codpostal.TabIndex = 6
         Me.cmb_codpostal.ValueMember = "Codpos"
+        '
+        'CodigosPostBindingSource4
+        '
+        Me.CodigosPostBindingSource4.DataMember = "CodigosPost"
+        Me.CodigosPostBindingSource4.DataSource = Me.TPIPAVIDataSet1
+        '
+        'TPIPAVIDataSet1
+        '
+        Me.TPIPAVIDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CodigosPostBindingSource3
+        '
+        Me.CodigosPostBindingSource3.DataMember = "CodigosPost"
+        Me.CodigosPostBindingSource3.DataSource = Me.TPIPAVIDataSet1
+        '
+        'CodigosPostBindingSource2
+        '
+        Me.CodigosPostBindingSource2.DataMember = "CodigosPost"
+        Me.CodigosPostBindingSource2.DataSource = Me.TPIPAVIDataSet1
         '
         'CodigosPostBindingSource1
         '
         Me.CodigosPostBindingSource1.DataMember = "CodigosPost"
         Me.CodigosPostBindingSource1.DataSource = Me.TPIPAVIDataSet1
-        '
-        'TPIPAVIDataSet1
-        '
-        Me.TPIPAVIDataSet1.DataSetName = "TPIPAVIDataSet"
-        Me.TPIPAVIDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'CodigosPostBindingSource
         '
@@ -142,87 +156,28 @@ Partial Class form_ABMProfesor
         '
         'txt_calle
         '
-        Me.txt_calle.Location = New System.Drawing.Point(139, 94)
+        Me.txt_calle.Location = New System.Drawing.Point(490, 26)
         Me.txt_calle.Name = "txt_calle"
-        Me.txt_calle.Size = New System.Drawing.Size(111, 20)
+        Me.txt_calle.Size = New System.Drawing.Size(127, 20)
         Me.txt_calle.TabIndex = 4
         '
         'txt_nrocalle
         '
-        Me.txt_nrocalle.Location = New System.Drawing.Point(323, 94)
+        Me.txt_nrocalle.Location = New System.Drawing.Point(504, 52)
         Me.txt_nrocalle.Name = "txt_nrocalle"
-        Me.txt_nrocalle.Size = New System.Drawing.Size(111, 20)
+        Me.txt_nrocalle.Size = New System.Drawing.Size(113, 20)
         Me.txt_nrocalle.TabIndex = 5
         '
         'grd_dgvProfesor
         '
         Me.grd_dgvProfesor.AllowUserToAddRows = False
         Me.grd_dgvProfesor.AllowUserToDeleteRows = False
-        Me.grd_dgvProfesor.AutoGenerateColumns = False
         Me.grd_dgvProfesor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grd_dgvProfesor.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodProfDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.ApellidoDataGridViewTextBoxColumn, Me.CalleDataGridViewTextBoxColumn, Me.NumeroDataGridViewTextBoxColumn, Me.CodPosDataGridViewTextBoxColumn, Me.TipoDocDataGridViewTextBoxColumn, Me.NroDocDataGridViewTextBoxColumn})
-        Me.grd_dgvProfesor.DataSource = Me.ProfesoresBindingSource2
         Me.grd_dgvProfesor.Location = New System.Drawing.Point(22, 133)
         Me.grd_dgvProfesor.Name = "grd_dgvProfesor"
         Me.grd_dgvProfesor.ReadOnly = True
         Me.grd_dgvProfesor.Size = New System.Drawing.Size(745, 286)
         Me.grd_dgvProfesor.TabIndex = 11
-        '
-        'CodProfDataGridViewTextBoxColumn
-        '
-        Me.CodProfDataGridViewTextBoxColumn.DataPropertyName = "CodProf"
-        Me.CodProfDataGridViewTextBoxColumn.HeaderText = "CodProf"
-        Me.CodProfDataGridViewTextBoxColumn.Name = "CodProfDataGridViewTextBoxColumn"
-        Me.CodProfDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ApellidoDataGridViewTextBoxColumn
-        '
-        Me.ApellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido"
-        Me.ApellidoDataGridViewTextBoxColumn.HeaderText = "Apellido"
-        Me.ApellidoDataGridViewTextBoxColumn.Name = "ApellidoDataGridViewTextBoxColumn"
-        Me.ApellidoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CalleDataGridViewTextBoxColumn
-        '
-        Me.CalleDataGridViewTextBoxColumn.DataPropertyName = "Calle"
-        Me.CalleDataGridViewTextBoxColumn.HeaderText = "Calle"
-        Me.CalleDataGridViewTextBoxColumn.Name = "CalleDataGridViewTextBoxColumn"
-        Me.CalleDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NumeroDataGridViewTextBoxColumn
-        '
-        Me.NumeroDataGridViewTextBoxColumn.DataPropertyName = "Numero"
-        Me.NumeroDataGridViewTextBoxColumn.HeaderText = "Numero"
-        Me.NumeroDataGridViewTextBoxColumn.Name = "NumeroDataGridViewTextBoxColumn"
-        Me.NumeroDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CodPosDataGridViewTextBoxColumn
-        '
-        Me.CodPosDataGridViewTextBoxColumn.DataPropertyName = "CodPos"
-        Me.CodPosDataGridViewTextBoxColumn.HeaderText = "CodPos"
-        Me.CodPosDataGridViewTextBoxColumn.Name = "CodPosDataGridViewTextBoxColumn"
-        Me.CodPosDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'TipoDocDataGridViewTextBoxColumn
-        '
-        Me.TipoDocDataGridViewTextBoxColumn.DataPropertyName = "TipoDoc"
-        Me.TipoDocDataGridViewTextBoxColumn.HeaderText = "TipoDoc"
-        Me.TipoDocDataGridViewTextBoxColumn.Name = "TipoDocDataGridViewTextBoxColumn"
-        Me.TipoDocDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NroDocDataGridViewTextBoxColumn
-        '
-        Me.NroDocDataGridViewTextBoxColumn.DataPropertyName = "NroDoc"
-        Me.NroDocDataGridViewTextBoxColumn.HeaderText = "NroDoc"
-        Me.NroDocDataGridViewTextBoxColumn.Name = "NroDocDataGridViewTextBoxColumn"
-        Me.NroDocDataGridViewTextBoxColumn.ReadOnly = True
         '
         'ProfesoresBindingSource2
         '
@@ -236,7 +191,6 @@ Partial Class form_ABMProfesor
         '
         'TPIPAVIDataSet
         '
-        Me.TPIPAVIDataSet.DataSetName = "TPIPAVIDataSet"
         Me.TPIPAVIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'cmd_nuevo
@@ -278,7 +232,7 @@ Partial Class form_ABMProfesor
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(203, 11)
+        Me.Label1.Location = New System.Drawing.Point(198, 94)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(47, 13)
         Me.Label1.TabIndex = 1
@@ -286,23 +240,43 @@ Partial Class form_ABMProfesor
         '
         'msk_nrodoc
         '
-        Me.msk_nrodoc.Location = New System.Drawing.Point(260, 7)
+        Me.msk_nrodoc.Location = New System.Drawing.Point(251, 90)
         Me.msk_nrodoc.Mask = "99999999"
         Me.msk_nrodoc.Name = "msk_nrodoc"
-        Me.msk_nrodoc.Size = New System.Drawing.Size(57, 20)
+        Me.msk_nrodoc.Size = New System.Drawing.Size(56, 20)
         Me.msk_nrodoc.TabIndex = 3
         '
         'cmb_tipodoc
         '
-        Me.cmb_tipodoc.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.TiposDocBindingSource3, "TipoDoc", True))
-        Me.cmb_tipodoc.DataSource = Me.TiposDocBindingSource2
+        Me.cmb_tipodoc.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.TiposDocBindingSource5, "TipoDoc", True))
+        Me.cmb_tipodoc.DataSource = Me.TiposDocBindingSource4
         Me.cmb_tipodoc.DisplayMember = "Nombre"
         Me.cmb_tipodoc.FormattingEnabled = True
-        Me.cmb_tipodoc.Location = New System.Drawing.Point(139, 7)
+        Me.cmb_tipodoc.Location = New System.Drawing.Point(123, 90)
         Me.cmb_tipodoc.Name = "cmb_tipodoc"
         Me.cmb_tipodoc.Size = New System.Drawing.Size(50, 21)
         Me.cmb_tipodoc.TabIndex = 2
         Me.cmb_tipodoc.ValueMember = "TipoDoc"
+        '
+        'TiposDocBindingSource5
+        '
+        Me.TiposDocBindingSource5.DataMember = "TiposDoc"
+        Me.TiposDocBindingSource5.DataSource = Me.TPIPAVIDataSet1
+        '
+        'TiposDocBindingSource4
+        '
+        Me.TiposDocBindingSource4.DataMember = "TiposDoc"
+        Me.TiposDocBindingSource4.DataSource = Me.TPIPAVIDataSet1
+        '
+        'TiposDocBindingSource3
+        '
+        Me.TiposDocBindingSource3.DataMember = "TiposDoc"
+        Me.TiposDocBindingSource3.DataSource = Me.TPIPAVIDataSet1
+        '
+        'TiposDocBindingSource2
+        '
+        Me.TiposDocBindingSource2.DataMember = "TiposDoc"
+        Me.TiposDocBindingSource2.DataSource = Me.TPIPAVIDataSet1
         '
         'TiposDocBindingSource1
         '
@@ -317,7 +291,7 @@ Partial Class form_ABMProfesor
         'lbl_tipoDoc
         '
         Me.lbl_tipoDoc.AutoSize = True
-        Me.lbl_tipoDoc.Location = New System.Drawing.Point(102, 11)
+        Me.lbl_tipoDoc.Location = New System.Drawing.Point(86, 94)
         Me.lbl_tipoDoc.Name = "lbl_tipoDoc"
         Me.lbl_tipoDoc.Size = New System.Drawing.Size(31, 13)
         Me.lbl_tipoDoc.TabIndex = 1
@@ -326,7 +300,7 @@ Partial Class form_ABMProfesor
         'lbl_documento
         '
         Me.lbl_documento.AutoSize = True
-        Me.lbl_documento.Location = New System.Drawing.Point(19, 12)
+        Me.lbl_documento.Location = New System.Drawing.Point(27, 81)
         Me.lbl_documento.Name = "lbl_documento"
         Me.lbl_documento.Size = New System.Drawing.Size(62, 13)
         Me.lbl_documento.TabIndex = 16
@@ -335,7 +309,7 @@ Partial Class form_ABMProfesor
         'lbl_domicilio
         '
         Me.lbl_domicilio.AutoSize = True
-        Me.lbl_domicilio.Location = New System.Drawing.Point(19, 97)
+        Me.lbl_domicilio.Location = New System.Drawing.Point(409, 15)
         Me.lbl_domicilio.Name = "lbl_domicilio"
         Me.lbl_domicilio.Size = New System.Drawing.Size(49, 13)
         Me.lbl_domicilio.TabIndex = 16
@@ -374,39 +348,24 @@ Partial Class form_ABMProfesor
         Me.ProfesoresBindingSource1.DataMember = "Profesores"
         Me.ProfesoresBindingSource1.DataSource = Me.TPIPAVIDataSet1
         '
-        'TiposDocBindingSource2
-        '
-        Me.TiposDocBindingSource2.DataMember = "TiposDoc"
-        Me.TiposDocBindingSource2.DataSource = Me.TPIPAVIDataSet1
-        '
-        'TiposDocBindingSource3
-        '
-        Me.TiposDocBindingSource3.DataMember = "TiposDoc"
-        Me.TiposDocBindingSource3.DataSource = Me.TPIPAVIDataSet1
-        '
-        'CodigosPostBindingSource2
-        '
-        Me.CodigosPostBindingSource2.DataMember = "CodigosPost"
-        Me.CodigosPostBindingSource2.DataSource = Me.TPIPAVIDataSet1
-        '
         'txt_nombres
         '
-        Me.txt_nombres.Location = New System.Drawing.Point(76, 69)
+        Me.txt_nombres.Location = New System.Drawing.Point(80, 41)
         Me.txt_nombres.Name = "txt_nombres"
         Me.txt_nombres.Size = New System.Drawing.Size(241, 20)
-        Me.txt_nombres.TabIndex = 20
+        Me.txt_nombres.TabIndex = 1
         '
         'txt_apellido
         '
-        Me.txt_apellido.Location = New System.Drawing.Point(74, 40)
+        Me.txt_apellido.Location = New System.Drawing.Point(78, 12)
         Me.txt_apellido.Name = "txt_apellido"
         Me.txt_apellido.Size = New System.Drawing.Size(243, 20)
-        Me.txt_apellido.TabIndex = 17
+        Me.txt_apellido.TabIndex = 0
         '
         'lbl_nombresProfesor
         '
         Me.lbl_nombresProfesor.AutoSize = True
-        Me.lbl_nombresProfesor.Location = New System.Drawing.Point(23, 72)
+        Me.lbl_nombresProfesor.Location = New System.Drawing.Point(27, 44)
         Me.lbl_nombresProfesor.Name = "lbl_nombresProfesor"
         Me.lbl_nombresProfesor.Size = New System.Drawing.Size(52, 13)
         Me.lbl_nombresProfesor.TabIndex = 19
@@ -415,7 +374,7 @@ Partial Class form_ABMProfesor
         'lbl_apellidoProfesor
         '
         Me.lbl_apellidoProfesor.AutoSize = True
-        Me.lbl_apellidoProfesor.Location = New System.Drawing.Point(21, 43)
+        Me.lbl_apellidoProfesor.Location = New System.Drawing.Point(27, 15)
         Me.lbl_apellidoProfesor.Name = "lbl_apellidoProfesor"
         Me.lbl_apellidoProfesor.Size = New System.Drawing.Size(47, 13)
         Me.lbl_apellidoProfesor.TabIndex = 18
@@ -452,21 +411,25 @@ Partial Class form_ABMProfesor
         Me.Name = "form_ABMProfesor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ABM Profesores"
-        CType(Me.CodigosPostBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CodigosPostBindingSource4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TPIPAVIDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CodigosPostBindingSource3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CodigosPostBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CodigosPostBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CodigosPostBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grd_dgvProfesor, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProfesoresBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProfesoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TiposDocBindingSource5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TiposDocBindingSource4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TiposDocBindingSource3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TiposDocBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TiposDocBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TiposDocBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TPIPAVIDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProfesoresBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TiposDocBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TiposDocBindingSource3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CodigosPostBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -500,14 +463,6 @@ Partial Class form_ABMProfesor
     Friend WithEvents CodigosPostBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents CodigosPostTableAdapter As TPI_PAVI.TPIPAVIDataSetTableAdapters.CodigosPostTableAdapter
     Friend WithEvents CodigosPostBindingSource1 As System.Windows.Forms.BindingSource
-    Friend WithEvents CodProfDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents NombreDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ApellidoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CalleDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents NumeroDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CodPosDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TipoDocDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents NroDocDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ProfesoresBindingSource2 As System.Windows.Forms.BindingSource
     Friend WithEvents ProfesoresBindingSource1 As System.Windows.Forms.BindingSource
     Friend WithEvents CodigosPostBindingSource2 As System.Windows.Forms.BindingSource
@@ -517,5 +472,9 @@ Partial Class form_ABMProfesor
     Friend WithEvents txt_apellido As System.Windows.Forms.TextBox
     Friend WithEvents lbl_nombresProfesor As System.Windows.Forms.Label
     Friend WithEvents lbl_apellidoProfesor As System.Windows.Forms.Label
+    Friend WithEvents CodigosPostBindingSource4 As System.Windows.Forms.BindingSource
+    Friend WithEvents CodigosPostBindingSource3 As System.Windows.Forms.BindingSource
+    Friend WithEvents TiposDocBindingSource5 As System.Windows.Forms.BindingSource
+    Friend WithEvents TiposDocBindingSource4 As System.Windows.Forms.BindingSource
 
 End Class

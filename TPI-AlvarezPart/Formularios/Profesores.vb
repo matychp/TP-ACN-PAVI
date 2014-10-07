@@ -180,18 +180,18 @@
         Return termino.aprobado
 
     End Function
-    ' MODIIIFIIICAAAADOOOO
+
     Private Function modificar() As termino
         Dim cmd As String = ""
         cmd = "Update Profesores  "
-        cmd &= "Set Apellido = '" & Me.txt_apellido.Text & ", "
+        cmd &= "Set Apellido = '" & Me.txt_apellido.Text & "', "
         cmd &= "Nombre = '" & Me.txt_nombres.Text & "'"
-        cmd &= ", TipoDoc = " & Me.cmb_tipodoc.SelectedValue
+        cmd &= ", TipoDoc = '" & Me.cmb_tipodoc.SelectedValue
         ' cmd &= ", nroDoc = " & Me.msk_nrodoc.Text & "'" //UN NUMERO DE DOCUMENTO NO PUEDE SER MODIFICADO
-        cmd &= ", Calle = '" & Me.txt_calle.Text & "'"
+        cmd &= "', Calle = '" & Me.txt_calle.Text & "'"
         cmd &= ", Numero = '" & Me.txt_nrocalle.Text & "'"
-        cmd &= ", CodPos = " & Me.cmb_codpostal.SelectedValue
-        cmd &= "where NroDoc = " & Me.msk_nrodoc.Text
+        cmd &= ", CodPos = '" & Me.cmb_codpostal.SelectedValue
+        cmd &= "' where NroDoc = '" & Me.msk_nrodoc.Text & "'"
 
         acceso.ejecutarNonConsulta(cmd)
 
@@ -224,33 +224,31 @@
 
     Private Sub carga_grilla()
 
+   
         Dim txt_sql As String = ""
-
-        txt_sql = " SELECT  Profesores.CodProf, Profesores.Nombre, Profesores.Apellido, Profesores.Calle, Profesores.Numero, Profesores.CodPos,"
-        txt_sql += " Profesores.TipoDoc, Profesores.NroDoc"
-        txt_sql += " FROM Profesores"
-
-
-        grd_dgvProfesor.DataSource = acceso.ejecutar(txt_sql)
+        Dim tabla As Data.DataTable
+        txt_sql = " SELECT  Profesores.CodProf, Profesores.Nombre, Profesores.Apellido, Profesores.Calle, Profesores.Numero, CodigosPost.Nombre AS 'Codigo Postal',"
+        txt_sql &= " TiposDoc.Nombre AS 'Tipo Documento', Profesores.NroDoc"
+        txt_sql &= " FROM (Profesores LEFT JOIN TiposDoc ON Profesores.TipoDoc = TiposDoc.TipoDoc) "
+        txt_sql &= "LEFT JOIN CodigosPost ON Profesores.CodPos = CodigosPost.CodPos"
 
 
-        '    Dim count As Integer = 0
-        '   For count = 0 To tabla.Rows.Count - 1
-        'Me.grd_dgvProfesor.Rows.Add(tabla.Rows(count)("apellido"), _
-        '                  tabla.Rows(count)("nombres"), tabla.Rows(count)("tipodoc"), tabla.Rows(count)("nrodoc"), tabla.Rows(count)("calle") _
-        '                 , tabla.Rows(count)("nrocalle"), tabla.Rows(count)("cp"))
+        tabla = acceso.ejecutar(txt_sql)
+        grd_dgvProfesor.DataSource = tabla
 
-        'Next
+
     End Sub
 
   
 
     Private Sub cmd_eliminarProfesor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_eliminar.Click
         If MessageBox.Show("Está seguro que desea borrar ese registro", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
+
             Dim txt_sql As String = ""
-            txt_sql = "delete from Profesores where NroDoc = " & Me.grd_dgvProfesor.CurrentRow.Cells("NroDocDataGridViewTextBoxColumn").Value
+            txt_sql = "delete from Profesores where NroDoc = " & Me.grd_dgvProfesor.CurrentRow.Cells("NroDoc").Value
             acceso.ejecutarNonConsulta(txt_sql)
-            Me.carga_grilla()
+
+
         End If
     End Sub
 
@@ -259,8 +257,7 @@
         Me.CodigosPostTableAdapter.Fill(Me.TPIPAVIDataSet1.CodigosPost)
         'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.TiposDoc' Puede moverla o quitarla según sea necesario.
         Me.TiposDocTableAdapter.Fill(Me.TPIPAVIDataSet1.TiposDoc)
-        'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.Profesores' Puede moverla o quitarla según sea necesario.
-        Me.ProfesoresTableAdapter.Fill(Me.TPIPAVIDataSet1.Profesores)
+  
         For Each objeto As System.Windows.Forms.Control In Me.Controls
             If TypeOf objeto Is TextBox Then
                 objeto.Enabled = False
@@ -272,20 +269,21 @@
         msk_nrodoc.Enabled = False
         cmd_cancelar.Enabled = False
         cmd_guardar.Enabled = False
+        Me.carga_grilla()
     End Sub
 
     Private Sub grd_dgvProfesor_CellContentDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grd_dgvProfesor.CellContentDoubleClick
-        Dim doc As String = Me.grd_dgvProfesor.CurrentRow.Cells("NroDocDataGridViewTextBoxColumn").Value
+        Dim doc As String = Me.grd_dgvProfesor.CurrentRow.Cells("NroDoc").Value
         Dim consulta As String = "select * from profesores where NroDoc = " & doc
         Dim tabla As New Data.DataTable
         tabla = acceso.ejecutar(consulta)
         msk_nrodoc.Text = tabla.Rows(0)("NroDoc")
         txt_apellido.Text = tabla.Rows(0)("Apellido")
         txt_nombres.Text = tabla.Rows(0)("Nombre")
-        cmb_tipodoc.SelectedIndex = tabla.Rows(0)("TipoDoc")
+        cmb_tipodoc.SelectedValue = tabla.Rows(0)("TipoDoc")
         txt_calle.Text = tabla.Rows(0)("Calle")
         txt_nrocalle.Text = tabla.Rows(0)("Numero")
-        cmb_codpostal.SelectedIndex = tabla.Rows(0)("CodPos")
+        cmb_codpostal.SelectedValue = tabla.Rows(0)("CodPos")
         For Each objeto As System.Windows.Forms.Control In Me.Controls
             If TypeOf objeto Is TextBox Then
                 objeto.Enabled = True
@@ -316,4 +314,6 @@
         End Try
 
     End Sub
+
+
 End Class

@@ -47,7 +47,7 @@ Partial Class frm_ABMTorneos
         Me.cmd_nuevo.Location = New System.Drawing.Point(12, 290)
         Me.cmd_nuevo.Name = "cmd_nuevo"
         Me.cmd_nuevo.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_nuevo.TabIndex = 0
+        Me.cmd_nuevo.TabIndex = 1
         Me.cmd_nuevo.Text = "Nuevo"
         Me.cmd_nuevo.UseVisualStyleBackColor = True
         '
@@ -56,7 +56,7 @@ Partial Class frm_ABMTorneos
         Me.cmd_eliminar.Location = New System.Drawing.Point(93, 290)
         Me.cmd_eliminar.Name = "cmd_eliminar"
         Me.cmd_eliminar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_eliminar.TabIndex = 0
+        Me.cmd_eliminar.TabIndex = 2
         Me.cmd_eliminar.Text = "Eliminar"
         Me.cmd_eliminar.UseVisualStyleBackColor = True
         '
@@ -65,7 +65,7 @@ Partial Class frm_ABMTorneos
         Me.cmd_cancelar.Location = New System.Drawing.Point(282, 290)
         Me.cmd_cancelar.Name = "cmd_cancelar"
         Me.cmd_cancelar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_cancelar.TabIndex = 0
+        Me.cmd_cancelar.TabIndex = 4
         Me.cmd_cancelar.Text = "Cancelar"
         Me.cmd_cancelar.UseVisualStyleBackColor = True
         '
@@ -74,7 +74,7 @@ Partial Class frm_ABMTorneos
         Me.cmd_guardar.Location = New System.Drawing.Point(201, 290)
         Me.cmd_guardar.Name = "cmd_guardar"
         Me.cmd_guardar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_guardar.TabIndex = 0
+        Me.cmd_guardar.TabIndex = 3
         Me.cmd_guardar.Text = "Guardar"
         Me.cmd_guardar.UseVisualStyleBackColor = True
         '
@@ -90,7 +90,7 @@ Partial Class frm_ABMTorneos
         Me.grd_dgvTorneos.Name = "grd_dgvTorneos"
         Me.grd_dgvTorneos.ReadOnly = True
         Me.grd_dgvTorneos.Size = New System.Drawing.Size(344, 210)
-        Me.grd_dgvTorneos.TabIndex = 1
+        Me.grd_dgvTorneos.TabIndex = 5
         '
         'CodTorneoDataGridViewTextBoxColumn
         '
@@ -125,7 +125,7 @@ Partial Class frm_ABMTorneos
         Me.txt_descrip.Location = New System.Drawing.Point(117, 30)
         Me.txt_descrip.Name = "txt_descrip"
         Me.txt_descrip.Size = New System.Drawing.Size(159, 20)
-        Me.txt_descrip.TabIndex = 2
+        Me.txt_descrip.TabIndex = 0
         '
         'Label2
         '

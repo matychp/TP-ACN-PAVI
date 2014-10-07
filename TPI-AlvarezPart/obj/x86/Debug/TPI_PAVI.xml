@@ -15,15 +15,11 @@ TPI_PAVI
   Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
 </summary>
-</member><member name="P:TPI_PAVI.My.Resources.Resources.Background_SplashScreen">
+</member><member name="P:TPI_PAVI.My.Resources.Resources.flechita">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
-</member><member name="P:TPI_PAVI.My.Resources.Resources.BotonRectangulo">
-	<summary>
-  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-</summary>
-</member><member name="P:TPI_PAVI.My.Resources.Resources.BotonRectanguloFlecha">
+</member><member name="P:TPI_PAVI.My.Resources.Resources.flechitaVerde">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -32,6 +28,14 @@ TPI_PAVI
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member><member name="P:TPI_PAVI.My.Resources.Resources.ico_n_natacion">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:TPI_PAVI.My.Resources.Resources.swimmingunderwater">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:TPI_PAVI.My.Resources.Resources.swimmingunderwater__Custom_">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

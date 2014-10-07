@@ -17,13 +17,14 @@
 
     Private Sub cambiarColorBoton(sender As System.Object, e As System.EventArgs) Handles cmd_abm.Click, cmd_listconsultas.Click, cmd_estadisticas.Click _
                                             , cmd_procesos.Click
-        If sender.BackColor = Color.SkyBlue Then
+        If sender.BackColor = Color.GreenYellow Then
             sender.BackColor = Color.White
         Else
-            sender.BackColor = Color.SkyBlue
+            sender.BackColor = Color.GreenYellow
         End If
     End Sub
     Private Sub cmd_abm_Click(sender As System.Object, e As System.EventArgs) Handles cmd_abm.Click
+
 
         If menuAbierto = False Then
             cmd_clubafiliado.Visible = True
@@ -79,5 +80,4 @@
     Private Sub cmd_codpostal_Click(sender As System.Object, e As System.EventArgs) Handles cmd_codpostal.Click
         Form_ABMCodigosPost.ShowDialog()
     End Sub
-
 End Class

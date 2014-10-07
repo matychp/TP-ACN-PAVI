@@ -5,4 +5,5 @@
             progressBar.Value = i
         Next
     End Sub
+
 End Class

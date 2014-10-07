@@ -61,7 +61,7 @@ Partial Class frm_ClubAfiliado
         Me.grd_dgvClubes.Name = "grd_dgvClubes"
         Me.grd_dgvClubes.ReadOnly = True
         Me.grd_dgvClubes.Size = New System.Drawing.Size(331, 192)
-        Me.grd_dgvClubes.TabIndex = 0
+        Me.grd_dgvClubes.TabIndex = 7
         '
         'CodClubDataGridViewTextBoxColumn
         '
@@ -106,7 +106,7 @@ Partial Class frm_ClubAfiliado
         Me.cmd_nuevo.Location = New System.Drawing.Point(13, 326)
         Me.cmd_nuevo.Name = "cmd_nuevo"
         Me.cmd_nuevo.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_nuevo.TabIndex = 1
+        Me.cmd_nuevo.TabIndex = 3
         Me.cmd_nuevo.Text = "Nuevo"
         Me.cmd_nuevo.UseVisualStyleBackColor = True
         '
@@ -115,7 +115,7 @@ Partial Class frm_ClubAfiliado
         Me.cmd_eliminar.Location = New System.Drawing.Point(94, 326)
         Me.cmd_eliminar.Name = "cmd_eliminar"
         Me.cmd_eliminar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_eliminar.TabIndex = 1
+        Me.cmd_eliminar.TabIndex = 4
         Me.cmd_eliminar.Text = "Eliminar"
         Me.cmd_eliminar.UseVisualStyleBackColor = True
         '
@@ -124,7 +124,7 @@ Partial Class frm_ClubAfiliado
         Me.cmd_cancelar.Location = New System.Drawing.Point(269, 326)
         Me.cmd_cancelar.Name = "cmd_cancelar"
         Me.cmd_cancelar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_cancelar.TabIndex = 1
+        Me.cmd_cancelar.TabIndex = 6
         Me.cmd_cancelar.Text = "Cancelar"
         Me.cmd_cancelar.UseVisualStyleBackColor = True
         '
@@ -133,7 +133,7 @@ Partial Class frm_ClubAfiliado
         Me.cmd_guardar.Location = New System.Drawing.Point(188, 326)
         Me.cmd_guardar.Name = "cmd_guardar"
         Me.cmd_guardar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_guardar.TabIndex = 1
+        Me.cmd_guardar.TabIndex = 5
         Me.cmd_guardar.Text = "Guardar"
         Me.cmd_guardar.UseVisualStyleBackColor = True
         '
@@ -151,7 +151,7 @@ Partial Class frm_ClubAfiliado
         Me.txt_nombre.Location = New System.Drawing.Point(59, 13)
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(179, 20)
-        Me.txt_nombre.TabIndex = 3
+        Me.txt_nombre.TabIndex = 0
         '
         'Label1
         '
@@ -185,14 +185,14 @@ Partial Class frm_ClubAfiliado
         Me.txt_calle.Location = New System.Drawing.Point(95, 59)
         Me.txt_calle.Name = "txt_calle"
         Me.txt_calle.Size = New System.Drawing.Size(143, 20)
-        Me.txt_calle.TabIndex = 4
+        Me.txt_calle.TabIndex = 1
         '
         'txt_nroCalle
         '
         Me.txt_nroCalle.Location = New System.Drawing.Point(95, 85)
         Me.txt_nroCalle.Name = "txt_nroCalle"
         Me.txt_nroCalle.Size = New System.Drawing.Size(143, 20)
-        Me.txt_nroCalle.TabIndex = 4
+        Me.txt_nroCalle.TabIndex = 2
         '
         'PictureBox1
         '

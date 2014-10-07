@@ -231,10 +231,14 @@
 
         Dim txt_sql As String = ""
 
-        txt_sql = " SELECT  Nadadores.Nombre, Nadadores.Apellido, Nadadores.CodNad, Nadadores.NroDoc, Nadadores.TipoDoc,"
-        txt_sql += " Nadadores.Calle, Nadadores.Numero, Nadadores.CodProf, Nadadores.CodPos, Nadadores.CodClub "
-        txt_sql += " FROM Nadadores "
-
+   
+        txt_sql = "SELECT        Nadadores.CodNad, Nadadores.Nombre, Nadadores.Apellido, Nadadores.Calle, Nadadores.Numero, Nadadores.NroDoc, Clubes.Nombre AS Club, Profesores.Apellido AS Profesor, TiposDoc.Nombre AS TipoDoc, "
+        txt_sql &= " CodigosPost.Nombre AS CodPost "
+        txt_sql &= " FROM Nadadores INNER JOIN "
+        txt_sql &= " TiposDoc ON Nadadores.TipoDoc = TiposDoc.TipoDoc INNER JOIN"
+        txt_sql &= "  Profesores ON Nadadores.CodProf = Profesores.CodProf AND TiposDoc.TipoDoc = Profesores.TipoDoc INNER JOIN"
+        txt_sql &= " Clubes ON Nadadores.CodClub = Clubes.CodClub INNER JOIN"
+        txt_sql &= "  CodigosPost ON Nadadores.CodPos = CodigosPost.Codpos AND Profesores.CodPos = CodigosPost.Codpos"
 
         grd_dgvNadador.DataSource = acceso.ejecutar(txt_sql)
 
@@ -251,7 +255,7 @@
     Private Sub cmd_eliminarNadador_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_eliminar.Click
         If MessageBox.Show("Está seguro que desea borrar ese registro", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
             Dim txt_sql As String = ""
-            txt_sql = "delete from Nadadores where NroDoc = " & Me.grd_dgvNadador.CurrentRow.Cells("NroDocDataGridViewTextBoxColumn").Value
+            txt_sql = "delete from Nadadores where NroDoc = " & Me.grd_dgvNadador.CurrentRow.Cells("NroDoc").Value
             acceso.ejecutarNonConsulta(txt_sql)
             Me.carga_grilla()
         End If
@@ -268,8 +272,7 @@
         Me.CodigosPostTableAdapter.Fill(Me.TPIPAVIDataSet.CodigosPost)
         'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.Profesores' Puede moverla o quitarla según sea necesario.
         Me.ProfesoresTableAdapter.Fill(Me.TPIPAVIDataSet.Profesores)
-        'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.Nadadores' Puede moverla o quitarla según sea necesario.
-        Me.NadadoresTableAdapter.Fill(Me.TPIPAVIDataSet.Nadadores)
+     
         For Each objeto As System.Windows.Forms.Control In Me.Controls
             If TypeOf objeto Is TextBox Then
                 objeto.Enabled = False
@@ -281,10 +284,11 @@
         msk_nrodoc.Enabled = False
         cmd_cancelar.Enabled = False
         cmd_guardar.Enabled = False
+        Me.carga_grilla()
     End Sub
 
     Private Sub grd_dgvNadadores_CellContentDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grd_dgvNadador.CellContentDoubleClick
-        Dim doc As String = Me.grd_dgvNadador.CurrentRow.Cells("NroDocDataGridViewTextBoxColumn").Value
+        Dim doc As String = Me.grd_dgvNadador.CurrentRow.Cells("NroDoc").Value
         Dim consulta As String = "select * from Nadadores where NroDoc = " & doc
         Dim tabla As New Data.DataTable
         tabla = acceso.ejecutar(consulta)

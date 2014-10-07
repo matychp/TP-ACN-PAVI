@@ -191,9 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\SplashScreen.resx">
       <DependentUpon>SplashScreen.vb</DependentUpon>
@@ -225,6 +225,9 @@
     <None Include="Resources\ico-n-natacion.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\swimmingunderwater.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 y x64%29</ProductName>
@@ -247,16 +250,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\swimmingunderwater %28Custom%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\fondo.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BotonRectanguloFlecha.png" />
+    <None Include="Resources\flechita.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BotonRectangulo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Background_SplashScreen.png" />
+    <None Include="Resources\flechitaVerde.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

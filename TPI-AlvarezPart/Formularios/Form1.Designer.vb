@@ -75,14 +75,14 @@ Partial Class Form_ABMEspecialidad
         Me.msk_TiempoRecord.Mask = "00:00,00"
         Me.msk_TiempoRecord.Name = "msk_TiempoRecord"
         Me.msk_TiempoRecord.Size = New System.Drawing.Size(48, 20)
-        Me.msk_TiempoRecord.TabIndex = 2
+        Me.msk_TiempoRecord.TabIndex = 1
         '
         'txt_NombreEspecialidad
         '
         Me.txt_NombreEspecialidad.Location = New System.Drawing.Point(125, 9)
         Me.txt_NombreEspecialidad.Name = "txt_NombreEspecialidad"
         Me.txt_NombreEspecialidad.Size = New System.Drawing.Size(159, 20)
-        Me.txt_NombreEspecialidad.TabIndex = 1
+        Me.txt_NombreEspecialidad.TabIndex = 0
         '
         'grd_ListaEspecialidades
         '
@@ -96,7 +96,7 @@ Partial Class Form_ABMEspecialidad
         Me.grd_ListaEspecialidades.Name = "grd_ListaEspecialidades"
         Me.grd_ListaEspecialidades.ReadOnly = True
         Me.grd_ListaEspecialidades.Size = New System.Drawing.Size(397, 180)
-        Me.grd_ListaEspecialidades.TabIndex = 3
+        Me.grd_ListaEspecialidades.TabIndex = 6
         '
         'CodEspeDataGridViewTextBoxColumn
         '
@@ -139,7 +139,7 @@ Partial Class Form_ABMEspecialidad
         Me.cmd_eliminar.Location = New System.Drawing.Point(104, 286)
         Me.cmd_eliminar.Name = "cmd_eliminar"
         Me.cmd_eliminar.Size = New System.Drawing.Size(83, 31)
-        Me.cmd_eliminar.TabIndex = 5
+        Me.cmd_eliminar.TabIndex = 3
         Me.cmd_eliminar.Text = "Eliminar"
         Me.cmd_eliminar.UseVisualStyleBackColor = True
         '
@@ -148,7 +148,7 @@ Partial Class Form_ABMEspecialidad
         Me.cmd_nuevo.Location = New System.Drawing.Point(15, 286)
         Me.cmd_nuevo.Name = "cmd_nuevo"
         Me.cmd_nuevo.Size = New System.Drawing.Size(83, 31)
-        Me.cmd_nuevo.TabIndex = 4
+        Me.cmd_nuevo.TabIndex = 2
         Me.cmd_nuevo.Text = "Nuevo"
         Me.cmd_nuevo.UseVisualStyleBackColor = True
         '
@@ -157,7 +157,7 @@ Partial Class Form_ABMEspecialidad
         Me.cmd_cancelar.Location = New System.Drawing.Point(329, 286)
         Me.cmd_cancelar.Name = "cmd_cancelar"
         Me.cmd_cancelar.Size = New System.Drawing.Size(83, 31)
-        Me.cmd_cancelar.TabIndex = 7
+        Me.cmd_cancelar.TabIndex = 5
         Me.cmd_cancelar.Text = "Cancelar"
         Me.cmd_cancelar.UseVisualStyleBackColor = True
         '
@@ -166,12 +166,13 @@ Partial Class Form_ABMEspecialidad
         Me.cmd_guardar.Location = New System.Drawing.Point(240, 286)
         Me.cmd_guardar.Name = "cmd_guardar"
         Me.cmd_guardar.Size = New System.Drawing.Size(83, 31)
-        Me.cmd_guardar.TabIndex = 6
+        Me.cmd_guardar.TabIndex = 4
         Me.cmd_guardar.Text = "Guardar"
         Me.cmd_guardar.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PictureBox1.Image = Global.TPI_PAVI.My.Resources.Resources.ico_n_natacion
         Me.PictureBox1.Location = New System.Drawing.Point(337, 9)
         Me.PictureBox1.Name = "PictureBox1"
