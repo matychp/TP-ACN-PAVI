@@ -53,7 +53,7 @@ Partial Class frm_NadadoresXEspecialidad
         'cmb_nadador
         '
         Me.cmb_nadador.DataSource = Me.NadadoresBindingSource
-        Me.cmb_nadador.DisplayMember = "Nombre"
+        Me.cmb_nadador.DisplayMember = "Apellido"
         Me.cmb_nadador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_nadador.FormattingEnabled = True
         Me.cmb_nadador.Location = New System.Drawing.Point(116, 12)

@@ -54,12 +54,17 @@
 
     
 
-    Private Sub grd_ListaEspecialidades_CellContentDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grd_dgvnxe.CellContentDoubleClick
-        code = Me.grd_dgvnxe.CurrentRow.Cells("CodEspeDataGridViewTextBoxColumn").Value
-        codn = Me.grd_dgvnxe.CurrentRow.Cells("CodNadDataGridViewTextBoxColumn").Value
-        Dim consulta As String = "select * from Especialidad where (CodEspe = " & code & ") AND (CodNad = " & codn & ") "
-        Dim tabla As New Data.DataTable
-        tabla = acceso.ejecutar(consulta)
+    Private Sub grd_ListaEspecialidades_CellContentDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grd_DGVNadxEspe.CellContentDoubleClick
+        Dim txt_sql As String
+        Dim tabla As Data.DataTable
+        Dim especialidad As String = Me.grd_DGVNadxEspe.CurrentRow.Cells("Especialidad").Value
+        Dim nadador As String = Me.grd_DGVNadxEspe.CurrentRow.Cells("Nadador").Value
+        txt_sql = "SELECT NadaXEspe.CodNad, NadaXEspe.CodEspe "
+        txt_sql &= "FROM  Especialidad INNER JOIN"
+        txt_sql &= " NadaXEspe ON Especialidad.CodEspe = NadaXEspe.CodEspe INNER JOIN Nadadores ON NadaXEspe.CodNad = Nadadores.CodNad "
+        txt_sql &= " WHERE (Nadadores.Apellido = '" & nadador & "') AND (Especialidad.Descripcion = '" & especialidad & "')"
+        tabla = acceso.ejecutar(txt_sql)
+
         cmb_especialidad.SelectedValue = tabla.Rows(0)("CodEspe")
         cmb_nadador.SelectedValue = tabla.Rows(0)("CodNad")
 
@@ -84,23 +89,35 @@
 
     Private Sub cmd_eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_eliminar.Click
         If MessageBox.Show("Está seguro que desea borrar ese registro", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
-            code = Me.grd_dgvnxe.CurrentRow.Cells("CodEspeDataGridViewTextBoxColumn").Value
-            codn = Me.grd_dgvnxe.CurrentRow.Cells("CodNadDataGridViewTextBoxColumn").Value
-            Dim txt_sql As String = ""
-            txt_sql = "delete from NadaXEspe where  (CodEspe = " & code & ") AND (CodNad = " & codn & ") "
-            acceso.ejecutarNonConsulta(txt_sql)
+            Dim txt_sql As String
+            Dim tabla As Data.DataTable
+            Dim especialidad As String = Me.grd_DGVNadxEspe.CurrentRow.Cells("Especialidad").Value
+            Dim nadador As String = Me.grd_DGVNadxEspe.CurrentRow.Cells("Nadador").Value
+            txt_sql = "SELECT NadaXEspe.CodNad, NadaXEspe.CodEspe "
+            txt_sql &= "FROM  Especialidad INNER JOIN"
+            txt_sql &= " NadaXEspe ON Especialidad.CodEspe = NadaXEspe.CodEspe INNER JOIN Nadadores ON NadaXEspe.CodNad = Nadadores.CodNad "
+            txt_sql &= " WHERE (Nadadores.Apellido = '" & nadador & "') AND (Especialidad.Descripcion = '" & especialidad & "')"
+            tabla = acceso.ejecutar(txt_sql)
+            code = tabla.Rows(0)("CodEspe")
+            codn = tabla.Rows(0)("CodNad")
+            Dim txt_del As String = ""
+            txt_del = "delete from NadaXEspe where  (CodEspe = " & code & ") AND (CodNad = " & codn & ") "
+            acceso.ejecutarNonConsulta(txt_del)
             Me.carga_grilla()
         End If
     End Sub
+
     Private Sub carga_grilla()
 
         Dim txt_sql As String = ""
 
-        txt_sql = "SELECT Nadadores.Apellido AS 'Nadador', Especialidad.Descripcion AS 'Especialidad' FROM  Especialidad INNER JOIN"
-                        
+        txt_sql = "SELECT Nadadores.Apellido AS 'Nadador', Especialidad.Descripcion AS 'Especialidad' "
+        txt_sql &= "FROM  Especialidad INNER JOIN"
         txt_sql &= " NadaXEspe ON Especialidad.CodEspe = NadaXEspe.CodEspe INNER JOIN Nadadores ON NadaXEspe.CodNad = Nadadores.CodNad"
-        grd_dgvnxe.DataSource = acceso.ejecutar(txt_sql)
+        grd_DGVNadxEspe.DataSource = acceso.ejecutar(txt_sql)
+
     End Sub
+
     Private Function modificar() As termino
         Dim cmd As String = ""
         cmd = "Update Especialidad "
@@ -146,7 +163,7 @@
                     MessageBox.Show("La inserción se realizo exitosamente.", _
                                     "¡Importante!", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MessageBox.Show("Ya esta cargada una especialidad con ese nombre", _
+                    MessageBox.Show("Ya esta cargada una combinación con ese Nadador y Especialidad", _
                                     "¡Importante!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Exit Sub
                 End If
