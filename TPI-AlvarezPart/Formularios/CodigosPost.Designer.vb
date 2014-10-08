@@ -24,8 +24,11 @@ Partial Class Form_ABMCodigosPost
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.dgv_CodPos = New System.Windows.Forms.DataGridView()
-        Me.CodigosPostBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CodposDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodigosPostBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.TPIPAVIDataSet = New TPI_PAVI.TPIPAVIDataSet()
+        Me.CodigosPostBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.msk_CodPos = New System.Windows.Forms.MaskedTextBox()
         Me.lbl_numCodPos = New System.Windows.Forms.Label()
         Me.cmd_cancelar = New System.Windows.Forms.Button()
@@ -33,13 +36,12 @@ Partial Class Form_ABMCodigosPost
         Me.cmd_nuevo = New System.Windows.Forms.Button()
         Me.cmd_eliminar = New System.Windows.Forms.Button()
         Me.CodigosPostTableAdapter = New TPI_PAVI.TPIPAVIDataSetTableAdapters.CodigosPostTableAdapter()
-        Me.CodigosPostBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CodposDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodigosPostBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.dgv_CodPos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CodigosPostBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CodigosPostBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CodigosPostBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CodigosPostBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgv_CodPos
@@ -49,22 +51,41 @@ Partial Class Form_ABMCodigosPost
         Me.dgv_CodPos.AutoGenerateColumns = False
         Me.dgv_CodPos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_CodPos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodposDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn})
-        Me.dgv_CodPos.DataSource = Me.CodigosPostBindingSource1
+        Me.dgv_CodPos.DataSource = Me.CodigosPostBindingSource2
         Me.dgv_CodPos.Location = New System.Drawing.Point(12, 38)
         Me.dgv_CodPos.Name = "dgv_CodPos"
         Me.dgv_CodPos.ReadOnly = True
         Me.dgv_CodPos.Size = New System.Drawing.Size(404, 222)
         Me.dgv_CodPos.TabIndex = 5
         '
-        'CodigosPostBindingSource
+        'CodposDataGridViewTextBoxColumn
         '
-        Me.CodigosPostBindingSource.DataMember = "CodigosPost"
-        Me.CodigosPostBindingSource.DataSource = Me.TPIPAVIDataSet
+        Me.CodposDataGridViewTextBoxColumn.DataPropertyName = "Codpos"
+        Me.CodposDataGridViewTextBoxColumn.HeaderText = "Codpos"
+        Me.CodposDataGridViewTextBoxColumn.Name = "CodposDataGridViewTextBoxColumn"
+        Me.CodposDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CodigosPostBindingSource1
+        '
+        Me.CodigosPostBindingSource1.DataMember = "CodigosPost"
+        Me.CodigosPostBindingSource1.DataSource = Me.TPIPAVIDataSet
         '
         'TPIPAVIDataSet
         '
         Me.TPIPAVIDataSet.DataSetName = "TPIPAVIDataSet"
         Me.TPIPAVIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CodigosPostBindingSource
+        '
+        Me.CodigosPostBindingSource.DataMember = "CodigosPost"
+        Me.CodigosPostBindingSource.DataSource = Me.TPIPAVIDataSet
         '
         'msk_CodPos
         '
@@ -123,24 +144,10 @@ Partial Class Form_ABMCodigosPost
         '
         Me.CodigosPostTableAdapter.ClearBeforeFill = True
         '
-        'CodigosPostBindingSource1
+        'CodigosPostBindingSource2
         '
-        Me.CodigosPostBindingSource1.DataMember = "CodigosPost"
-        Me.CodigosPostBindingSource1.DataSource = Me.TPIPAVIDataSet
-        '
-        'CodposDataGridViewTextBoxColumn
-        '
-        Me.CodposDataGridViewTextBoxColumn.DataPropertyName = "Codpos"
-        Me.CodposDataGridViewTextBoxColumn.HeaderText = "Codpos"
-        Me.CodposDataGridViewTextBoxColumn.Name = "CodposDataGridViewTextBoxColumn"
-        Me.CodposDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CodigosPostBindingSource2.DataMember = "CodigosPost"
+        Me.CodigosPostBindingSource2.DataSource = Me.TPIPAVIDataSet
         '
         'Form_ABMCodigosPost
         '
@@ -160,9 +167,10 @@ Partial Class Form_ABMCodigosPost
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Codigos Postales"
         CType(Me.dgv_CodPos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CodigosPostBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CodigosPostBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CodigosPostBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CodigosPostBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -180,4 +188,5 @@ Partial Class Form_ABMCodigosPost
     Friend WithEvents CodposDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NombreDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents CodigosPostBindingSource1 As System.Windows.Forms.BindingSource
+    Friend WithEvents CodigosPostBindingSource2 As System.Windows.Forms.BindingSource
 End Class

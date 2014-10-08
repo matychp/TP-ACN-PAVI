@@ -216,11 +216,11 @@
 
         txt_sql = "SELECT        Nadadores.CodNad, Nadadores.Nombre, Nadadores.Apellido, Nadadores.Calle, Nadadores.Numero, Nadadores.NroDoc, Clubes.Nombre AS Club, Profesores.Apellido AS Profesor, TiposDoc.Nombre AS TipoDoc, "
         txt_sql &= " CodigosPost.Nombre AS CodPost "
-        txt_sql &= " FROM Nadadores INNER JOIN "
-        txt_sql &= " TiposDoc ON Nadadores.TipoDoc = TiposDoc.TipoDoc INNER JOIN"
-        txt_sql &= "  Profesores ON Nadadores.CodProf = Profesores.CodProf AND TiposDoc.TipoDoc = Profesores.TipoDoc INNER JOIN"
-        txt_sql &= " Clubes ON Nadadores.CodClub = Clubes.CodClub INNER JOIN"
-        txt_sql &= "  CodigosPost ON Nadadores.CodPos = CodigosPost.Codpos AND Profesores.CodPos = CodigosPost.Codpos"
+        txt_sql &= " FROM Nadadores LEFT JOIN "
+        txt_sql &= " TiposDoc ON Nadadores.TipoDoc = TiposDoc.TipoDoc LEFT JOIN"
+        txt_sql &= "  Profesores ON Nadadores.CodProf = Profesores.CodProf  LEFT JOIN"
+        txt_sql &= " Clubes ON Nadadores.CodClub = Clubes.CodClub LEFT JOIN"
+        txt_sql &= "  CodigosPost ON Nadadores.CodPos = CodigosPost.Codpos"
 
         grd_dgvNadador.DataSource = acceso.ejecutar(txt_sql)
 
@@ -244,8 +244,6 @@
     End Sub
 
     Private Sub form_ABMNadadores_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.NadaXEspe' Puede moverla o quitarla según sea necesario.
-        Me.NadaXEspeTableAdapter.Fill(Me.TPIPAVIDataSet.NadaXEspe)
         'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.TiposDoc' Puede moverla o quitarla según sea necesario.
         Me.TiposDocTableAdapter.Fill(Me.TPIPAVIDataSet.TiposDoc)
         'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.Clubes' Puede moverla o quitarla según sea necesario.
