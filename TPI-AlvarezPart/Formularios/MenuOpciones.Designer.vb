@@ -35,7 +35,8 @@ Partial Class MenuOpciones
         Me.cmd_procesos = New System.Windows.Forms.Button()
         Me.cmd_listconsultas = New System.Windows.Forms.Button()
         Me.cmd_estadisticas = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.cmd_nadXespe = New System.Windows.Forms.Button()
+        Me.cmd_profXespe = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -179,14 +180,23 @@ Partial Class MenuOpciones
         Me.cmd_estadisticas.Text = "Estadísticas"
         Me.cmd_estadisticas.UseVisualStyleBackColor = False
         '
-        'Button1
+        'cmd_nadXespe
         '
-        Me.Button1.Location = New System.Drawing.Point(119, 266)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(101, 42)
-        Me.Button1.TabIndex = 11
-        Me.Button1.Text = "Nadadores X Especialidad"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.cmd_nadXespe.Location = New System.Drawing.Point(119, 266)
+        Me.cmd_nadXespe.Name = "cmd_nadXespe"
+        Me.cmd_nadXespe.Size = New System.Drawing.Size(102, 46)
+        Me.cmd_nadXespe.TabIndex = 11
+        Me.cmd_nadXespe.Text = "Nadadores X Especialidad"
+        Me.cmd_nadXespe.UseVisualStyleBackColor = True
+        '
+        'cmd_profXespe
+        '
+        Me.cmd_profXespe.Location = New System.Drawing.Point(227, 266)
+        Me.cmd_profXespe.Name = "cmd_profXespe"
+        Me.cmd_profXespe.Size = New System.Drawing.Size(102, 46)
+        Me.cmd_profXespe.TabIndex = 11
+        Me.cmd_profXespe.Text = "Profesores X Especialidad"
+        Me.cmd_profXespe.UseVisualStyleBackColor = True
         '
         'MenuOpciones
         '
@@ -197,7 +207,8 @@ Partial Class MenuOpciones
         Me.ClientSize = New System.Drawing.Size(615, 626)
         Me.Controls.Add(Me.cmd_clubafiliado)
         Me.Controls.Add(Me.cmd_profesores)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.cmd_profXespe)
+        Me.Controls.Add(Me.cmd_nadXespe)
         Me.Controls.Add(Me.cmd_abm)
         Me.Controls.Add(Me.cmd_estadisticas)
         Me.Controls.Add(Me.cmd_listconsultas)
@@ -231,5 +242,6 @@ Partial Class MenuOpciones
     Friend WithEvents cmd_listconsultas As System.Windows.Forms.Button
     Friend WithEvents cmd_estadisticas As System.Windows.Forms.Button
     Private WithEvents cmd_abm As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents cmd_nadXespe As System.Windows.Forms.Button
+    Friend WithEvents cmd_profXespe As System.Windows.Forms.Button
 End Class

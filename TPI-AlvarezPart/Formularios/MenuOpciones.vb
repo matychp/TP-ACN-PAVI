@@ -1,20 +1,26 @@
 ﻿Public Class MenuOpciones
-    Dim menuAbierto As Boolean = False
 
     Private Sub MenuOpciones_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        cmd_clubafiliado.Visible = False
-        cmd_codpostal.Visible = False
-        cmd_especialidades.Visible = False
-        cmd_nadadores.Visible = False
-        cmd_profesores.Visible = False
-        cmd_tipodocumento.Visible = False
-        cmd_torneos.Visible = False
-
+        cmd_clubafiliado.Visible = cambiarBoolean(cmd_clubafiliado.Visible)
+        cmd_codpostal.Visible = cambiarBoolean(cmd_codpostal.Visible)
+        cmd_especialidades.Visible = cambiarBoolean(cmd_especialidades.Visible)
+        cmd_nadadores.Visible = cambiarBoolean(cmd_nadadores.Visible)
+        cmd_profesores.Visible = cambiarBoolean(cmd_profesores.Visible)
+        cmd_tipodocumento.Visible = cambiarBoolean(cmd_tipodocumento.Visible)
+        cmd_torneos.Visible = cambiarBoolean(cmd_torneos.Visible)
+        cmd_nadXespe.Visible = cambiarBoolean(cmd_nadXespe.Visible)
+        cmd_profXespe.Visible = cambiarBoolean(cmd_profXespe.Visible)
         'Me.cambiarEstadoBotones()
     End Sub
 
     Private Sub cmd_profesores_Click(sender As System.Object, e As System.EventArgs) Handles cmd_profesores.Click
         form_ABMProfesor.ShowDialog()
+    End Sub
+
+    Private Sub cmd_procesos_Click(sender As System.Object, e As System.EventArgs) Handles cmd_procesos.Click
+
+        cmd_nadXespe.Visible = cambiarBoolean(cmd_nadXespe.Visible)
+        cmd_profXespe.Visible = cambiarBoolean(cmd_profXespe.Visible)
     End Sub
 
     Private Sub cambiarColorBoton(sender As System.Object, e As System.EventArgs) Handles cmd_abm.Click, cmd_listconsultas.Click, cmd_estadisticas.Click _
@@ -26,48 +32,28 @@
         End If
     End Sub
 
-    'Private Sub cambiarEstadoBotones()
-    '    For Each o As Object In Panel1.Controls
-    '        If TypeOf o Is Button Then
-    '            If menuAbierto = False Then
-    '                o.Visible = True
-    '            Else
-    '                o.Visible = False
-    '            End If
-    '        End If
-    '    Next
 
-    '    If menuAbierto = False Then
-    '        menuAbierto = True
-    '    Else
-    '        menuAbierto = False
-    '    End If
-    'End Sub
+    Private Function cambiarBoolean(ByVal var As Boolean)
+        If var = True Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
     Private Sub cmd_abm_Click(sender As System.Object, e As System.EventArgs) Handles cmd_abm.Click
         'Me.cambiarEstadoBotones()
-
-        If menuAbierto = False Then
-            cmd_clubafiliado.Visible = True
-            cmd_codpostal.Visible = True
-            cmd_especialidades.Visible = True
-            cmd_nadadores.Visible = True
-            cmd_profesores.Visible = True
-            cmd_tipodocumento.Visible = True
-            cmd_torneos.Visible = True
-            menuAbierto = True
-        Else
-            cmd_clubafiliado.Visible = False
-            cmd_codpostal.Visible = False
-            cmd_especialidades.Visible = False
-            cmd_nadadores.Visible = False
-            cmd_profesores.Visible = False
-            cmd_tipodocumento.Visible = False
-            cmd_torneos.Visible = False
-            menuAbierto = False
-        End If
+        cmd_clubafiliado.Visible = cambiarBoolean(cmd_clubafiliado.Visible)
+        cmd_codpostal.Visible = cambiarBoolean(cmd_codpostal.Visible)
+        cmd_especialidades.Visible = cambiarBoolean(cmd_especialidades.Visible)
+        cmd_nadadores.Visible = cambiarBoolean(cmd_nadadores.Visible)
+        cmd_profesores.Visible = cambiarBoolean(cmd_profesores.Visible)
+        cmd_tipodocumento.Visible = cambiarBoolean(cmd_tipodocumento.Visible)
+        cmd_torneos.Visible = cambiarBoolean(cmd_torneos.Visible)
+       
     End Sub
 
-    
+
     Private Sub MenuOpciones_FormClosing(sender As System.Object, e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
         If MessageBox.Show("¿Está seguro que desea Salir?", "¡Importante!", _
        MessageBoxButtons.YesNo, MessageBoxIcon.Question) = _
@@ -101,7 +87,11 @@
         Form_ABMCodigosPost.ShowDialog()
     End Sub
 
-    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+    Private Sub cmd_nadXespe_Click(sender As System.Object, e As System.EventArgs) Handles cmd_nadXespe.Click
         frm_NadadoresXEspecialidad.ShowDialog()
+    End Sub
+
+    Private Sub cmd_profXespe_click(sender As System.Object, e As System.EventArgs) Handles cmd_profXespe.Click
+        frm_ProfesorXEspecialidad.ShowDialog()
     End Sub
 End Class

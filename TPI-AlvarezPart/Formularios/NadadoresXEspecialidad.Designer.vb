@@ -142,7 +142,7 @@ Partial Class frm_NadadoresXEspecialidad
         '
         'cmd_nuevo
         '
-        Me.cmd_nuevo.Location = New System.Drawing.Point(13, 311)
+        Me.cmd_nuevo.Location = New System.Drawing.Point(13, 318)
         Me.cmd_nuevo.Name = "cmd_nuevo"
         Me.cmd_nuevo.Size = New System.Drawing.Size(75, 23)
         Me.cmd_nuevo.TabIndex = 3
@@ -151,7 +151,7 @@ Partial Class frm_NadadoresXEspecialidad
         '
         'cmd_eliminar
         '
-        Me.cmd_eliminar.Location = New System.Drawing.Point(103, 311)
+        Me.cmd_eliminar.Location = New System.Drawing.Point(94, 318)
         Me.cmd_eliminar.Name = "cmd_eliminar"
         Me.cmd_eliminar.Size = New System.Drawing.Size(75, 23)
         Me.cmd_eliminar.TabIndex = 3
@@ -160,7 +160,7 @@ Partial Class frm_NadadoresXEspecialidad
         '
         'cmd_guardar
         '
-        Me.cmd_guardar.Location = New System.Drawing.Point(195, 311)
+        Me.cmd_guardar.Location = New System.Drawing.Point(215, 318)
         Me.cmd_guardar.Name = "cmd_guardar"
         Me.cmd_guardar.Size = New System.Drawing.Size(75, 23)
         Me.cmd_guardar.TabIndex = 3
@@ -169,7 +169,7 @@ Partial Class frm_NadadoresXEspecialidad
         '
         'cmd_cancelar
         '
-        Me.cmd_cancelar.Location = New System.Drawing.Point(296, 310)
+        Me.cmd_cancelar.Location = New System.Drawing.Point(296, 317)
         Me.cmd_cancelar.Name = "cmd_cancelar"
         Me.cmd_cancelar.Size = New System.Drawing.Size(75, 23)
         Me.cmd_cancelar.TabIndex = 3
