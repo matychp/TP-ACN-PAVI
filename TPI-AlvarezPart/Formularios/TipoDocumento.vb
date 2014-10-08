@@ -159,7 +159,7 @@
             If Me.accion = estado.insertar Then
                 If Me.validar_existencia() = termino.aprobado Then
                     Me.insertar()
-                    MessageBox.Show("La insersión se realizo exitosamente.", _
+                    MessageBox.Show("La inserción se realizo exitosamente.", _
                                     "¡Importante!", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
                     MessageBox.Show("Ya esta cargado el Tipo de Documento.", _
@@ -174,8 +174,6 @@
 
             Me.carga_grilla()
 
-            MessageBox.Show("Se grabó exitosamente", "Importante", _
-                          MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
         cmd_cancelar.Enabled = False
         cmd_guardar.Enabled = False

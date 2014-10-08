@@ -41,7 +41,7 @@ Partial Class MenuOpciones
         '
         'cmd_profesores
         '
-        Me.cmd_profesores.Location = New System.Drawing.Point(118, 146)
+        Me.cmd_profesores.Location = New System.Drawing.Point(119, 146)
         Me.cmd_profesores.Name = "cmd_profesores"
         Me.cmd_profesores.Size = New System.Drawing.Size(102, 46)
         Me.cmd_profesores.TabIndex = 1
@@ -64,7 +64,7 @@ Partial Class MenuOpciones
         '
         'cmd_clubafiliado
         '
-        Me.cmd_clubafiliado.Location = New System.Drawing.Point(226, 145)
+        Me.cmd_clubafiliado.Location = New System.Drawing.Point(227, 146)
         Me.cmd_clubafiliado.Name = "cmd_clubafiliado"
         Me.cmd_clubafiliado.Size = New System.Drawing.Size(102, 46)
         Me.cmd_clubafiliado.TabIndex = 2
@@ -195,6 +195,8 @@ Partial Class MenuOpciones
         Me.BackgroundImage = Global.TPI_PAVI.My.Resources.Resources.fondo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(615, 626)
+        Me.Controls.Add(Me.cmd_clubafiliado)
+        Me.Controls.Add(Me.cmd_profesores)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.cmd_abm)
         Me.Controls.Add(Me.cmd_estadisticas)
@@ -207,8 +209,6 @@ Partial Class MenuOpciones
         Me.Controls.Add(Me.cmd_nadadores)
         Me.Controls.Add(Me.cmd_torneos)
         Me.Controls.Add(Me.cmd_tipodocumento)
-        Me.Controls.Add(Me.cmd_clubafiliado)
-        Me.Controls.Add(Me.cmd_profesores)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "MenuOpciones"

@@ -9,6 +9,8 @@
         cmd_profesores.Visible = False
         cmd_tipodocumento.Visible = False
         cmd_torneos.Visible = False
+
+        'Me.cambiarEstadoBotones()
     End Sub
 
     Private Sub cmd_profesores_Click(sender As System.Object, e As System.EventArgs) Handles cmd_profesores.Click
@@ -23,8 +25,26 @@
             sender.BackColor = Color.GreenYellow
         End If
     End Sub
-    Private Sub cmd_abm_Click(sender As System.Object, e As System.EventArgs) Handles cmd_abm.Click
 
+    'Private Sub cambiarEstadoBotones()
+    '    For Each o As Object In Panel1.Controls
+    '        If TypeOf o Is Button Then
+    '            If menuAbierto = False Then
+    '                o.Visible = True
+    '            Else
+    '                o.Visible = False
+    '            End If
+    '        End If
+    '    Next
+
+    '    If menuAbierto = False Then
+    '        menuAbierto = True
+    '    Else
+    '        menuAbierto = False
+    '    End If
+    'End Sub
+    Private Sub cmd_abm_Click(sender As System.Object, e As System.EventArgs) Handles cmd_abm.Click
+        'Me.cambiarEstadoBotones()
 
         If menuAbierto = False Then
             cmd_clubafiliado.Visible = True
