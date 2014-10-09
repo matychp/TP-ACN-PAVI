@@ -297,7 +297,7 @@
                     MessageBox.Show("La inserción se realizo exitosamente.", _
                                     "¡Importante!", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MessageBox.Show("Ya esta cargada una combinación con ese Año y Torneo.", _
+                    MessageBox.Show("Ya esta cargada una inscripción con esa combinación", _
                                     "¡Importante!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Exit Sub
                 End If
