@@ -148,6 +148,7 @@
         If cmb_profesor.SelectedIndex < 0 Then
             MsgBox("Debe seleccionar un nadador.", MsgBoxStyle.Critical, "¡Importante!")
             Me.cmb_profesor.Focus()
+            Return False
         End If
         Return True
     End Function
@@ -160,7 +161,7 @@
                     MessageBox.Show("La inserción se realizo exitosamente.", _
                                     "¡Importante!", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MessageBox.Show("Ya esta cargada una combinación con ese Nadador y Especialidad", _
+                    MessageBox.Show("Ya esta cargada una combinación con ese Profesor y Especialidad.", _
                                     "¡Importante!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Exit Sub
                 End If
@@ -184,7 +185,7 @@
     End Sub
 
     Private Sub cmd_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_cancelar.Click
-        If MessageBox.Show("Está seguro que desea cancelar este registro", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
+        If MessageBox.Show("¿Está seguro que desea cancelar este registro?", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
             cancelar()
         End If
     End Sub
