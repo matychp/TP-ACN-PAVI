@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class TorneosXAño
+Partial Class frm_TorneosXAño
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,6 +22,7 @@ Partial Class TorneosXAño
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.cmb_club = New System.Windows.Forms.ComboBox()
         Me.cmb_torneo = New System.Windows.Forms.ComboBox()
         Me.msk_anio = New System.Windows.Forms.MaskedTextBox()
@@ -33,26 +34,40 @@ Partial Class TorneosXAño
         Me.cmd_eliminar = New System.Windows.Forms.Button()
         Me.cmd_guardar = New System.Windows.Forms.Button()
         Me.cmd_cancelar = New System.Windows.Forms.Button()
+        Me.TPIPAVIDataSet = New TPI_PAVI.TPIPAVIDataSet()
+        Me.ClubesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ClubesTableAdapter = New TPI_PAVI.TPIPAVIDataSetTableAdapters.ClubesTableAdapter()
+        Me.TORNEOSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TORNEOSTableAdapter = New TPI_PAVI.TPIPAVIDataSetTableAdapters.TORNEOSTableAdapter()
         CType(Me.grd_DGVTorneosxAño, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClubesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TORNEOSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmb_club
         '
+        Me.cmb_club.DataSource = Me.ClubesBindingSource
+        Me.cmb_club.DisplayMember = "Nombre"
         Me.cmb_club.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_club.FormattingEnabled = True
-        Me.cmb_club.Location = New System.Drawing.Point(62, 12)
+        Me.cmb_club.Location = New System.Drawing.Point(64, 36)
         Me.cmb_club.Name = "cmb_club"
-        Me.cmb_club.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_club.Size = New System.Drawing.Size(134, 21)
         Me.cmb_club.TabIndex = 0
+        Me.cmb_club.ValueMember = "CodClub"
         '
         'cmb_torneo
         '
+        Me.cmb_torneo.DataSource = Me.TORNEOSBindingSource
+        Me.cmb_torneo.DisplayMember = "Descrip"
         Me.cmb_torneo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_torneo.FormattingEnabled = True
-        Me.cmb_torneo.Location = New System.Drawing.Point(62, 39)
+        Me.cmb_torneo.Location = New System.Drawing.Point(77, 6)
         Me.cmb_torneo.Name = "cmb_torneo"
         Me.cmb_torneo.Size = New System.Drawing.Size(121, 21)
         Me.cmb_torneo.TabIndex = 0
+        Me.cmb_torneo.ValueMember = "CodTorneo"
         '
         'msk_anio
         '
@@ -65,7 +80,7 @@ Partial Class TorneosXAño
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(25, 15)
+        Me.Label1.Location = New System.Drawing.Point(27, 39)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(31, 13)
         Me.Label1.TabIndex = 2
@@ -74,7 +89,7 @@ Partial Class TorneosXAño
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 42)
+        Me.Label2.Location = New System.Drawing.Point(27, 9)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(44, 13)
         Me.Label2.TabIndex = 2
@@ -91,9 +106,12 @@ Partial Class TorneosXAño
         '
         'grd_DGVTorneosxAño
         '
+        Me.grd_DGVTorneosxAño.AllowUserToAddRows = False
+        Me.grd_DGVTorneosxAño.AllowUserToDeleteRows = False
         Me.grd_DGVTorneosxAño.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grd_DGVTorneosxAño.Location = New System.Drawing.Point(12, 92)
         Me.grd_DGVTorneosxAño.Name = "grd_DGVTorneosxAño"
+        Me.grd_DGVTorneosxAño.ReadOnly = True
         Me.grd_DGVTorneosxAño.Size = New System.Drawing.Size(318, 176)
         Me.grd_DGVTorneosxAño.TabIndex = 3
         '
@@ -133,7 +151,30 @@ Partial Class TorneosXAño
         Me.cmd_cancelar.Text = "Cancelar"
         Me.cmd_cancelar.UseVisualStyleBackColor = True
         '
-        'TorneosXAño
+        'TPIPAVIDataSet
+        '
+        Me.TPIPAVIDataSet.DataSetName = "TPIPAVIDataSet"
+        Me.TPIPAVIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ClubesBindingSource
+        '
+        Me.ClubesBindingSource.DataMember = "Clubes"
+        Me.ClubesBindingSource.DataSource = Me.TPIPAVIDataSet
+        '
+        'ClubesTableAdapter
+        '
+        Me.ClubesTableAdapter.ClearBeforeFill = True
+        '
+        'TORNEOSBindingSource
+        '
+        Me.TORNEOSBindingSource.DataMember = "TORNEOS"
+        Me.TORNEOSBindingSource.DataSource = Me.TPIPAVIDataSet
+        '
+        'TORNEOSTableAdapter
+        '
+        Me.TORNEOSTableAdapter.ClearBeforeFill = True
+        '
+        'frm_TorneosXAño
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -151,9 +192,12 @@ Partial Class TorneosXAño
         Me.Controls.Add(Me.cmb_club)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
-        Me.Name = "TorneosXAño"
+        Me.Name = "frm_TorneosXAño"
         Me.Text = "TorneosXAño"
         CType(Me.grd_DGVTorneosxAño, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClubesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TORNEOSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -169,4 +213,9 @@ Partial Class TorneosXAño
     Friend WithEvents cmd_guardar As System.Windows.Forms.Button
     Friend WithEvents cmd_cancelar As System.Windows.Forms.Button
     Friend WithEvents cmb_torneo As System.Windows.Forms.ComboBox
+    Friend WithEvents TPIPAVIDataSet As TPI_PAVI.TPIPAVIDataSet
+    Friend WithEvents ClubesBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents ClubesTableAdapter As TPI_PAVI.TPIPAVIDataSetTableAdapters.ClubesTableAdapter
+    Friend WithEvents TORNEOSBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents TORNEOSTableAdapter As TPI_PAVI.TPIPAVIDataSetTableAdapters.TORNEOSTableAdapter
 End Class

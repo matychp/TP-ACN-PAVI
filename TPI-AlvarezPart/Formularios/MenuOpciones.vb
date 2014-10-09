@@ -10,6 +10,7 @@
         cmd_torneos.Visible = cambiarBoolean(cmd_torneos.Visible)
         cmd_nadXespe.Visible = cambiarBoolean(cmd_nadXespe.Visible)
         cmd_profXespe.Visible = cambiarBoolean(cmd_profXespe.Visible)
+        cmd_TorneosXAño.Visible = cambiarBoolean(cmd_TorneosXAño.Visible)
         'Me.cambiarEstadoBotones()
     End Sub
 
@@ -21,6 +22,7 @@
 
         cmd_nadXespe.Visible = cambiarBoolean(cmd_nadXespe.Visible)
         cmd_profXespe.Visible = cambiarBoolean(cmd_profXespe.Visible)
+        cmd_TorneosXAño.Visible = cambiarBoolean(cmd_TorneosXAño.Visible)
     End Sub
 
     Private Sub cambiarColorBoton(sender As System.Object, e As System.EventArgs) Handles cmd_abm.Click, cmd_listconsultas.Click, cmd_estadisticas.Click _
@@ -93,5 +95,9 @@
 
     Private Sub cmd_profXespe_click(sender As System.Object, e As System.EventArgs) Handles cmd_profXespe.Click
         frm_ProfesorXEspecialidad.ShowDialog()
+    End Sub
+
+    Private Sub cmd_TorneosXAño_Click(sender As System.Object, e As System.EventArgs) Handles cmd_TorneosXAño.Click
+        frm_TorneosXAño.ShowDialog()
     End Sub
 End Class

@@ -9,7 +9,6 @@
     End Enum
     Dim cod As String
     Dim accion As estado = estado.insertar
-    Dim codEspecialidad As Integer = 15
     Dim cadena As String = "Data Source=localhost\SQLEXPRESS;Initial Catalog=TPIPAVI;Integrated Security=True"
     Dim acceso As New accesoBD With {._cadenaConexion = cadena, _
                                      ._tipoBaseDatos = accesoBD.BaseDatos.SqlServer}

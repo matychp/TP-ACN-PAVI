@@ -1,4 +1,4 @@
-﻿Public Class TorneosXAño
+﻿Public Class frm_TorneosXAño
     Enum estado
         insertar
         modificar
@@ -9,23 +9,22 @@
     End Enum
     Dim code, codn As String
     Dim accion As estado = estado.insertar
-    Dim codEspecialidad As Integer = 15
     Dim cadena As String = "Data Source=localhost\SQLEXPRESS;Initial Catalog=TPIPAVI;Integrated Security=True"
     Dim acceso As New accesoBD With {._cadenaConexion = cadena, _
                                      ._tipoBaseDatos = accesoBD.BaseDatos.SqlServer}
-    Private Sub TorneosXAño_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
     Private Sub TorneosXAño_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.Nadadores' Puede moverla o quitarla según sea necesario.
-        Me.TorneosTableAdapter.Fill(Me.TPIPAVIDataSet.Nadadores)
-        'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.Especialidad' Puede moverla o quitarla según sea necesario.
-        Me.ClubTableAdapter.Fill(Me.TPIPAVIDataSet.Especialidad)
+        'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.TORNEOS' Puede moverla o quitarla según sea necesario.
+        Me.TORNEOSTableAdapter.Fill(Me.TPIPAVIDataSet.TORNEOS)
+        'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.Clubes' Puede moverla o quitarla según sea necesario.
+        Me.ClubesTableAdapter.Fill(Me.TPIPAVIDataSet.Clubes)
+
 
         cmb_club.Enabled = False
         cmb_torneo.Enabled = False
         msk_anio.Enabled = False
-        cmd_eliminar.Enabled = False
-        cmd_nuevo.Enabled = False
+        cmd_cancelar.Enabled = False
+        cmd_guardar.Enabled = False
         Me.carga_grilla()
     End Sub
     Private Sub TorneosXAño_acceso_datos_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
@@ -58,20 +57,20 @@
         Dim anio As String = Me.grd_DGVTorneosxAño.CurrentRow.Cells("Año").Value
         Dim club As String = Me.grd_DGVTorneosxAño.CurrentRow.Cells("Club").Value
 
-        txt_sql = "SELECT TorneosXAño.CodTorneo, TorneosXAño.Año " 'Club no lo considero, no es parte de la PK...
-        txt_sql &= "FROM Torneos INNER JOIN"
-        txt_sql &= " TorneosXAño ON Torneo.CodTorneo = TorneoXAño.CodTorneo INNER JOIN Clubes ON TorneosXAño.CodClub = Clubes.CodClub "
-        txt_sql &= " WHERE (TorneosXAño.Año = '" & anio & "') AND (TorneoXAño.CodTorneo = '" & torneo & "') AND (TorneoXAño.CodClub = '" & club & "')"
+        txt_sql = "SELECT TorneosXAño.CodTorneo, TorneosXAño.Año, TorneosXAño.CodClub " 'Club no lo considero, no es parte de la PK...
+        txt_sql &= "FROM TORNEOS INNER JOIN"
+        txt_sql &= " TorneosXAño ON TORNEOS.CodTorneo = TorneosXAño.CodTorneo INNER JOIN Clubes ON TorneosXAño.CodClub = Clubes.CodClub "
+        txt_sql &= " WHERE (TorneosXAño.Año = '" & anio & "') AND (TORNEOS.Descrip = '" & torneo & "') AND (Clubes.Nombre = '" & club & "')"
 
         tabla = acceso.ejecutar(txt_sql)
 
         cmb_torneo.SelectedValue = tabla.Rows(0)("CodTorneo")
-        cmb_club.SelectedValue = tabla.Rows(0)("Club")
+        cmb_club.SelectedValue = tabla.Rows(0)("CodClub")
         msk_anio.Text = tabla.Rows(0)("Año")
 
         cmb_club.Enabled = True
-        cmb_torneo.Enabled = True
-        msk_anio.Enabled = True
+        'cmb_torneo.Enabled = True
+        '   msk_anio.Enabled = True
 
         Me.cmd_cancelar.Enabled = True
         Me.cmd_guardar.Enabled = True
@@ -94,7 +93,7 @@
 
     Private Sub cmd_eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_eliminar.Click
 
-        If MessageBox.Show("Está seguro que desea borrar ese registro", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
+        If MessageBox.Show("¿Está seguro que desea borrar ese registro?", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
 
             Dim txt_sql As String
             Dim tabla As Data.DataTable
@@ -102,9 +101,9 @@
             Dim torneo As String = Me.grd_DGVTorneosxAño.CurrentRow.Cells("Torneo").Value
 
             txt_sql = "SELECT TorneosXAño.CodTorneo, TorneosXAño.Año "
-            txt_sql &= "FROM  Torneos INNER JOIN"
-            txt_sql &= " TorneosXAño ON Torneos.CodTorneo = TorneosXAño.CodTorneo "
-            txt_sql &= " WHERE (Torneo.CodTorneo = '" & torneo & "') AND (TorneosXAño.Año = '" & anio & "')"
+            txt_sql &= "FROM  TORNEOS INNER JOIN"
+            txt_sql &= " TorneosXAño ON TORNEOS.CodTorneo = TorneosXAño.CodTorneo "
+            txt_sql &= " WHERE (TORNEOS.Descrip = '" & torneo & "') AND (TorneosXAño.Año = '" & anio & "')"
 
             tabla = acceso.ejecutar(txt_sql)
             code = tabla.Rows(0)("CodTorneo")
@@ -125,9 +124,9 @@
 
         Dim txt_sql As String = ""
 
-        txt_sql = "SELECT Torneos.CodTorneo AS 'Torneo', Clubes.CodClub AS 'Club' "
-        txt_sql &= "FROM Torneos INNER JOIN"
-        txt_sql &= " TorneosXAño ON Torneos.CodTorneo = TorneosXAño.CodTorneo INNER JOIN Clubes ON Clubes.CodClub = TorneosXAño.CodClub"
+        txt_sql = "SELECT TORNEOS.Descrip AS 'Torneo', Clubes.Nombre AS 'Club', TorneosXAño.Año "
+        txt_sql &= "FROM TORNEOS INNER JOIN"
+        txt_sql &= " TorneosXAño ON TORNEOS.CodTorneo = TorneosXAño.CodTorneo INNER JOIN Clubes ON Clubes.CodClub = TorneosXAño.CodClub"
         grd_DGVTorneosxAño.DataSource = acceso.ejecutar(txt_sql)
 
     End Sub
@@ -137,8 +136,7 @@
         Dim cmd As String = ""
 
         cmd = "Update TorneosXAño "
-        cmd &= " Set CodTorneo = '" & cmb_torneo.SelectedValue & "'"
-        cmd &= ", Año = '" & msk_anio.Text & "'"
+        cmd &= " Set CodClub = '" & cmb_club.SelectedValue & "'"
         cmd &= " where (CodTorneo = " & code & ") AND (Año = " & codn & ") "
 
         acceso.ejecutarNonConsulta(cmd)
@@ -153,7 +151,7 @@
         Dim tabla As DataTable
 
         consulta = "select * from TorneosXAño "
-        consulta &= " where (CodTorneos = " & cmb_torneo.SelectedValue & ") AND (Año = " & msk_anio.Text & ") "
+        consulta &= " where (CodTorneo = " & cmb_torneo.SelectedValue & ") AND (Año = " & msk_anio.Text & ") "
 
         tabla = acceso.ejecutar(consulta)
 
@@ -166,7 +164,8 @@
     End Function
 
     Private Function validar() As Boolean
-
+        'Dim anioValor As Integer = CInt(msk_anio.Text)
+        'Dim anioActual As Integer = Year(Today)
         If cmb_club.SelectedIndex < 0 Then
             MsgBox(" Debe seleccionar un Club.", MsgBoxStyle.Critical, "¡Importante!")
             Me.cmb_club.Focus()
@@ -180,7 +179,7 @@
         End If
 
         If msk_anio.Text = "" Then
-            MsgBox("Debe ingresar un Año.", MsgBoxStyle.Critical, "¡Importante!")
+            MsgBox("Debe ingresar un Año válido y mayor o igual que el actual.", MsgBoxStyle.Critical, "¡Importante!")
             Me.msk_anio.Focus()
             Return False
         End If

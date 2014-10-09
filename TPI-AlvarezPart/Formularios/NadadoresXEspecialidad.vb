@@ -12,7 +12,6 @@
     End Enum
     Dim code, codn As String
     Dim accion As estado = estado.insertar
-    Dim codEspecialidad As Integer = 15
     Dim cadena As String = "Data Source=localhost\SQLEXPRESS;Initial Catalog=TPIPAVI;Integrated Security=True"
     Dim acceso As New accesoBD With {._cadenaConexion = cadena, _
                                      ._tipoBaseDatos = accesoBD.BaseDatos.SqlServer}
@@ -54,28 +53,28 @@
 
     
 
-    Private Sub grd_ListaEspecialidades_CellContentDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grd_DGVNadxEspe.CellContentDoubleClick
-        Dim txt_sql As String
-        Dim tabla As Data.DataTable
-        Dim especialidad As String = Me.grd_DGVNadxEspe.CurrentRow.Cells("Especialidad").Value
-        Dim nadador As String = Me.grd_DGVNadxEspe.CurrentRow.Cells("Nadador").Value
-        txt_sql = "SELECT NadaXEspe.CodNad, NadaXEspe.CodEspe "
-        txt_sql &= "FROM  Especialidad INNER JOIN"
-        txt_sql &= " NadaXEspe ON Especialidad.CodEspe = NadaXEspe.CodEspe INNER JOIN Nadadores ON NadaXEspe.CodNad = Nadadores.CodNad "
-        txt_sql &= " WHERE (Nadadores.Apellido = '" & nadador & "') AND (Especialidad.Descripcion = '" & especialidad & "')"
-        tabla = acceso.ejecutar(txt_sql)
+    'Private Sub grd_ListaEspecialidades_CellContentDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grd_DGVNadxEspe.CellContentDoubleClick
+    '    Dim txt_sql As String
+    '    Dim tabla As Data.DataTable
+    '    Dim especialidad As String = Me.grd_DGVNadxEspe.CurrentRow.Cells("Especialidad").Value
+    '    Dim nadador As String = Me.grd_DGVNadxEspe.CurrentRow.Cells("Nadador").Value
+    '    txt_sql = "SELECT NadaXEspe.CodNad, NadaXEspe.CodEspe "
+    '    txt_sql &= "FROM  Especialidad INNER JOIN"
+    '    txt_sql &= " NadaXEspe ON Especialidad.CodEspe = NadaXEspe.CodEspe INNER JOIN Nadadores ON NadaXEspe.CodNad = Nadadores.CodNad "
+    '    txt_sql &= " WHERE (Nadadores.Apellido = '" & nadador & "') AND (Especialidad.Descripcion = '" & especialidad & "')"
+    '    tabla = acceso.ejecutar(txt_sql)
 
-        cmb_especialidad.SelectedValue = tabla.Rows(0)("CodEspe")
-        cmb_nadador.SelectedValue = tabla.Rows(0)("CodNad")
+    '    cmb_especialidad.SelectedValue = tabla.Rows(0)("CodEspe")
+    '    cmb_nadador.SelectedValue = tabla.Rows(0)("CodNad")
 
-        cmb_nadador.Enabled = True
-        cmb_especialidad.Enabled = True
-        Me.cmd_cancelar.Enabled = True
-        Me.cmd_guardar.Enabled = True
-        Me.cmd_nuevo.Enabled = False
-        Me.cmd_eliminar.Enabled = False
-        Me.accion = estado.modificar
-    End Sub
+    '    cmb_nadador.Enabled = True
+    '    cmb_especialidad.Enabled = True
+    '    Me.cmd_cancelar.Enabled = True
+    '    Me.cmd_guardar.Enabled = True
+    '    Me.cmd_nuevo.Enabled = False
+    '    Me.cmd_eliminar.Enabled = False
+    '    Me.accion = estado.modificar
+    'End Sub
 
     Private Function insertar() As termino
         Dim cmd As String = ""
@@ -118,17 +117,17 @@
 
     End Sub
 
-    Private Function modificar() As termino
-        Dim cmd As String = ""
-        cmd = "Update NadaXEspe "
-        cmd &= " Set CodNad = '" & cmb_nadador.SelectedValue & "'"
-        cmd &= ", CodEspe = '" & cmb_especialidad.SelectedValue & "'"
-        cmd &= " where (CodEspe = " & code & ") AND (CodNad = " & codn & ") "
-        acceso.ejecutarNonConsulta(cmd)
+    'Private Function modificar() As termino
+    '    Dim cmd As String = ""
+    '    cmd = "Update NadaXEspe "
+    '    cmd &= " Set CodNad = '" & cmb_nadador.SelectedValue & "'"
+    '    cmd &= ", CodEspe = '" & cmb_especialidad.SelectedValue & "'"
+    '    cmd &= " where (CodEspe = " & code & ") AND (CodNad = " & codn & ") "
+    '    acceso.ejecutarNonConsulta(cmd)
 
-        Return termino.aprobado
+    '    Return termino.aprobado
 
-    End Function
+    'End Function
     Private Function validar_existencia() As termino
         Dim consulta As String = ""
         Dim tabla As DataTable
@@ -168,11 +167,6 @@
                                     "¡Importante!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Exit Sub
                 End If
-            Else
-                Me.modificar()
-                MessageBox.Show("La modificación se realizo exitosamente.", _
-                                "¡Importante!", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
             End If
             Me.carga_grilla()
 
