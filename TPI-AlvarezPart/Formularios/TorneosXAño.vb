@@ -68,6 +68,9 @@
         cmb_club.SelectedValue = tabla.Rows(0)("CodClub")
         msk_anio.Text = tabla.Rows(0)("Año")
 
+        code = tabla.Rows(0)("CodTorneo")
+        codn = tabla.Rows(0)("Año")
+
         cmb_club.Enabled = True
         'cmb_torneo.Enabled = True
         '   msk_anio.Enabled = True

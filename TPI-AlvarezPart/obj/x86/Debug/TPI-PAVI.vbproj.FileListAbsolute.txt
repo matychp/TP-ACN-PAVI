@@ -113,3 +113,4 @@ C:\Users\Fabricio\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI
 C:\Users\Fabricio\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.xml
 C:\Users\Fabricio\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.pdb
 C:\Users\Gonzalo\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.frm_TorneosXAño.resources
+C:\Users\Gonzalo\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.frm_Inscriptos.resources

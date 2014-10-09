@@ -38,6 +38,7 @@ Partial Class MenuOpciones
         Me.cmd_nadXespe = New System.Windows.Forms.Button()
         Me.cmd_profXespe = New System.Windows.Forms.Button()
         Me.cmd_TorneosXAño = New System.Windows.Forms.Button()
+        Me.cmd_Inscriptos = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -208,6 +209,15 @@ Partial Class MenuOpciones
         Me.cmd_TorneosXAño.Text = "Torneos X Año"
         Me.cmd_TorneosXAño.UseVisualStyleBackColor = True
         '
+        'cmd_Inscriptos
+        '
+        Me.cmd_Inscriptos.Location = New System.Drawing.Point(442, 266)
+        Me.cmd_Inscriptos.Name = "cmd_Inscriptos"
+        Me.cmd_Inscriptos.Size = New System.Drawing.Size(101, 46)
+        Me.cmd_Inscriptos.TabIndex = 13
+        Me.cmd_Inscriptos.Text = "Inscriptos"
+        Me.cmd_Inscriptos.UseVisualStyleBackColor = True
+        '
         'MenuOpciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -215,6 +225,7 @@ Partial Class MenuOpciones
         Me.BackgroundImage = Global.TPI_PAVI.My.Resources.Resources.fondo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(615, 626)
+        Me.Controls.Add(Me.cmd_Inscriptos)
         Me.Controls.Add(Me.cmd_TorneosXAño)
         Me.Controls.Add(Me.cmd_clubafiliado)
         Me.Controls.Add(Me.cmd_profesores)
@@ -256,4 +267,5 @@ Partial Class MenuOpciones
     Friend WithEvents cmd_nadXespe As System.Windows.Forms.Button
     Friend WithEvents cmd_profXespe As System.Windows.Forms.Button
     Friend WithEvents cmd_TorneosXAño As System.Windows.Forms.Button
+    Friend WithEvents cmd_Inscriptos As System.Windows.Forms.Button
 End Class

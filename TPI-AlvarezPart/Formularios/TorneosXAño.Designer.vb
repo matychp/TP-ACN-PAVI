@@ -24,7 +24,10 @@ Partial Class frm_TorneosXAño
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.cmb_club = New System.Windows.Forms.ComboBox()
+        Me.ClubesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TPIPAVIDataSet = New TPI_PAVI.TPIPAVIDataSet()
         Me.cmb_torneo = New System.Windows.Forms.ComboBox()
+        Me.TORNEOSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.msk_anio = New System.Windows.Forms.MaskedTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -34,15 +37,12 @@ Partial Class frm_TorneosXAño
         Me.cmd_eliminar = New System.Windows.Forms.Button()
         Me.cmd_guardar = New System.Windows.Forms.Button()
         Me.cmd_cancelar = New System.Windows.Forms.Button()
-        Me.TPIPAVIDataSet = New TPI_PAVI.TPIPAVIDataSet()
-        Me.ClubesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ClubesTableAdapter = New TPI_PAVI.TPIPAVIDataSetTableAdapters.ClubesTableAdapter()
-        Me.TORNEOSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TORNEOSTableAdapter = New TPI_PAVI.TPIPAVIDataSetTableAdapters.TORNEOSTableAdapter()
-        CType(Me.grd_DGVTorneosxAño, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClubesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TORNEOSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grd_DGVTorneosxAño, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmb_club
@@ -54,8 +54,18 @@ Partial Class frm_TorneosXAño
         Me.cmb_club.Location = New System.Drawing.Point(64, 36)
         Me.cmb_club.Name = "cmb_club"
         Me.cmb_club.Size = New System.Drawing.Size(134, 21)
-        Me.cmb_club.TabIndex = 0
+        Me.cmb_club.TabIndex = 1
         Me.cmb_club.ValueMember = "CodClub"
+        '
+        'ClubesBindingSource
+        '
+        Me.ClubesBindingSource.DataMember = "Clubes"
+        Me.ClubesBindingSource.DataSource = Me.TPIPAVIDataSet
+        '
+        'TPIPAVIDataSet
+        '
+        Me.TPIPAVIDataSet.DataSetName = "TPIPAVIDataSet"
+        Me.TPIPAVIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'cmb_torneo
         '
@@ -69,13 +79,18 @@ Partial Class frm_TorneosXAño
         Me.cmb_torneo.TabIndex = 0
         Me.cmb_torneo.ValueMember = "CodTorneo"
         '
+        'TORNEOSBindingSource
+        '
+        Me.TORNEOSBindingSource.DataMember = "TORNEOS"
+        Me.TORNEOSBindingSource.DataSource = Me.TPIPAVIDataSet
+        '
         'msk_anio
         '
         Me.msk_anio.Location = New System.Drawing.Point(62, 66)
         Me.msk_anio.Mask = "9999"
         Me.msk_anio.Name = "msk_anio"
         Me.msk_anio.Size = New System.Drawing.Size(33, 20)
-        Me.msk_anio.TabIndex = 1
+        Me.msk_anio.TabIndex = 2
         '
         'Label1
         '
@@ -129,7 +144,7 @@ Partial Class frm_TorneosXAño
         Me.cmd_eliminar.Location = New System.Drawing.Point(93, 273)
         Me.cmd_eliminar.Name = "cmd_eliminar"
         Me.cmd_eliminar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_eliminar.TabIndex = 4
+        Me.cmd_eliminar.TabIndex = 5
         Me.cmd_eliminar.Text = "Eliminar"
         Me.cmd_eliminar.UseVisualStyleBackColor = True
         '
@@ -138,7 +153,7 @@ Partial Class frm_TorneosXAño
         Me.cmd_guardar.Location = New System.Drawing.Point(174, 273)
         Me.cmd_guardar.Name = "cmd_guardar"
         Me.cmd_guardar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_guardar.TabIndex = 4
+        Me.cmd_guardar.TabIndex = 6
         Me.cmd_guardar.Text = "Guardar"
         Me.cmd_guardar.UseVisualStyleBackColor = True
         '
@@ -147,28 +162,13 @@ Partial Class frm_TorneosXAño
         Me.cmd_cancelar.Location = New System.Drawing.Point(255, 273)
         Me.cmd_cancelar.Name = "cmd_cancelar"
         Me.cmd_cancelar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_cancelar.TabIndex = 4
+        Me.cmd_cancelar.TabIndex = 7
         Me.cmd_cancelar.Text = "Cancelar"
         Me.cmd_cancelar.UseVisualStyleBackColor = True
-        '
-        'TPIPAVIDataSet
-        '
-        Me.TPIPAVIDataSet.DataSetName = "TPIPAVIDataSet"
-        Me.TPIPAVIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ClubesBindingSource
-        '
-        Me.ClubesBindingSource.DataMember = "Clubes"
-        Me.ClubesBindingSource.DataSource = Me.TPIPAVIDataSet
         '
         'ClubesTableAdapter
         '
         Me.ClubesTableAdapter.ClearBeforeFill = True
-        '
-        'TORNEOSBindingSource
-        '
-        Me.TORNEOSBindingSource.DataMember = "TORNEOS"
-        Me.TORNEOSBindingSource.DataSource = Me.TPIPAVIDataSet
         '
         'TORNEOSTableAdapter
         '
@@ -194,10 +194,10 @@ Partial Class frm_TorneosXAño
         Me.MaximizeBox = False
         Me.Name = "frm_TorneosXAño"
         Me.Text = "TorneosXAño"
-        CType(Me.grd_DGVTorneosxAño, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClubesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TORNEOSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grd_DGVTorneosxAño, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

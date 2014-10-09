@@ -48,7 +48,7 @@ Partial Class frm_ProfesorXEspecialidad
         Me.cmd_cancelar.Location = New System.Drawing.Point(295, 305)
         Me.cmd_cancelar.Name = "cmd_cancelar"
         Me.cmd_cancelar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_cancelar.TabIndex = 10
+        Me.cmd_cancelar.TabIndex = 5
         Me.cmd_cancelar.Text = "Cancelar"
         Me.cmd_cancelar.UseVisualStyleBackColor = True
         '
@@ -57,7 +57,7 @@ Partial Class frm_ProfesorXEspecialidad
         Me.cmd_guardar.Location = New System.Drawing.Point(214, 305)
         Me.cmd_guardar.Name = "cmd_guardar"
         Me.cmd_guardar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_guardar.TabIndex = 9
+        Me.cmd_guardar.TabIndex = 4
         Me.cmd_guardar.Text = "Guardar"
         Me.cmd_guardar.UseVisualStyleBackColor = True
         '
@@ -66,7 +66,7 @@ Partial Class frm_ProfesorXEspecialidad
         Me.cmd_eliminar.Location = New System.Drawing.Point(93, 306)
         Me.cmd_eliminar.Name = "cmd_eliminar"
         Me.cmd_eliminar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_eliminar.TabIndex = 12
+        Me.cmd_eliminar.TabIndex = 3
         Me.cmd_eliminar.Text = "Eliminar"
         Me.cmd_eliminar.UseVisualStyleBackColor = True
         '
@@ -75,7 +75,7 @@ Partial Class frm_ProfesorXEspecialidad
         Me.cmd_nuevo.Location = New System.Drawing.Point(12, 306)
         Me.cmd_nuevo.Name = "cmd_nuevo"
         Me.cmd_nuevo.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_nuevo.TabIndex = 11
+        Me.cmd_nuevo.TabIndex = 2
         Me.cmd_nuevo.Text = "Nuevo"
         Me.cmd_nuevo.UseVisualStyleBackColor = True
         '
@@ -117,7 +117,7 @@ Partial Class frm_ProfesorXEspecialidad
         Me.cmb_especialidad.Location = New System.Drawing.Point(115, 48)
         Me.cmb_especialidad.Name = "cmb_especialidad"
         Me.cmb_especialidad.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_especialidad.TabIndex = 4
+        Me.cmb_especialidad.TabIndex = 1
         Me.cmb_especialidad.ValueMember = "CodEspe"
         '
         'EspecialidadBindingSource
@@ -139,7 +139,7 @@ Partial Class frm_ProfesorXEspecialidad
         Me.cmb_profesor.Location = New System.Drawing.Point(115, 13)
         Me.cmb_profesor.Name = "cmb_profesor"
         Me.cmb_profesor.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_profesor.TabIndex = 5
+        Me.cmb_profesor.TabIndex = 0
         Me.cmb_profesor.ValueMember = "CodProf"
         '
         'ProfesoresBindingSource

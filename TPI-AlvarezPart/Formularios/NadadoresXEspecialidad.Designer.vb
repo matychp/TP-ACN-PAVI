@@ -81,7 +81,7 @@ Partial Class frm_NadadoresXEspecialidad
         Me.cmb_especialidad.Location = New System.Drawing.Point(116, 53)
         Me.cmb_especialidad.Name = "cmb_especialidad"
         Me.cmb_especialidad.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_especialidad.TabIndex = 0
+        Me.cmb_especialidad.TabIndex = 1
         Me.cmb_especialidad.ValueMember = "CodEspe"
         '
         'EspecialidadBindingSource
@@ -98,7 +98,7 @@ Partial Class frm_NadadoresXEspecialidad
         Me.grd_DGVNadxEspe.Name = "grd_DGVNadxEspe"
         Me.grd_DGVNadxEspe.ReadOnly = True
         Me.grd_DGVNadxEspe.Size = New System.Drawing.Size(358, 196)
-        Me.grd_DGVNadxEspe.TabIndex = 1
+        Me.grd_DGVNadxEspe.TabIndex = 2
         '
         'NadaXEspeBindingSource
         '
@@ -154,7 +154,7 @@ Partial Class frm_NadadoresXEspecialidad
         Me.cmd_eliminar.Location = New System.Drawing.Point(94, 318)
         Me.cmd_eliminar.Name = "cmd_eliminar"
         Me.cmd_eliminar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_eliminar.TabIndex = 3
+        Me.cmd_eliminar.TabIndex = 4
         Me.cmd_eliminar.Text = "Eliminar"
         Me.cmd_eliminar.UseVisualStyleBackColor = True
         '
@@ -163,7 +163,7 @@ Partial Class frm_NadadoresXEspecialidad
         Me.cmd_guardar.Location = New System.Drawing.Point(215, 318)
         Me.cmd_guardar.Name = "cmd_guardar"
         Me.cmd_guardar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_guardar.TabIndex = 3
+        Me.cmd_guardar.TabIndex = 5
         Me.cmd_guardar.Text = "Guardar"
         Me.cmd_guardar.UseVisualStyleBackColor = True
         '
@@ -172,7 +172,7 @@ Partial Class frm_NadadoresXEspecialidad
         Me.cmd_cancelar.Location = New System.Drawing.Point(296, 317)
         Me.cmd_cancelar.Name = "cmd_cancelar"
         Me.cmd_cancelar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_cancelar.TabIndex = 3
+        Me.cmd_cancelar.TabIndex = 6
         Me.cmd_cancelar.Text = "Cancelar"
         Me.cmd_cancelar.UseVisualStyleBackColor = True
         '
