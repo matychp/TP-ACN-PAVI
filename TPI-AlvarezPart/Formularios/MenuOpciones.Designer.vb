@@ -22,6 +22,7 @@ Partial Class MenuOpciones
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MenuOpciones))
         Me.cmd_profesores = New System.Windows.Forms.Button()
         Me.cmd_abm = New System.Windows.Forms.Button()
         Me.cmd_clubafiliado = New System.Windows.Forms.Button()
@@ -46,80 +47,109 @@ Partial Class MenuOpciones
         '
         'cmd_profesores
         '
-        Me.cmd_profesores.Location = New System.Drawing.Point(119, 146)
+        Me.cmd_profesores.BackColor = System.Drawing.Color.White
+        Me.cmd_profesores.BackgroundImage = CType(resources.GetObject("cmd_profesores.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_profesores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_profesores.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_profesores.Location = New System.Drawing.Point(9, 218)
         Me.cmd_profesores.Name = "cmd_profesores"
-        Me.cmd_profesores.Size = New System.Drawing.Size(102, 46)
+        Me.cmd_profesores.Size = New System.Drawing.Size(100, 32)
         Me.cmd_profesores.TabIndex = 1
         Me.cmd_profesores.Text = "Profesores"
-        Me.cmd_profesores.UseVisualStyleBackColor = True
+        Me.cmd_profesores.UseVisualStyleBackColor = False
         '
         'cmd_abm
         '
         Me.cmd_abm.BackColor = System.Drawing.Color.White
-        Me.cmd_abm.BackgroundImage = Global.TPI_PAVI.My.Resources.Resources.flechitaVerde
+        Me.cmd_abm.BackgroundImage = CType(resources.GetObject("cmd_abm.BackgroundImage"), System.Drawing.Image)
         Me.cmd_abm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_abm.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmd_abm.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmd_abm.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmd_abm.Location = New System.Drawing.Point(12, 146)
+        Me.cmd_abm.Location = New System.Drawing.Point(9, 146)
         Me.cmd_abm.Name = "cmd_abm"
-        Me.cmd_abm.Size = New System.Drawing.Size(100, 100)
+        Me.cmd_abm.Size = New System.Drawing.Size(100, 65)
         Me.cmd_abm.TabIndex = 0
         Me.cmd_abm.Text = "Altas, Bajas, Modificaciones"
         Me.cmd_abm.UseVisualStyleBackColor = False
         '
         'cmd_clubafiliado
         '
-        Me.cmd_clubafiliado.Location = New System.Drawing.Point(227, 146)
+        Me.cmd_clubafiliado.BackColor = System.Drawing.Color.White
+        Me.cmd_clubafiliado.BackgroundImage = CType(resources.GetObject("cmd_clubafiliado.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_clubafiliado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_clubafiliado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_clubafiliado.Location = New System.Drawing.Point(9, 354)
         Me.cmd_clubafiliado.Name = "cmd_clubafiliado"
-        Me.cmd_clubafiliado.Size = New System.Drawing.Size(102, 46)
+        Me.cmd_clubafiliado.Size = New System.Drawing.Size(100, 32)
         Me.cmd_clubafiliado.TabIndex = 2
         Me.cmd_clubafiliado.Text = "Club Afiliado"
-        Me.cmd_clubafiliado.UseVisualStyleBackColor = True
+        Me.cmd_clubafiliado.UseVisualStyleBackColor = False
         '
         'cmd_nadadores
         '
-        Me.cmd_nadadores.Location = New System.Drawing.Point(334, 145)
+        Me.cmd_nadadores.BackColor = System.Drawing.Color.White
+        Me.cmd_nadadores.BackgroundImage = CType(resources.GetObject("cmd_nadadores.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_nadadores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_nadadores.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_nadadores.Location = New System.Drawing.Point(9, 321)
         Me.cmd_nadadores.Name = "cmd_nadadores"
-        Me.cmd_nadadores.Size = New System.Drawing.Size(102, 46)
+        Me.cmd_nadadores.Size = New System.Drawing.Size(100, 32)
         Me.cmd_nadadores.TabIndex = 3
         Me.cmd_nadadores.Text = "Nadadores"
-        Me.cmd_nadadores.UseVisualStyleBackColor = True
+        Me.cmd_nadadores.UseVisualStyleBackColor = False
         '
         'cmd_especialidades
         '
-        Me.cmd_especialidades.Location = New System.Drawing.Point(442, 146)
+        Me.cmd_especialidades.BackColor = System.Drawing.Color.White
+        Me.cmd_especialidades.BackgroundImage = CType(resources.GetObject("cmd_especialidades.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_especialidades.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_especialidades.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_especialidades.Location = New System.Drawing.Point(9, 387)
         Me.cmd_especialidades.Name = "cmd_especialidades"
-        Me.cmd_especialidades.Size = New System.Drawing.Size(102, 46)
+        Me.cmd_especialidades.Size = New System.Drawing.Size(100, 32)
         Me.cmd_especialidades.TabIndex = 4
         Me.cmd_especialidades.Text = "Especialidades"
-        Me.cmd_especialidades.UseVisualStyleBackColor = True
+        Me.cmd_especialidades.UseVisualStyleBackColor = False
         '
         'cmd_torneos
         '
-        Me.cmd_torneos.Location = New System.Drawing.Point(118, 198)
+        Me.cmd_torneos.BackColor = System.Drawing.Color.White
+        Me.cmd_torneos.BackgroundImage = CType(resources.GetObject("cmd_torneos.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_torneos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_torneos.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_torneos.Location = New System.Drawing.Point(9, 251)
         Me.cmd_torneos.Name = "cmd_torneos"
-        Me.cmd_torneos.Size = New System.Drawing.Size(102, 46)
+        Me.cmd_torneos.Size = New System.Drawing.Size(100, 32)
         Me.cmd_torneos.TabIndex = 5
         Me.cmd_torneos.Text = "Torneos"
-        Me.cmd_torneos.UseVisualStyleBackColor = True
+        Me.cmd_torneos.UseVisualStyleBackColor = False
         '
         'cmd_codpostal
         '
-        Me.cmd_codpostal.Location = New System.Drawing.Point(334, 197)
+        Me.cmd_codpostal.BackColor = System.Drawing.Color.White
+        Me.cmd_codpostal.BackgroundImage = CType(resources.GetObject("cmd_codpostal.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_codpostal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_codpostal.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_codpostal.Location = New System.Drawing.Point(9, 289)
         Me.cmd_codpostal.Name = "cmd_codpostal"
-        Me.cmd_codpostal.Size = New System.Drawing.Size(102, 46)
+        Me.cmd_codpostal.Size = New System.Drawing.Size(100, 32)
         Me.cmd_codpostal.TabIndex = 7
         Me.cmd_codpostal.Text = "Codigo Postal"
-        Me.cmd_codpostal.UseVisualStyleBackColor = True
+        Me.cmd_codpostal.UseVisualStyleBackColor = False
         '
         'cmd_tipodocumento
         '
-        Me.cmd_tipodocumento.Location = New System.Drawing.Point(226, 198)
+        Me.cmd_tipodocumento.BackColor = System.Drawing.Color.White
+        Me.cmd_tipodocumento.BackgroundImage = CType(resources.GetObject("cmd_tipodocumento.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_tipodocumento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_tipodocumento.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_tipodocumento.Location = New System.Drawing.Point(9, 422)
         Me.cmd_tipodocumento.Name = "cmd_tipodocumento"
-        Me.cmd_tipodocumento.Size = New System.Drawing.Size(102, 46)
+        Me.cmd_tipodocumento.Size = New System.Drawing.Size(100, 40)
         Me.cmd_tipodocumento.TabIndex = 6
         Me.cmd_tipodocumento.Text = "Tipos de Documentos"
-        Me.cmd_tipodocumento.UseVisualStyleBackColor = True
+        Me.cmd_tipodocumento.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -127,20 +157,21 @@ Partial Class MenuOpciones
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ImageAlign = System.Drawing.ContentAlignment.TopRight
         Me.Label1.Location = New System.Drawing.Point(5, 9)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(3)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(453, 130)
+        Me.Label1.Size = New System.Drawing.Size(524, 130)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Asociación Cordobesa " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Natación"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PictureBox1
         '
-        Me.PictureBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.PictureBox1.BackColor = System.Drawing.Color.White
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PictureBox1.Image = Global.TPI_PAVI.My.Resources.Resources.ico_n_natacion
-        Me.PictureBox1.Location = New System.Drawing.Point(464, 9)
+        Me.PictureBox1.Location = New System.Drawing.Point(536, 9)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(139, 131)
+        Me.PictureBox1.Size = New System.Drawing.Size(135, 131)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
@@ -148,12 +179,13 @@ Partial Class MenuOpciones
         'cmd_procesos
         '
         Me.cmd_procesos.BackColor = System.Drawing.Color.White
-        Me.cmd_procesos.BackgroundImage = Global.TPI_PAVI.My.Resources.Resources.flechitaVerde
+        Me.cmd_procesos.BackgroundImage = CType(resources.GetObject("cmd_procesos.BackgroundImage"), System.Drawing.Image)
         Me.cmd_procesos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_procesos.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmd_procesos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmd_procesos.Location = New System.Drawing.Point(12, 266)
+        Me.cmd_procesos.Location = New System.Drawing.Point(200, 146)
         Me.cmd_procesos.Name = "cmd_procesos"
-        Me.cmd_procesos.Size = New System.Drawing.Size(100, 100)
+        Me.cmd_procesos.Size = New System.Drawing.Size(100, 65)
         Me.cmd_procesos.TabIndex = 8
         Me.cmd_procesos.Text = "Procesos"
         Me.cmd_procesos.UseVisualStyleBackColor = False
@@ -161,12 +193,13 @@ Partial Class MenuOpciones
         'cmd_listconsultas
         '
         Me.cmd_listconsultas.BackColor = System.Drawing.Color.White
-        Me.cmd_listconsultas.BackgroundImage = Global.TPI_PAVI.My.Resources.Resources.flechitaVerde
+        Me.cmd_listconsultas.BackgroundImage = CType(resources.GetObject("cmd_listconsultas.BackgroundImage"), System.Drawing.Image)
         Me.cmd_listconsultas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_listconsultas.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmd_listconsultas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmd_listconsultas.Location = New System.Drawing.Point(12, 392)
+        Me.cmd_listconsultas.Location = New System.Drawing.Point(390, 146)
         Me.cmd_listconsultas.Name = "cmd_listconsultas"
-        Me.cmd_listconsultas.Size = New System.Drawing.Size(100, 100)
+        Me.cmd_listconsultas.Size = New System.Drawing.Size(100, 65)
         Me.cmd_listconsultas.TabIndex = 9
         Me.cmd_listconsultas.Text = "Listados/" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Consultas"
         Me.cmd_listconsultas.UseVisualStyleBackColor = False
@@ -174,69 +207,100 @@ Partial Class MenuOpciones
         'cmd_estadisticas
         '
         Me.cmd_estadisticas.BackColor = System.Drawing.Color.White
-        Me.cmd_estadisticas.BackgroundImage = Global.TPI_PAVI.My.Resources.Resources.flechitaVerde
+        Me.cmd_estadisticas.BackgroundImage = CType(resources.GetObject("cmd_estadisticas.BackgroundImage"), System.Drawing.Image)
         Me.cmd_estadisticas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_estadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmd_estadisticas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmd_estadisticas.Location = New System.Drawing.Point(12, 514)
+        Me.cmd_estadisticas.Location = New System.Drawing.Point(569, 146)
         Me.cmd_estadisticas.Name = "cmd_estadisticas"
-        Me.cmd_estadisticas.Size = New System.Drawing.Size(100, 100)
+        Me.cmd_estadisticas.Size = New System.Drawing.Size(100, 65)
         Me.cmd_estadisticas.TabIndex = 10
         Me.cmd_estadisticas.Text = "Estadísticas"
         Me.cmd_estadisticas.UseVisualStyleBackColor = False
         '
         'cmd_nadXespe
         '
-        Me.cmd_nadXespe.Location = New System.Drawing.Point(119, 266)
+        Me.cmd_nadXespe.BackColor = System.Drawing.Color.White
+        Me.cmd_nadXespe.BackgroundImage = CType(resources.GetObject("cmd_nadXespe.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_nadXespe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_nadXespe.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_nadXespe.Location = New System.Drawing.Point(200, 212)
+        Me.cmd_nadXespe.Margin = New System.Windows.Forms.Padding(1)
         Me.cmd_nadXespe.Name = "cmd_nadXespe"
-        Me.cmd_nadXespe.Size = New System.Drawing.Size(102, 46)
+        Me.cmd_nadXespe.Size = New System.Drawing.Size(100, 40)
         Me.cmd_nadXespe.TabIndex = 11
         Me.cmd_nadXespe.Text = "Nadadores X Especialidad"
-        Me.cmd_nadXespe.UseVisualStyleBackColor = True
+        Me.cmd_nadXespe.UseVisualStyleBackColor = False
         '
         'cmd_profXespe
         '
-        Me.cmd_profXespe.Location = New System.Drawing.Point(227, 266)
+        Me.cmd_profXespe.BackColor = System.Drawing.Color.White
+        Me.cmd_profXespe.BackgroundImage = CType(resources.GetObject("cmd_profXespe.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_profXespe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_profXespe.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_profXespe.Location = New System.Drawing.Point(200, 254)
+        Me.cmd_profXespe.Margin = New System.Windows.Forms.Padding(1)
         Me.cmd_profXespe.Name = "cmd_profXespe"
-        Me.cmd_profXespe.Size = New System.Drawing.Size(102, 46)
+        Me.cmd_profXespe.Size = New System.Drawing.Size(100, 40)
         Me.cmd_profXespe.TabIndex = 11
         Me.cmd_profXespe.Text = "Profesores X Especialidad"
-        Me.cmd_profXespe.UseVisualStyleBackColor = True
+        Me.cmd_profXespe.UseVisualStyleBackColor = False
         '
         'cmd_TorneosXAño
         '
-        Me.cmd_TorneosXAño.Location = New System.Drawing.Point(334, 266)
+        Me.cmd_TorneosXAño.BackColor = System.Drawing.Color.White
+        Me.cmd_TorneosXAño.BackgroundImage = CType(resources.GetObject("cmd_TorneosXAño.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_TorneosXAño.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_TorneosXAño.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_TorneosXAño.Location = New System.Drawing.Point(200, 338)
+        Me.cmd_TorneosXAño.Margin = New System.Windows.Forms.Padding(1)
         Me.cmd_TorneosXAño.Name = "cmd_TorneosXAño"
-        Me.cmd_TorneosXAño.Size = New System.Drawing.Size(102, 45)
+        Me.cmd_TorneosXAño.Size = New System.Drawing.Size(100, 40)
         Me.cmd_TorneosXAño.TabIndex = 12
         Me.cmd_TorneosXAño.Text = "Torneos X Año"
-        Me.cmd_TorneosXAño.UseVisualStyleBackColor = True
+        Me.cmd_TorneosXAño.UseVisualStyleBackColor = False
         '
         'cmd_Inscriptos
         '
-        Me.cmd_Inscriptos.Location = New System.Drawing.Point(442, 266)
+        Me.cmd_Inscriptos.BackColor = System.Drawing.Color.White
+        Me.cmd_Inscriptos.BackgroundImage = CType(resources.GetObject("cmd_Inscriptos.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_Inscriptos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_Inscriptos.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_Inscriptos.Location = New System.Drawing.Point(200, 422)
+        Me.cmd_Inscriptos.Margin = New System.Windows.Forms.Padding(1)
         Me.cmd_Inscriptos.Name = "cmd_Inscriptos"
-        Me.cmd_Inscriptos.Size = New System.Drawing.Size(101, 46)
+        Me.cmd_Inscriptos.Size = New System.Drawing.Size(100, 40)
         Me.cmd_Inscriptos.TabIndex = 13
         Me.cmd_Inscriptos.Text = "Inscriptos"
-        Me.cmd_Inscriptos.UseVisualStyleBackColor = True
+        Me.cmd_Inscriptos.UseVisualStyleBackColor = False
         '
         'cmd_ProfXClub
         '
-        Me.cmd_ProfXClub.Location = New System.Drawing.Point(119, 319)
+        Me.cmd_ProfXClub.BackColor = System.Drawing.Color.White
+        Me.cmd_ProfXClub.BackgroundImage = CType(resources.GetObject("cmd_ProfXClub.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_ProfXClub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_ProfXClub.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_ProfXClub.Location = New System.Drawing.Point(200, 380)
+        Me.cmd_ProfXClub.Margin = New System.Windows.Forms.Padding(1)
         Me.cmd_ProfXClub.Name = "cmd_ProfXClub"
-        Me.cmd_ProfXClub.Size = New System.Drawing.Size(102, 47)
+        Me.cmd_ProfXClub.Size = New System.Drawing.Size(100, 40)
         Me.cmd_ProfXClub.TabIndex = 14
         Me.cmd_ProfXClub.Text = "Profesor X Club"
-        Me.cmd_ProfXClub.UseVisualStyleBackColor = True
+        Me.cmd_ProfXClub.UseVisualStyleBackColor = False
         '
         'cmd_espeXCompe
         '
-        Me.cmd_espeXCompe.Location = New System.Drawing.Point(227, 319)
+        Me.cmd_espeXCompe.BackColor = System.Drawing.Color.White
+        Me.cmd_espeXCompe.BackgroundImage = CType(resources.GetObject("cmd_espeXCompe.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_espeXCompe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_espeXCompe.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_espeXCompe.Location = New System.Drawing.Point(200, 296)
+        Me.cmd_espeXCompe.Margin = New System.Windows.Forms.Padding(1)
         Me.cmd_espeXCompe.Name = "cmd_espeXCompe"
-        Me.cmd_espeXCompe.Size = New System.Drawing.Size(102, 47)
+        Me.cmd_espeXCompe.Size = New System.Drawing.Size(100, 40)
         Me.cmd_espeXCompe.TabIndex = 15
         Me.cmd_espeXCompe.Text = "Especialidad X Competencia"
-        Me.cmd_espeXCompe.UseVisualStyleBackColor = True
+        Me.cmd_espeXCompe.UseVisualStyleBackColor = False
         '
         'MenuOpciones
         '
@@ -244,7 +308,7 @@ Partial Class MenuOpciones
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.TPI_PAVI.My.Resources.Resources.fondo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(615, 626)
+        Me.ClientSize = New System.Drawing.Size(679, 480)
         Me.Controls.Add(Me.cmd_espeXCompe)
         Me.Controls.Add(Me.cmd_ProfXClub)
         Me.Controls.Add(Me.cmd_Inscriptos)

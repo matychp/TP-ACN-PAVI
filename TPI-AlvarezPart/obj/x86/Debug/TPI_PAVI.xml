@@ -15,6 +15,14 @@ TPI_PAVI
   Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
 </summary>
+</member><member name="P:TPI_PAVI.My.Resources.Resources.Cuadro_150x100">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:TPI_PAVI.My.Resources.Resources.Cuadro_150x50">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
 </member><member name="P:TPI_PAVI.My.Resources.Resources.flechita">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

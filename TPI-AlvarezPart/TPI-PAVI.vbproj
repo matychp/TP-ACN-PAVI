@@ -118,6 +118,12 @@
     <Compile Include="Formularios\Inscriptos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\MenuOpciones.Designer.vb">
+      <DependentUpon>MenuOpciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\MenuOpciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Nadadores.Designer.vb">
       <DependentUpon>Nadadores.vb</DependentUpon>
     </Compile>
@@ -135,12 +141,6 @@
     </Compile>
     <Compile Include="Formularios\Profesores.Designer.vb">
       <DependentUpon>Profesores.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\MenuOpciones.Designer.vb">
-      <DependentUpon>MenuOpciones.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\MenuOpciones.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\ProfesorXClub.Designer.vb">
@@ -216,6 +216,9 @@
     <EmbeddedResource Include="Formularios\Inscriptos.resx">
       <DependentUpon>Inscriptos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\MenuOpciones.resx">
+      <DependentUpon>MenuOpciones.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Nadadores.resx">
       <DependentUpon>Nadadores.vb</DependentUpon>
     </EmbeddedResource>
@@ -224,9 +227,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Profesores.resx">
       <DependentUpon>Profesores.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\MenuOpciones.resx">
-      <DependentUpon>MenuOpciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ProfesorXClub.resx">
       <DependentUpon>ProfesorXClub.vb</DependentUpon>
@@ -314,6 +314,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\flechitaVerde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Background_SplashScreen.png" />
+    <Content Include="Resources\BotonRectangulo.png" />
+    <Content Include="Resources\BotonRectanguloFlecha.png" />
+    <Content Include="Resources\Cuadro_150x100.png" />
+    <None Include="Resources\Cuadro_150x501.png" />
+    <None Include="Resources\Cuadro_150x1001.png" />
+    <Content Include="Resources\Cuadro_150x50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
