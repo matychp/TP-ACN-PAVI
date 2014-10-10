@@ -65,6 +65,7 @@
         cmb_especialidad.Enabled = True
         Me.msk_fecha.Enabled = True
         grd_DGVTorneosxAño.Enabled = True
+        Me.cmb_especialidad.Focus()
 
         Me.accion = estado.insertar
     End Sub
@@ -87,6 +88,8 @@
         code = tabla.Rows(0)("CodEspe")
         Year = tabla.Rows(0)("Año")
 
+        msk_fecha.Text = grd_DGVEspecialidadXCompetencia.CurrentRow.Cells("Fecha").Value
+        msk_fecha.Enabled = True
         Me.cmd_cancelar.Enabled = True
         Me.cmd_guardar.Enabled = True
         Me.cmd_nuevo.Enabled = False
@@ -114,9 +117,9 @@
         If MessageBox.Show("¿Está seguro que desea borrar ese registro?", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
             Dim txt_sql As String
             Dim tabla As Data.DataTable
-            Dim torneo As String = Me.grd_DGVTorneosxAño.CurrentRow.Cells("Torneo").Value
-            Dim anio As String = Me.grd_DGVTorneosxAño.CurrentRow.Cells("Año").Value
-            Dim especialidad As String = Me.grd_DGVTorneosxAño.CurrentRow.Cells("Especialidad").Value
+            Dim torneo As String = Me.grd_DGVEspecialidadXCompetencia.CurrentRow.Cells("Torneo").Value
+            Dim anio As String = Me.grd_DGVEspecialidadXCompetencia.CurrentRow.Cells("Año").Value
+            Dim especialidad As String = Me.grd_DGVEspecialidadXCompetencia.CurrentRow.Cells("Especialidad").Value
 
             txt_sql = "SELECT EspecXCompet.* "
             txt_sql &= "FROM TorneosXAño INNER JOIN"

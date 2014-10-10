@@ -57,11 +57,12 @@ Partial Class frm_EspecialidadXCompetencia
         '
         Me.cmb_especialidad.DataSource = Me.EspecialidadBindingSource
         Me.cmb_especialidad.DisplayMember = "Descripcion"
+        Me.cmb_especialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_especialidad.FormattingEnabled = True
         Me.cmb_especialidad.Location = New System.Drawing.Point(87, 13)
         Me.cmb_especialidad.Name = "cmb_especialidad"
         Me.cmb_especialidad.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_especialidad.TabIndex = 1
+        Me.cmb_especialidad.TabIndex = 0
         Me.cmb_especialidad.ValueMember = "CodEspe"
         '
         'EspecialidadBindingSource
@@ -79,16 +80,16 @@ Partial Class frm_EspecialidadXCompetencia
         Me.grd_DGVTorneosxAño.AllowUserToAddRows = False
         Me.grd_DGVTorneosxAño.AllowUserToDeleteRows = False
         Me.grd_DGVTorneosxAño.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grd_DGVTorneosxAño.Location = New System.Drawing.Point(87, 41)
+        Me.grd_DGVTorneosxAño.Location = New System.Drawing.Point(17, 66)
         Me.grd_DGVTorneosxAño.Name = "grd_DGVTorneosxAño"
         Me.grd_DGVTorneosxAño.ReadOnly = True
-        Me.grd_DGVTorneosxAño.Size = New System.Drawing.Size(193, 107)
+        Me.grd_DGVTorneosxAño.Size = New System.Drawing.Size(490, 107)
         Me.grd_DGVTorneosxAño.TabIndex = 2
         '
         'txt_torneo
         '
         Me.txt_torneo.AutoSize = True
-        Me.txt_torneo.Location = New System.Drawing.Point(14, 41)
+        Me.txt_torneo.Location = New System.Drawing.Point(14, 50)
         Me.txt_torneo.Name = "txt_torneo"
         Me.txt_torneo.Size = New System.Drawing.Size(69, 13)
         Me.txt_torneo.TabIndex = 3
@@ -108,7 +109,7 @@ Partial Class frm_EspecialidadXCompetencia
         Me.cmd_eliminar.Location = New System.Drawing.Point(98, 381)
         Me.cmd_eliminar.Name = "cmd_eliminar"
         Me.cmd_eliminar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_eliminar.TabIndex = 4
+        Me.cmd_eliminar.TabIndex = 5
         Me.cmd_eliminar.Text = "Eliminar"
         Me.cmd_eliminar.UseVisualStyleBackColor = True
         '
@@ -117,7 +118,7 @@ Partial Class frm_EspecialidadXCompetencia
         Me.cmd_guardar.Location = New System.Drawing.Point(351, 381)
         Me.cmd_guardar.Name = "cmd_guardar"
         Me.cmd_guardar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_guardar.TabIndex = 4
+        Me.cmd_guardar.TabIndex = 6
         Me.cmd_guardar.Text = "Guardar"
         Me.cmd_guardar.UseVisualStyleBackColor = True
         '
@@ -126,7 +127,7 @@ Partial Class frm_EspecialidadXCompetencia
         Me.cmd_cancelar.Location = New System.Drawing.Point(432, 381)
         Me.cmd_cancelar.Name = "cmd_cancelar"
         Me.cmd_cancelar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_cancelar.TabIndex = 4
+        Me.cmd_cancelar.TabIndex = 7
         Me.cmd_cancelar.Text = "Cancelar"
         Me.cmd_cancelar.UseVisualStyleBackColor = True
         '
@@ -139,12 +140,12 @@ Partial Class frm_EspecialidadXCompetencia
         Me.grd_DGVEspecialidadXCompetencia.Name = "grd_DGVEspecialidadXCompetencia"
         Me.grd_DGVEspecialidadXCompetencia.ReadOnly = True
         Me.grd_DGVEspecialidadXCompetencia.Size = New System.Drawing.Size(490, 150)
-        Me.grd_DGVEspecialidadXCompetencia.TabIndex = 2
+        Me.grd_DGVEspecialidadXCompetencia.TabIndex = 3
         '
         'txt_especialdiadXCompetencia
         '
         Me.txt_especialdiadXCompetencia.AutoSize = True
-        Me.txt_especialdiadXCompetencia.Location = New System.Drawing.Point(17, 180)
+        Me.txt_especialdiadXCompetencia.Location = New System.Drawing.Point(14, 198)
         Me.txt_especialdiadXCompetencia.Name = "txt_especialdiadXCompetencia"
         Me.txt_especialdiadXCompetencia.Size = New System.Drawing.Size(150, 13)
         Me.txt_especialdiadXCompetencia.TabIndex = 5
@@ -153,7 +154,7 @@ Partial Class frm_EspecialidadXCompetencia
         'txt_fecha
         '
         Me.txt_fecha.AutoSize = True
-        Me.txt_fecha.Location = New System.Drawing.Point(316, 40)
+        Me.txt_fecha.Location = New System.Drawing.Point(230, 17)
         Me.txt_fecha.Name = "txt_fecha"
         Me.txt_fecha.Size = New System.Drawing.Size(37, 13)
         Me.txt_fecha.TabIndex = 6
@@ -161,11 +162,11 @@ Partial Class frm_EspecialidadXCompetencia
         '
         'msk_fecha
         '
-        Me.msk_fecha.Location = New System.Drawing.Point(359, 37)
+        Me.msk_fecha.Location = New System.Drawing.Point(273, 14)
         Me.msk_fecha.Mask = "00/00/0000"
         Me.msk_fecha.Name = "msk_fecha"
         Me.msk_fecha.Size = New System.Drawing.Size(67, 20)
-        Me.msk_fecha.TabIndex = 7
+        Me.msk_fecha.TabIndex = 1
         Me.msk_fecha.ValidatingType = GetType(Date)
         '
         'EspecialidadTableAdapter
@@ -190,6 +191,7 @@ Partial Class frm_EspecialidadXCompetencia
         Me.Controls.Add(Me.cmb_especialidad)
         Me.Controls.Add(Me.txt_especialidad)
         Me.Name = "frm_EspecialidadXCompetencia"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "EspecialidadXCompetencia"
         CType(Me.EspecialidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()

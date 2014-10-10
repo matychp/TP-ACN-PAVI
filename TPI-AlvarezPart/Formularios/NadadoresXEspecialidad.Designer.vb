@@ -205,6 +205,7 @@ Partial Class frm_NadadoresXEspecialidad
         Me.Controls.Add(Me.cmb_nadador)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frm_NadadoresXEspecialidad"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "NadadoresXEspecialidad"
         CType(Me.NadadoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()

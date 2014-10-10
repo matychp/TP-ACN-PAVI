@@ -55,8 +55,8 @@ Partial Class frm_Inscriptos
         Me.grd_dgvInscriptos.Location = New System.Drawing.Point(16, 241)
         Me.grd_dgvInscriptos.Name = "grd_dgvInscriptos"
         Me.grd_dgvInscriptos.ReadOnly = True
-        Me.grd_dgvInscriptos.Size = New System.Drawing.Size(703, 182)
-        Me.grd_dgvInscriptos.TabIndex = 0
+        Me.grd_dgvInscriptos.Size = New System.Drawing.Size(615, 182)
+        Me.grd_dgvInscriptos.TabIndex = 4
         '
         'TPIPAVIDataSet
         '
@@ -75,7 +75,7 @@ Partial Class frm_Inscriptos
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(13, 9)
+        Me.Label1.Location = New System.Drawing.Point(13, 37)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(73, 13)
         Me.Label1.TabIndex = 2
@@ -86,27 +86,27 @@ Partial Class frm_Inscriptos
         Me.grd_DGVTorneosxAño.AllowUserToAddRows = False
         Me.grd_DGVTorneosxAño.AllowUserToDeleteRows = False
         Me.grd_DGVTorneosxAño.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grd_DGVTorneosxAño.Location = New System.Drawing.Point(54, 25)
+        Me.grd_DGVTorneosxAño.Location = New System.Drawing.Point(16, 53)
         Me.grd_DGVTorneosxAño.Name = "grd_DGVTorneosxAño"
         Me.grd_DGVTorneosxAño.ReadOnly = True
-        Me.grd_DGVTorneosxAño.Size = New System.Drawing.Size(240, 150)
-        Me.grd_DGVTorneosxAño.TabIndex = 3
+        Me.grd_DGVTorneosxAño.Size = New System.Drawing.Size(295, 150)
+        Me.grd_DGVTorneosxAño.TabIndex = 2
         '
         'grd_DGVNadxEspe
         '
         Me.grd_DGVNadxEspe.AllowUserToAddRows = False
         Me.grd_DGVNadxEspe.AllowUserToDeleteRows = False
         Me.grd_DGVNadxEspe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grd_DGVNadxEspe.Location = New System.Drawing.Point(472, 25)
+        Me.grd_DGVNadxEspe.Location = New System.Drawing.Point(317, 53)
         Me.grd_DGVNadxEspe.Name = "grd_DGVNadxEspe"
         Me.grd_DGVNadxEspe.ReadOnly = True
-        Me.grd_DGVNadxEspe.Size = New System.Drawing.Size(240, 150)
-        Me.grd_DGVNadxEspe.TabIndex = 4
+        Me.grd_DGVNadxEspe.Size = New System.Drawing.Size(311, 150)
+        Me.grd_DGVNadxEspe.TabIndex = 3
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(398, 9)
+        Me.Label2.Location = New System.Drawing.Point(314, 37)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(132, 13)
         Me.Label2.TabIndex = 5
@@ -114,16 +114,16 @@ Partial Class frm_Inscriptos
         '
         'msk_tiempo
         '
-        Me.msk_tiempo.Location = New System.Drawing.Point(475, 190)
+        Me.msk_tiempo.Location = New System.Drawing.Point(170, 5)
         Me.msk_tiempo.Mask = "99:99.99"
         Me.msk_tiempo.Name = "msk_tiempo"
         Me.msk_tiempo.Size = New System.Drawing.Size(50, 20)
-        Me.msk_tiempo.TabIndex = 7
+        Me.msk_tiempo.TabIndex = 1
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(427, 193)
+        Me.Label3.Location = New System.Drawing.Point(122, 8)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(42, 13)
         Me.Label3.TabIndex = 5
@@ -132,7 +132,7 @@ Partial Class frm_Inscriptos
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(51, 190)
+        Me.Label4.Location = New System.Drawing.Point(13, 9)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(47, 13)
         Me.Label4.TabIndex = 5
@@ -140,11 +140,11 @@ Partial Class frm_Inscriptos
         '
         'msk_posicion
         '
-        Me.msk_posicion.Location = New System.Drawing.Point(105, 186)
+        Me.msk_posicion.Location = New System.Drawing.Point(67, 5)
         Me.msk_posicion.Mask = "999"
         Me.msk_posicion.Name = "msk_posicion"
         Me.msk_posicion.Size = New System.Drawing.Size(26, 20)
-        Me.msk_posicion.TabIndex = 8
+        Me.msk_posicion.TabIndex = 0
         '
         'Label5
         '
@@ -160,7 +160,7 @@ Partial Class frm_Inscriptos
         Me.cmd_nuevo.Location = New System.Drawing.Point(16, 432)
         Me.cmd_nuevo.Name = "cmd_nuevo"
         Me.cmd_nuevo.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_nuevo.TabIndex = 9
+        Me.cmd_nuevo.TabIndex = 5
         Me.cmd_nuevo.Text = "Nuevo"
         Me.cmd_nuevo.UseVisualStyleBackColor = True
         '
@@ -169,25 +169,25 @@ Partial Class frm_Inscriptos
         Me.cmd_eliminar.Location = New System.Drawing.Point(105, 432)
         Me.cmd_eliminar.Name = "cmd_eliminar"
         Me.cmd_eliminar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_eliminar.TabIndex = 9
+        Me.cmd_eliminar.TabIndex = 6
         Me.cmd_eliminar.Text = "Eliminar"
         Me.cmd_eliminar.UseVisualStyleBackColor = True
         '
         'cmd_guardar
         '
-        Me.cmd_guardar.Location = New System.Drawing.Point(556, 432)
+        Me.cmd_guardar.Location = New System.Drawing.Point(475, 432)
         Me.cmd_guardar.Name = "cmd_guardar"
         Me.cmd_guardar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_guardar.TabIndex = 9
+        Me.cmd_guardar.TabIndex = 7
         Me.cmd_guardar.Text = "Guardar"
         Me.cmd_guardar.UseVisualStyleBackColor = True
         '
         'cmd_cancelar
         '
-        Me.cmd_cancelar.Location = New System.Drawing.Point(637, 432)
+        Me.cmd_cancelar.Location = New System.Drawing.Point(556, 432)
         Me.cmd_cancelar.Name = "cmd_cancelar"
         Me.cmd_cancelar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_cancelar.TabIndex = 9
+        Me.cmd_cancelar.TabIndex = 8
         Me.cmd_cancelar.Text = "Cancelar"
         Me.cmd_cancelar.UseVisualStyleBackColor = True
         '
@@ -195,7 +195,7 @@ Partial Class frm_Inscriptos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(731, 467)
+        Me.ClientSize = New System.Drawing.Size(649, 467)
         Me.Controls.Add(Me.cmd_cancelar)
         Me.Controls.Add(Me.cmd_guardar)
         Me.Controls.Add(Me.cmd_eliminar)
@@ -211,6 +211,7 @@ Partial Class frm_Inscriptos
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.grd_dgvInscriptos)
         Me.Name = "frm_Inscriptos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inscriptos"
         CType(Me.grd_dgvInscriptos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()

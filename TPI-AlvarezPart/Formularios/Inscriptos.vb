@@ -105,10 +105,10 @@
     Private Sub grd_dgvInscriptos_CellContentDoubleClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grd_dgvInscriptos.CellContentDoubleClick
         Dim txt_sql As String
         Dim tabla As Data.DataTable
-        Dim torneo As String = Me.grd_DGVTorneosxAño.CurrentRow.Cells("Torneo").Value
-        Dim anio As String = Me.grd_DGVTorneosxAño.CurrentRow.Cells("Año").Value
-        Dim nadador As String = Me.grd_DGVTorneosxAño.CurrentRow.Cells("Nadador").Value
-        Dim especialidad As String = Me.grd_DGVTorneosxAño.CurrentRow.Cells("Especialidad").Value
+        Dim torneo As String = Me.grd_dgvInscriptos.CurrentRow.Cells("Torneo").Value
+        Dim anio As String = Me.grd_dgvInscriptos.CurrentRow.Cells("Año").Value
+        Dim nadador As String = Me.grd_dgvInscriptos.CurrentRow.Cells("Nadador").Value
+        Dim especialidad As String = Me.grd_dgvInscriptos.CurrentRow.Cells("Especialidad").Value
 
         txt_sql = " SELECT Inscriptos.* "
         txt_sql &= "FROM            Inscriptos INNER JOIN"
@@ -159,10 +159,10 @@
         If MessageBox.Show("¿Está seguro que desea borrar ese registro?", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
             Dim txt_sql As String
             Dim tabla As Data.DataTable
-            Dim torneo As String = Me.grd_DGVTorneosxAño.CurrentRow.Cells("Torneo").Value
-            Dim anio As String = Me.grd_DGVTorneosxAño.CurrentRow.Cells("Año").Value
-            Dim nadador As String = Me.grd_DGVTorneosxAño.CurrentRow.Cells("Nadador").Value
-            Dim especialidad As String = Me.grd_DGVTorneosxAño.CurrentRow.Cells("Especialidad").Value
+            Dim torneo As String = Me.grd_dgvInscriptos.CurrentRow.Cells("Torneo").Value
+            Dim anio As String = Me.grd_dgvInscriptos.CurrentRow.Cells("Año").Value
+            Dim nadador As String = Me.grd_dgvInscriptos.CurrentRow.Cells("Nadador").Value
+            Dim especialidad As String = Me.grd_dgvInscriptos.CurrentRow.Cells("Especialidad").Value
 
             txt_sql = " SELECT Inscriptos.* "
             txt_sql &= "FROM            Inscriptos INNER JOIN"
@@ -181,7 +181,7 @@
 
             Dim txt_del As String = ""
 
-            txt_del = "delete from TorneosXAño where (CodTorneo = '" & codT & "') AND (Año = '" & year & "') AND (CodNad = '" & codN & "') AND (CodEspe = '" & codE & "')"
+            txt_del = "delete from Inscriptos where (CodTorneo = " & codT & ") AND (Año = " & year & ") AND (CodNad = " & codN & ") AND (CodEspe = " & codE & ")"
 
             acceso.ejecutarNonConsulta(txt_del)
 

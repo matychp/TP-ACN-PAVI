@@ -30,9 +30,11 @@ Partial Class frm_ProfesorXClub
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmb_club = New System.Windows.Forms.ComboBox()
-        Me.ClubesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ClubesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.TPIPAVIDataSet = New TPI_PAVI.TPIPAVIDataSet()
+        Me.ClubesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.cmb_profesor = New System.Windows.Forms.ComboBox()
+        Me.ProfesoresBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProfesoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProfXClubBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProfXClubTableAdapter = New TPI_PAVI.TPIPAVIDataSetTableAdapters.ProfXClubTableAdapter()
@@ -42,17 +44,15 @@ Partial Class frm_ProfesorXClub
         Me.grd_DGVProfXClub = New System.Windows.Forms.DataGridView()
         Me.TPIPAVIDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TPIPAVIDataSetBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ProfesoresBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ClubesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.ClubesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClubesBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClubesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProfesoresBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProfesoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProfXClubBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grd_DGVProfXClub, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TPIPAVIDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TPIPAVIDataSetBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProfesoresBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ClubesBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmd_cancelar
@@ -121,15 +121,20 @@ Partial Class frm_ProfesorXClub
         Me.cmb_club.TabIndex = 13
         Me.cmb_club.ValueMember = "CodClub"
         '
-        'ClubesBindingSource
+        'ClubesBindingSource1
         '
-        Me.ClubesBindingSource.DataMember = "Clubes"
-        Me.ClubesBindingSource.DataSource = Me.TPIPAVIDataSet
+        Me.ClubesBindingSource1.DataMember = "Clubes"
+        Me.ClubesBindingSource1.DataSource = Me.TPIPAVIDataSet
         '
         'TPIPAVIDataSet
         '
         Me.TPIPAVIDataSet.DataSetName = "TPIPAVIDataSet"
         Me.TPIPAVIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ClubesBindingSource
+        '
+        Me.ClubesBindingSource.DataMember = "Clubes"
+        Me.ClubesBindingSource.DataSource = Me.TPIPAVIDataSet
         '
         'cmb_profesor
         '
@@ -142,6 +147,11 @@ Partial Class frm_ProfesorXClub
         Me.cmb_profesor.Size = New System.Drawing.Size(121, 21)
         Me.cmb_profesor.TabIndex = 14
         Me.cmb_profesor.ValueMember = "CodProf"
+        '
+        'ProfesoresBindingSource1
+        '
+        Me.ProfesoresBindingSource1.DataMember = "Profesores"
+        Me.ProfesoresBindingSource1.DataSource = Me.TPIPAVIDataSet
         '
         'ProfesoresBindingSource
         '
@@ -204,16 +214,6 @@ Partial Class frm_ProfesorXClub
         Me.TPIPAVIDataSetBindingSource1.DataSource = Me.TPIPAVIDataSet
         Me.TPIPAVIDataSetBindingSource1.Position = 0
         '
-        'ProfesoresBindingSource1
-        '
-        Me.ProfesoresBindingSource1.DataMember = "Profesores"
-        Me.ProfesoresBindingSource1.DataSource = Me.TPIPAVIDataSet
-        '
-        'ClubesBindingSource1
-        '
-        Me.ClubesBindingSource1.DataMember = "Clubes"
-        Me.ClubesBindingSource1.DataSource = Me.TPIPAVIDataSet
-        '
         'frm_ProfesorXClub
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -229,16 +229,17 @@ Partial Class frm_ProfesorXClub
         Me.Controls.Add(Me.cmb_club)
         Me.Controls.Add(Me.cmb_profesor)
         Me.Name = "frm_ProfesorXClub"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ProfesorXClub"
-        CType(Me.ClubesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClubesBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClubesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProfesoresBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProfesoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProfXClubBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grd_DGVProfXClub, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TPIPAVIDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TPIPAVIDataSetBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProfesoresBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ClubesBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

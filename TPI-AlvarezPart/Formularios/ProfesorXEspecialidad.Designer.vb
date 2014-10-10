@@ -170,6 +170,7 @@ Partial Class frm_ProfesorXEspecialidad
         Me.Controls.Add(Me.cmb_especialidad)
         Me.Controls.Add(Me.cmb_profesor)
         Me.Name = "frm_ProfesorXEspecialidad"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ProfesorXEspecialidad"
         CType(Me.grd_DGVProfxEspe, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EspecialidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
