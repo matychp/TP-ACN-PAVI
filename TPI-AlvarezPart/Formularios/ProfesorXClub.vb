@@ -1,4 +1,4 @@
-﻿Public Class ProfesorXClub
+﻿Public Class frm_ProfesorXClub
     Enum estado
         insertar
         modificar
@@ -19,8 +19,7 @@
         Me.ClubesTableAdapter.Fill(Me.TPIPAVIDataSet.Clubes)
         'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.Profesores' Puede moverla o quitarla según sea necesario.
         Me.ProfesoresTableAdapter.Fill(Me.TPIPAVIDataSet.Profesores)
-        'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.ProfXClub' Puede moverla o quitarla según sea necesario.
-        Me.ProfXClubTableAdapter.Fill(Me.TPIPAVIDataSet.ProfXClub)
+
 
         cmb_club.Enabled = False
         cmb_profesor.Enabled = False
@@ -92,7 +91,7 @@
         acceso.ejecutarNonConsulta(cmd)
         Return termino.aprobado
     End Function
-   Private Sub cmd_eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_eliminar.Click
+    Private Sub cmd_eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_eliminar.Click
         If MessageBox.Show("Está seguro que desea borrar ese registro", "Atención", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.OK Then
 
             Dim txt_sql As String
@@ -119,7 +118,7 @@
 
         Dim txt_sql As String = ""
 
-        txt_sql = "SELECT Profesores.Apellido AS 'Profesor', Clubes.Nombre AS 'Nombre' "
+        txt_sql = "SELECT Profesores.Apellido AS 'Profesor', Clubes.Nombre AS 'Club' "
         txt_sql &= "FROM  Clubes INNER JOIN"
         txt_sql &= " ProfXClub ON Clubes.CodClub = ProfXClub.CodClub INNER JOIN Profesores ON ProfXClub.CodProf = Profesores.CodProf "
         grd_DGVProfXClub.DataSource = acceso.ejecutar(txt_sql)
@@ -150,7 +149,7 @@
     End Function
     Private Function validar() As Boolean
         If cmb_club.SelectedIndex < 0 Then
-            MsgBox("Debe seleccionar una Club.", MsgBoxStyle.Critical, "¡Importante!")
+            MsgBox("Debe seleccionar un Club.", MsgBoxStyle.Critical, "¡Importante!")
             Me.cmb_club.Focus()
             Return False
         End If

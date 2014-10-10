@@ -39,6 +39,8 @@ Partial Class MenuOpciones
         Me.cmd_profXespe = New System.Windows.Forms.Button()
         Me.cmd_TorneosXAño = New System.Windows.Forms.Button()
         Me.cmd_Inscriptos = New System.Windows.Forms.Button()
+        Me.cmd_ProfXClub = New System.Windows.Forms.Button()
+        Me.cmd_espeXCompe = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -218,6 +220,24 @@ Partial Class MenuOpciones
         Me.cmd_Inscriptos.Text = "Inscriptos"
         Me.cmd_Inscriptos.UseVisualStyleBackColor = True
         '
+        'cmd_ProfXClub
+        '
+        Me.cmd_ProfXClub.Location = New System.Drawing.Point(119, 319)
+        Me.cmd_ProfXClub.Name = "cmd_ProfXClub"
+        Me.cmd_ProfXClub.Size = New System.Drawing.Size(102, 47)
+        Me.cmd_ProfXClub.TabIndex = 14
+        Me.cmd_ProfXClub.Text = "Profesor X Club"
+        Me.cmd_ProfXClub.UseVisualStyleBackColor = True
+        '
+        'cmd_espeXCompe
+        '
+        Me.cmd_espeXCompe.Location = New System.Drawing.Point(227, 319)
+        Me.cmd_espeXCompe.Name = "cmd_espeXCompe"
+        Me.cmd_espeXCompe.Size = New System.Drawing.Size(102, 47)
+        Me.cmd_espeXCompe.TabIndex = 15
+        Me.cmd_espeXCompe.Text = "Especialidad X Competencia"
+        Me.cmd_espeXCompe.UseVisualStyleBackColor = True
+        '
         'MenuOpciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -225,6 +245,8 @@ Partial Class MenuOpciones
         Me.BackgroundImage = Global.TPI_PAVI.My.Resources.Resources.fondo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(615, 626)
+        Me.Controls.Add(Me.cmd_espeXCompe)
+        Me.Controls.Add(Me.cmd_ProfXClub)
         Me.Controls.Add(Me.cmd_Inscriptos)
         Me.Controls.Add(Me.cmd_TorneosXAño)
         Me.Controls.Add(Me.cmd_clubafiliado)
@@ -268,4 +290,6 @@ Partial Class MenuOpciones
     Friend WithEvents cmd_profXespe As System.Windows.Forms.Button
     Friend WithEvents cmd_TorneosXAño As System.Windows.Forms.Button
     Friend WithEvents cmd_Inscriptos As System.Windows.Forms.Button
+    Friend WithEvents cmd_ProfXClub As System.Windows.Forms.Button
+    Friend WithEvents cmd_espeXCompe As System.Windows.Forms.Button
 End Class

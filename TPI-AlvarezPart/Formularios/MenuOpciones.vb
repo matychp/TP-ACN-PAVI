@@ -12,6 +12,8 @@
         cmd_profXespe.Visible = cambiarBoolean(cmd_profXespe.Visible)
         cmd_TorneosXAño.Visible = cambiarBoolean(cmd_TorneosXAño.Visible)
         cmd_Inscriptos.Visible = cambiarBoolean(cmd_Inscriptos.Visible)
+        cmd_ProfXClub.Visible = cambiarBoolean(cmd_ProfXClub.Visible)
+        cmd_espeXCompe.Visible = cambiarBoolean(cmd_espeXCompe.Visible)
         'Me.cambiarEstadoBotones()
     End Sub
 
@@ -25,6 +27,8 @@
         cmd_profXespe.Visible = cambiarBoolean(cmd_profXespe.Visible)
         cmd_TorneosXAño.Visible = cambiarBoolean(cmd_TorneosXAño.Visible)
         cmd_Inscriptos.Visible = cambiarBoolean(cmd_Inscriptos.Visible)
+        cmd_ProfXClub.Visible = cambiarBoolean(cmd_ProfXClub.Visible)
+        cmd_espeXCompe.Visible = cambiarBoolean(cmd_espeXCompe.Visible)
     End Sub
 
     Private Sub cambiarColorBoton(sender As System.Object, e As System.EventArgs) Handles cmd_abm.Click, cmd_listconsultas.Click, cmd_estadisticas.Click _
@@ -105,5 +109,13 @@
 
     Private Sub cmd_Inscriptos_Click(sender As System.Object, e As System.EventArgs) Handles cmd_Inscriptos.Click
         frm_Inscriptos.ShowDialog()
+    End Sub
+
+    Private Sub cmd_ProfXClub_Click(sender As System.Object, e As System.EventArgs) Handles cmd_ProfXClub.Click
+        frm_ProfesorXClub.ShowDialog()
+    End Sub
+
+    Private Sub cmd_espeXCompe_Click(sender As System.Object, e As System.EventArgs) Handles cmd_espeXCompe.Click
+        frm_EspecialidadXCompetencia.ShowDialog()
     End Sub
 End Class

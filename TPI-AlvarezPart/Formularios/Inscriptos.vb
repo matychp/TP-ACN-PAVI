@@ -239,6 +239,17 @@
             Me.msk_tiempo.Focus()
             Return False
         End If
+        If grd_DGVTorneosxAño.CurrentRow.Cells.Count = 0 Then
+            MsgBox("Debe seleccionar un elemento de la grilla de Torneos.", MsgBoxStyle.Critical, "¡Importante!")
+            Me.grd_DGVTorneosxAño.Focus()
+            Return False
+        End If
+        If grd_DGVNadxEspe.CurrentRow.Cells.Count = 0 Then
+            MsgBox("Debe seleccionar un elemento de la grilla de Nadadores Por Especialidad.", MsgBoxStyle.Critical, "¡Importante!")
+            Me.grd_DGVTorneosxAño.Focus()
+            Return False
+        End If
+
 
         Return True
 

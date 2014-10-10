@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class ProfesorXClub
+Partial Class frm_ProfesorXClub
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -40,10 +40,10 @@ Partial Class ProfesorXClub
         Me.ClubesTableAdapter = New TPI_PAVI.TPIPAVIDataSetTableAdapters.ClubesTableAdapter()
         Me.ProfesoresTableAdapter = New TPI_PAVI.TPIPAVIDataSetTableAdapters.ProfesoresTableAdapter()
         Me.grd_DGVProfXClub = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TPIPAVIDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TPIPAVIDataSetBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ProfesoresBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ClubesBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.ClubesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProfesoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,6 +51,8 @@ Partial Class ProfesorXClub
         CType(Me.grd_DGVProfXClub, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TPIPAVIDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TPIPAVIDataSetBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProfesoresBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClubesBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmd_cancelar
@@ -109,7 +111,7 @@ Partial Class ProfesorXClub
         '
         'cmb_club
         '
-        Me.cmb_club.DataSource = Me.ClubesBindingSource
+        Me.cmb_club.DataSource = Me.ClubesBindingSource1
         Me.cmb_club.DisplayMember = "Nombre"
         Me.cmb_club.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_club.FormattingEnabled = True
@@ -131,7 +133,7 @@ Partial Class ProfesorXClub
         '
         'cmb_profesor
         '
-        Me.cmb_profesor.DataSource = Me.ProfesoresBindingSource
+        Me.cmb_profesor.DataSource = Me.ProfesoresBindingSource1
         Me.cmb_profesor.DisplayMember = "Apellido"
         Me.cmb_profesor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_profesor.FormattingEnabled = True
@@ -184,26 +186,13 @@ Partial Class ProfesorXClub
         'grd_DGVProfXClub
         '
         Me.grd_DGVProfXClub.AllowUserToAddRows = False
-        Me.grd_DGVProfXClub.AutoGenerateColumns = False
+        Me.grd_DGVProfXClub.AllowUserToDeleteRows = False
         Me.grd_DGVProfXClub.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grd_DGVProfXClub.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2})
-        Me.grd_DGVProfXClub.DataSource = Me.ProfXClubBindingSource
         Me.grd_DGVProfXClub.Location = New System.Drawing.Point(12, 90)
         Me.grd_DGVProfXClub.Name = "grd_DGVProfXClub"
+        Me.grd_DGVProfXClub.ReadOnly = True
         Me.grd_DGVProfXClub.Size = New System.Drawing.Size(356, 220)
         Me.grd_DGVProfXClub.TabIndex = 21
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "CodProf"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "CodProf"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "CodClub"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "CodClub"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         '
         'TPIPAVIDataSetBindingSource
         '
@@ -215,7 +204,17 @@ Partial Class ProfesorXClub
         Me.TPIPAVIDataSetBindingSource1.DataSource = Me.TPIPAVIDataSet
         Me.TPIPAVIDataSetBindingSource1.Position = 0
         '
-        'ProfesorXClub
+        'ProfesoresBindingSource1
+        '
+        Me.ProfesoresBindingSource1.DataMember = "Profesores"
+        Me.ProfesoresBindingSource1.DataSource = Me.TPIPAVIDataSet
+        '
+        'ClubesBindingSource1
+        '
+        Me.ClubesBindingSource1.DataMember = "Clubes"
+        Me.ClubesBindingSource1.DataSource = Me.TPIPAVIDataSet
+        '
+        'frm_ProfesorXClub
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -229,7 +228,7 @@ Partial Class ProfesorXClub
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cmb_club)
         Me.Controls.Add(Me.cmb_profesor)
-        Me.Name = "ProfesorXClub"
+        Me.Name = "frm_ProfesorXClub"
         Me.Text = "ProfesorXClub"
         CType(Me.ClubesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()
@@ -238,6 +237,8 @@ Partial Class ProfesorXClub
         CType(Me.grd_DGVProfXClub, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TPIPAVIDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TPIPAVIDataSetBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProfesoresBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClubesBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -256,11 +257,11 @@ Partial Class ProfesorXClub
     Friend WithEvents TableAdapterManager As TPI_PAVI.TPIPAVIDataSetTableAdapters.TableAdapterManager
     Friend WithEvents ProfesoresTableAdapter As TPI_PAVI.TPIPAVIDataSetTableAdapters.ProfesoresTableAdapter
     Friend WithEvents grd_DGVProfXClub As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TPIPAVIDataSetBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents TPIPAVIDataSetBindingSource1 As System.Windows.Forms.BindingSource
     Friend WithEvents ProfesoresBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents ClubesTableAdapter As TPI_PAVI.TPIPAVIDataSetTableAdapters.ClubesTableAdapter
     Friend WithEvents ClubesBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents ClubesBindingSource1 As System.Windows.Forms.BindingSource
+    Friend WithEvents ProfesoresBindingSource1 As System.Windows.Forms.BindingSource
 End Class
