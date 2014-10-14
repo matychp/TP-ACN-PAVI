@@ -30,6 +30,7 @@
     Private Sub resultado(ByVal year As Integer, ByVal especialidad As Integer)
         Dim txt_sql As String
         Dim tabla As Data.DataTable = New Data.DataTable
+        Dim tablaAux As Data.DataTable = New Data.DataTable
         If cmb_especialidad.SelectedIndex < 0 Then
             txt_sql = " Select * "
             txt_sql &= " From EspecXCompet"
@@ -44,11 +45,14 @@
 
         If tabla.Rows.Count = 0 Then
             MessageBox.Show("No se han encontrado coincidencias con la busqueda", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Me.grd_dgvconsultaComXEspe.DataSource = tablaAux
         Else
 
             Me.grd_dgvconsultaComXEspe.DataSource = tabla
         End If
 
+        msk_anio.Text = ""
+        cmb_especialidad.SelectedIndex = -1
     End Sub
 
     Private Function validar() As Boolean
@@ -85,9 +89,7 @@
         End If
     End Sub
 
-    Private Sub cmd_resetcmb_Click(sender As System.Object, e As System.EventArgs) Handles cmd_resetcmb.Click
-        Me.cmb_especialidad.SelectedIndex = -1
-    End Sub
+
 
     Private Sub cmd_help_Click(sender As System.Object, e As System.EventArgs) Handles cmd_help.Click
         Dim mensaje As String

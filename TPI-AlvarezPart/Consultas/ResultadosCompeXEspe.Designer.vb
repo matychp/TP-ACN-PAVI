@@ -35,7 +35,6 @@ Partial Class frm_ResultadosCompeXEspe
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cmd_ejecutarConsultaPerso = New System.Windows.Forms.Button()
         Me.cmd_ejecutarConsulta = New System.Windows.Forms.Button()
-        Me.cmd_resetcmb = New System.Windows.Forms.Button()
         Me.tt_consultaestandar = New System.Windows.Forms.ToolTip(Me.components)
         Me.tt_consultapersonal = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.grd_dgvconsultaComXEspe, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -145,21 +144,11 @@ Partial Class frm_ResultadosCompeXEspe
         Me.cmd_ejecutarConsulta.Text = "Ejecutar Consulta Estándar"
         Me.cmd_ejecutarConsulta.UseVisualStyleBackColor = True
         '
-        'cmd_resetcmb
-        '
-        Me.cmd_resetcmb.Location = New System.Drawing.Point(325, 15)
-        Me.cmd_resetcmb.Name = "cmd_resetcmb"
-        Me.cmd_resetcmb.Size = New System.Drawing.Size(77, 23)
-        Me.cmd_resetcmb.TabIndex = 6
-        Me.cmd_resetcmb.Text = "RESET BOX"
-        Me.cmd_resetcmb.UseVisualStyleBackColor = True
-        '
         'frm_ResultadosCompeXEspe
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(478, 368)
-        Me.Controls.Add(Me.cmd_resetcmb)
         Me.Controls.Add(Me.cmd_ejecutarConsulta)
         Me.Controls.Add(Me.cmd_ejecutarConsultaPerso)
         Me.Controls.Add(Me.cmd_help)
@@ -170,6 +159,7 @@ Partial Class frm_ResultadosCompeXEspe
         Me.Controls.Add(Me.msk_anio)
         Me.Controls.Add(Me.grd_dgvconsultaComXEspe)
         Me.Name = "frm_ResultadosCompeXEspe"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Consulta Competencia por Especialidad"
         CType(Me.grd_dgvconsultaComXEspe, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EspecialidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -190,7 +180,6 @@ Partial Class frm_ResultadosCompeXEspe
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents cmd_ejecutarConsultaPerso As System.Windows.Forms.Button
     Friend WithEvents cmd_ejecutarConsulta As System.Windows.Forms.Button
-    Friend WithEvents cmd_resetcmb As System.Windows.Forms.Button
     Friend WithEvents tt_consultaestandar As System.Windows.Forms.ToolTip
     Friend WithEvents tt_consultapersonal As System.Windows.Forms.ToolTip
 End Class
