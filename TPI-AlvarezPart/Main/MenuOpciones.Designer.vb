@@ -42,6 +42,7 @@ Partial Class MenuOpciones
         Me.cmd_Inscriptos = New System.Windows.Forms.Button()
         Me.cmd_ProfXClub = New System.Windows.Forms.Button()
         Me.cmd_espeXCompe = New System.Windows.Forms.Button()
+        Me.cmd_consultaespeXcompe = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -302,6 +303,20 @@ Partial Class MenuOpciones
         Me.cmd_espeXCompe.Text = "Especialidad X Competencia"
         Me.cmd_espeXCompe.UseVisualStyleBackColor = False
         '
+        'cmd_consultaespeXcompe
+        '
+        Me.cmd_consultaespeXcompe.BackColor = System.Drawing.Color.White
+        Me.cmd_consultaespeXcompe.BackgroundImage = CType(resources.GetObject("cmd_consultaespeXcompe.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_consultaespeXcompe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_consultaespeXcompe.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_consultaespeXcompe.Location = New System.Drawing.Point(390, 212)
+        Me.cmd_consultaespeXcompe.Margin = New System.Windows.Forms.Padding(1)
+        Me.cmd_consultaespeXcompe.Name = "cmd_consultaespeXcompe"
+        Me.cmd_consultaespeXcompe.Size = New System.Drawing.Size(100, 40)
+        Me.cmd_consultaespeXcompe.TabIndex = 15
+        Me.cmd_consultaespeXcompe.Text = "Especialidad X Competencia"
+        Me.cmd_consultaespeXcompe.UseVisualStyleBackColor = False
+        '
         'MenuOpciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -309,6 +324,7 @@ Partial Class MenuOpciones
         Me.BackgroundImage = Global.TPI_PAVI.My.Resources.Resources.fondo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(679, 480)
+        Me.Controls.Add(Me.cmd_consultaespeXcompe)
         Me.Controls.Add(Me.cmd_espeXCompe)
         Me.Controls.Add(Me.cmd_ProfXClub)
         Me.Controls.Add(Me.cmd_Inscriptos)
@@ -356,4 +372,5 @@ Partial Class MenuOpciones
     Friend WithEvents cmd_Inscriptos As System.Windows.Forms.Button
     Friend WithEvents cmd_ProfXClub As System.Windows.Forms.Button
     Friend WithEvents cmd_espeXCompe As System.Windows.Forms.Button
+    Friend WithEvents cmd_consultaespeXcompe As System.Windows.Forms.Button
 End Class

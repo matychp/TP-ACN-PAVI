@@ -118,4 +118,8 @@
     Private Sub cmd_espeXCompe_Click(sender As System.Object, e As System.EventArgs) Handles cmd_espeXCompe.Click
         frm_EspecialidadXCompetencia.ShowDialog()
     End Sub
+
+    Private Sub cmd_consultaEXC_click(sender As System.Object, e As System.EventArgs) Handles cmd_consultaespeXcompe.Click
+        frm_ResultadosCompeXEspe.ShowDialog()
+    End Sub
 End Class

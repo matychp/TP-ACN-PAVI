@@ -116,3 +116,4 @@ C:\Users\Gonzalo\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_
 C:\Users\Gonzalo\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.frm_Inscriptos.resources
 C:\Users\Gonzalo\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.frm_ProfesorXClub.resources
 C:\Users\Gonzalo\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.frm_EspecialidadXCompetencia.resources
+C:\Users\Gonzalo\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.frm_ResultadosCompeXEspe.resources

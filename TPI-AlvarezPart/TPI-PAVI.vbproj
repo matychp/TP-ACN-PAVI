@@ -88,89 +88,95 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\accesoBD.vb" />
-    <Compile Include="Formularios\ClubAfiliado.Designer.vb">
+    <Compile Include="ABM\ClubAfiliado.Designer.vb">
       <DependentUpon>ClubAfiliado.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\ClubAfiliado.vb">
+    <Compile Include="ABM\ClubAfiliado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\CodigosPost.Designer.vb">
+    <Compile Include="ABM\CodigosPost.Designer.vb">
       <DependentUpon>CodigosPost.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\CodigosPost.vb">
+    <Compile Include="ABM\CodigosPost.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\EspecialidadXCompetencia.Designer.vb">
+    <Compile Include="Procesos\EspecialidadXCompetencia.Designer.vb">
       <DependentUpon>EspecialidadXCompetencia.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\EspecialidadXCompetencia.vb">
+    <Compile Include="Procesos\EspecialidadXCompetencia.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Form1.Designer.vb">
+    <Compile Include="ABM\Form1.Designer.vb">
       <DependentUpon>Especialidad.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Especialidad.vb">
+    <Compile Include="ABM\Especialidad.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Inscriptos.Designer.vb">
+    <Compile Include="Procesos\Inscriptos.Designer.vb">
       <DependentUpon>Inscriptos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Inscriptos.vb">
+    <Compile Include="Procesos\Inscriptos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\MenuOpciones.Designer.vb">
+    <Compile Include="Main\MenuOpciones.Designer.vb">
       <DependentUpon>MenuOpciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\MenuOpciones.vb">
+    <Compile Include="Main\MenuOpciones.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Nadadores.Designer.vb">
+    <Compile Include="ABM\Nadadores.Designer.vb">
       <DependentUpon>Nadadores.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Nadadores.vb">
+    <Compile Include="ABM\Nadadores.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\NadadoresXEspecialidad.Designer.vb">
+    <Compile Include="Procesos\NadadoresXEspecialidad.Designer.vb">
       <DependentUpon>NadadoresXEspecialidad.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\NadadoresXEspecialidad.vb">
+    <Compile Include="Procesos\NadadoresXEspecialidad.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Profesores.vb">
+    <Compile Include="ABM\Profesores.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Profesores.Designer.vb">
+    <Compile Include="ABM\Profesores.Designer.vb">
       <DependentUpon>Profesores.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\ProfesorXClub.Designer.vb">
+    <Compile Include="Procesos\ProfesorXClub.Designer.vb">
       <DependentUpon>ProfesorXClub.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\ProfesorXClub.vb">
+    <Compile Include="Procesos\ProfesorXClub.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\ProfesorXEspecialidad.Designer.vb">
+    <Compile Include="Procesos\ProfesorXEspecialidad.Designer.vb">
       <DependentUpon>ProfesorXEspecialidad.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\ProfesorXEspecialidad.vb">
+    <Compile Include="Procesos\ProfesorXEspecialidad.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\TipoDocumento.Designer.vb">
+    <Compile Include="Consultas\ResultadosCompeXEspe.Designer.vb">
+      <DependentUpon>ResultadosCompeXEspe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ResultadosCompeXEspe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM\TipoDocumento.Designer.vb">
       <DependentUpon>TipoDocumento.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\TipoDocumento.vb">
+    <Compile Include="ABM\TipoDocumento.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Torneos.Designer.vb">
+    <Compile Include="ABM\Torneos.Designer.vb">
       <DependentUpon>Torneos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Torneos.vb">
+    <Compile Include="ABM\Torneos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\TorneosXAño.Designer.vb">
+    <Compile Include="Procesos\TorneosXAño.Designer.vb">
       <DependentUpon>TorneosXAño.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\TorneosXAño.vb">
+    <Compile Include="Procesos\TorneosXAño.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -188,10 +194,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Formularios\SplashScreen.Designer.vb">
+    <Compile Include="Main\SplashScreen.Designer.vb">
       <DependentUpon>SplashScreen.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\SplashScreen.vb">
+    <Compile Include="Main\SplashScreen.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TPIPAVIDataSet1.Designer.vb">
@@ -201,46 +207,49 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Formularios\ClubAfiliado.resx">
+    <EmbeddedResource Include="ABM\ClubAfiliado.resx">
       <DependentUpon>ClubAfiliado.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\CodigosPost.resx">
+    <EmbeddedResource Include="ABM\CodigosPost.resx">
       <DependentUpon>CodigosPost.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Especialidad.resx">
+    <EmbeddedResource Include="ABM\Especialidad.resx">
       <DependentUpon>Especialidad.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\EspecialidadXCompetencia.resx">
+    <EmbeddedResource Include="Procesos\EspecialidadXCompetencia.resx">
       <DependentUpon>EspecialidadXCompetencia.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Inscriptos.resx">
+    <EmbeddedResource Include="Procesos\Inscriptos.resx">
       <DependentUpon>Inscriptos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\MenuOpciones.resx">
+    <EmbeddedResource Include="Main\MenuOpciones.resx">
       <DependentUpon>MenuOpciones.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Nadadores.resx">
+    <EmbeddedResource Include="ABM\Nadadores.resx">
       <DependentUpon>Nadadores.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\NadadoresXEspecialidad.resx">
+    <EmbeddedResource Include="Procesos\NadadoresXEspecialidad.resx">
       <DependentUpon>NadadoresXEspecialidad.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Profesores.resx">
+    <EmbeddedResource Include="ABM\Profesores.resx">
       <DependentUpon>Profesores.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\ProfesorXClub.resx">
+    <EmbeddedResource Include="Procesos\ProfesorXClub.resx">
       <DependentUpon>ProfesorXClub.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\ProfesorXEspecialidad.resx">
+    <EmbeddedResource Include="Procesos\ProfesorXEspecialidad.resx">
       <DependentUpon>ProfesorXEspecialidad.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\TipoDocumento.resx">
+    <EmbeddedResource Include="Consultas\ResultadosCompeXEspe.resx">
+      <DependentUpon>ResultadosCompeXEspe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM\TipoDocumento.resx">
       <DependentUpon>TipoDocumento.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Torneos.resx">
+    <EmbeddedResource Include="ABM\Torneos.resx">
       <DependentUpon>Torneos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\TorneosXAño.resx">
+    <EmbeddedResource Include="Procesos\TorneosXAño.resx">
       <DependentUpon>TorneosXAño.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -249,7 +258,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\SplashScreen.resx">
+    <EmbeddedResource Include="Main\SplashScreen.resx">
       <DependentUpon>SplashScreen.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

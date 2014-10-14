@@ -238,6 +238,7 @@
             Dim txt_sql As String = ""
             txt_sql = "delete from Profesores where NroDoc = " & Me.grd_dgvProfesor.CurrentRow.Cells("NroDoc").Value
             acceso.ejecutarNonConsulta(txt_sql)
+            Me.carga_grilla()
         End If
     End Sub
 
