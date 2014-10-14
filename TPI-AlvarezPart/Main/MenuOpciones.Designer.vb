@@ -43,6 +43,7 @@ Partial Class MenuOpciones
         Me.cmd_ProfXClub = New System.Windows.Forms.Button()
         Me.cmd_espeXCompe = New System.Windows.Forms.Button()
         Me.cmd_consultaespeXcompe = New System.Windows.Forms.Button()
+        Me.cmd_ProfesoresClubAl = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -317,6 +318,20 @@ Partial Class MenuOpciones
         Me.cmd_consultaespeXcompe.Text = "Especialidad X Competencia"
         Me.cmd_consultaespeXcompe.UseVisualStyleBackColor = False
         '
+        'cmd_ProfesoresClubAl
+        '
+        Me.cmd_ProfesoresClubAl.BackColor = System.Drawing.Color.White
+        Me.cmd_ProfesoresClubAl.BackgroundImage = CType(resources.GetObject("cmd_ProfesoresClubAl.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_ProfesoresClubAl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_ProfesoresClubAl.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_ProfesoresClubAl.Location = New System.Drawing.Point(390, 254)
+        Me.cmd_ProfesoresClubAl.Margin = New System.Windows.Forms.Padding(1)
+        Me.cmd_ProfesoresClubAl.Name = "cmd_ProfesoresClubAl"
+        Me.cmd_ProfesoresClubAl.Size = New System.Drawing.Size(100, 40)
+        Me.cmd_ProfesoresClubAl.TabIndex = 15
+        Me.cmd_ProfesoresClubAl.Text = "Profesores con Alumnos en Club"
+        Me.cmd_ProfesoresClubAl.UseVisualStyleBackColor = False
+        '
         'MenuOpciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -324,6 +339,7 @@ Partial Class MenuOpciones
         Me.BackgroundImage = Global.TPI_PAVI.My.Resources.Resources.fondo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(679, 480)
+        Me.Controls.Add(Me.cmd_ProfesoresClubAl)
         Me.Controls.Add(Me.cmd_consultaespeXcompe)
         Me.Controls.Add(Me.cmd_espeXCompe)
         Me.Controls.Add(Me.cmd_ProfXClub)
@@ -373,4 +389,5 @@ Partial Class MenuOpciones
     Friend WithEvents cmd_ProfXClub As System.Windows.Forms.Button
     Friend WithEvents cmd_espeXCompe As System.Windows.Forms.Button
     Friend WithEvents cmd_consultaespeXcompe As System.Windows.Forms.Button
+    Friend WithEvents cmd_ProfesoresClubAl As System.Windows.Forms.Button
 End Class

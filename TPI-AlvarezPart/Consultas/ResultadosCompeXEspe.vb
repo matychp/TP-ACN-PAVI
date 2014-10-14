@@ -15,9 +15,11 @@
     Private Sub resultado()
         Dim txt_sql As String
         Dim tabla As Data.DataTable
-        txt_sql = " Select * "
-        txt_sql &= " From EspecXCompet"
-        txt_sql &= " Where EspecXCompet.Año = Year(GETDATE())"
+        txt_sql = " Select TORNEOS.Descrip AS 'Torneo' , Especialidad.Descripcion AS 'Especialidad', EspecXCompet.Año, EspecXCompet.Fecha  "
+        txt_sql &= " From EspecXCompet INNER JOIN Especialidad ON EspecXCompet.CodEspe = Especialidad.CodEspe "
+        txt_sql &= " INNER JOIN TorneosXAño ON EspecXCompet.Año = TorneosXAño.Año AND EspecXCompet.CodTorneo = TorneosXAño.CodTorneo "
+        txt_sql &= " INNER JOIN TORNEOS ON TorneosXAño.CodTorneo = TORNEOS.CodTorneo "
+        txt_sql &= " Where EspecXCompet.Año = Year(GETDATE()) "
         tabla = acceso.ejecutar(txt_sql)
         If tabla.Rows.Count = 0 Then
             MessageBox.Show("No se han encontrado coincidencias con la busqueda", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -32,12 +34,16 @@
         Dim tabla As Data.DataTable = New Data.DataTable
         Dim tablaAux As Data.DataTable = New Data.DataTable
         If cmb_especialidad.SelectedIndex < 0 Then
-            txt_sql = " Select * "
-            txt_sql &= " From EspecXCompet"
+            txt_sql = " Select TORNEOS.Descrip AS 'Torneo' , Especialidad.Descripcion AS 'Especialidad', EspecXCompet.Año, EspecXCompet.Fecha  "
+            txt_sql &= " From EspecXCompet INNER JOIN Especialidad ON EspecXCompet.CodEspe = Especialidad.CodEspe "
+            txt_sql &= " INNER JOIN TorneosXAño ON EspecXCompet.Año = TorneosXAño.Año AND EspecXCompet.CodTorneo = TorneosXAño.CodTorneo "
+            txt_sql &= " INNER JOIN TORNEOS ON TorneosXAño.CodTorneo = TORNEOS.CodTorneo "
             txt_sql &= " Where EspecXCompet.Año = " & year
         Else
-            txt_sql = " Select * "
-            txt_sql &= " From EspecXCompet"
+            txt_sql = " Select TORNEOS.Descrip AS 'Torneo' , Especialidad.Descripcion AS 'Especialidad', EspecXCompet.Año, EspecXCompet.Fecha  "
+            txt_sql &= " From EspecXCompet INNER JOIN Especialidad ON EspecXCompet.CodEspe = Especialidad.CodEspe "
+            txt_sql &= " INNER JOIN TorneosXAño ON EspecXCompet.Año = TorneosXAño.Año AND EspecXCompet.CodTorneo = TorneosXAño.CodTorneo "
+            txt_sql &= " INNER JOIN TORNEOS ON TorneosXAño.CodTorneo = TORNEOS.CodTorneo "
             txt_sql &= " Where EspecXCompet.Año = " & year & " AND EspecXCompet.CodEspe = " & especialidad
         End If
     
@@ -56,9 +62,11 @@
     End Sub
 
     Private Function validar() As Boolean
+        Dim tablaAux As Data.DataTable = New Data.DataTable
         If Me.msk_anio.Text = "" Then
             MessageBox.Show("Debe ingresar el año a consultar para la Consulta Personalizada", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Me.msk_anio.Focus()
+            Me.grd_dgvconsultaComXEspe.DataSource = tablaAux
             Return False
         End If
         Return True

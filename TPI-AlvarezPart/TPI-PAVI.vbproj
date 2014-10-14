@@ -100,6 +100,12 @@
     <Compile Include="ABM\CodigosPost.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Consultas\ProfesoresConAlumnosEnClub.Designer.vb">
+      <DependentUpon>ProfesoresConAlumnosEnClub.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ProfesoresConAlumnosEnClub.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Procesos\EspecialidadXCompetencia.Designer.vb">
       <DependentUpon>EspecialidadXCompetencia.vb</DependentUpon>
     </Compile>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABM\Especialidad.resx">
       <DependentUpon>Especialidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ProfesoresConAlumnosEnClub.resx">
+      <DependentUpon>ProfesoresConAlumnosEnClub.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Procesos\EspecialidadXCompetencia.resx">
       <DependentUpon>EspecialidadXCompetencia.vb</DependentUpon>

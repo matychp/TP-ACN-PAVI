@@ -122,4 +122,8 @@
     Private Sub cmd_consultaEXC_click(sender As System.Object, e As System.EventArgs) Handles cmd_consultaespeXcompe.Click
         frm_ResultadosCompeXEspe.ShowDialog()
     End Sub
+
+    Private Sub cmd_ProfesoresClubAl_Click(sender As System.Object, e As System.EventArgs) Handles cmd_ProfesoresClubAl.Click
+        frm_ProfesoresConAlumnosEnClub.ShowDialog()
+    End Sub
 End Class

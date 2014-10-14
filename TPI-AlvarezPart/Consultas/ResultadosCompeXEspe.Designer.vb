@@ -78,7 +78,7 @@ Partial Class frm_ResultadosCompeXEspe
         Me.cmb_especialidad.DisplayMember = "Descripcion"
         Me.cmb_especialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_especialidad.FormattingEnabled = True
-        Me.cmb_especialidad.Location = New System.Drawing.Point(198, 15)
+        Me.cmb_especialidad.Location = New System.Drawing.Point(198, 14)
         Me.cmb_especialidad.Name = "cmb_especialidad"
         Me.cmb_especialidad.Size = New System.Drawing.Size(121, 21)
         Me.cmb_especialidad.TabIndex = 3
