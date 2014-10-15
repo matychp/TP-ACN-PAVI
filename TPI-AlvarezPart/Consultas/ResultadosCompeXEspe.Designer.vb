@@ -120,7 +120,7 @@ Partial Class frm_ResultadosCompeXEspe
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(12, 72)
+        Me.Label3.Location = New System.Drawing.Point(12, 71)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(245, 24)
         Me.Label3.TabIndex = 2

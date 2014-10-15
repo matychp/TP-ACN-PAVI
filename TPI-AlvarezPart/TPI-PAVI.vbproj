@@ -106,6 +106,12 @@
     <Compile Include="Consultas\ProfesoresConAlumnosEnClub.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Consultas\TorneoRealizadosEnElAñoEnUnClub.Designer.vb">
+      <DependentUpon>TorneoRealizadosEnElAñoEnUnClub.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\TorneoRealizadosEnElAñoEnUnClub.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Procesos\EspecialidadXCompetencia.Designer.vb">
       <DependentUpon>EspecialidadXCompetencia.vb</DependentUpon>
     </Compile>
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\ProfesoresConAlumnosEnClub.resx">
       <DependentUpon>ProfesoresConAlumnosEnClub.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\TorneoRealizadosEnElAñoEnUnClub.resx">
+      <DependentUpon>TorneoRealizadosEnElAñoEnUnClub.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Procesos\EspecialidadXCompetencia.resx">
       <DependentUpon>EspecialidadXCompetencia.vb</DependentUpon>
