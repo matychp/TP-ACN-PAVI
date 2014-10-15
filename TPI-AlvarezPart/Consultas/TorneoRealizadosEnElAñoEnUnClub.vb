@@ -1,4 +1,4 @@
-﻿Public Class TorneoRealizadosEnElAñoEnUnClub
+﻿Public Class frm_TorneoRealizadosEnElAñoEnUnClub
 
     Dim cadena As String = "Data Source=localhost\SQLEXPRESS;Initial Catalog=TPIPAVI;Integrated Security=True"
     Dim acceso As New accesoBD With {._cadenaConexion = cadena, _
@@ -16,10 +16,10 @@
     Private Sub resultado()
         Dim txt_sql As String
         Dim tabla As Data.DataTable
-        txt_sql = " Select TORNEOS.Descrip AS 'Torneo' , TorneoXAño.Año, Clubes.Nombre  "
+        txt_sql = " Select TORNEOS.Descrip AS 'Torneo' , TorneosXAño.Año, Clubes.Nombre  "
         txt_sql &= " From TORNEOS INNER JOIN TorneosXAño ON TORNEOS.CodTorneo = TorneosXAño.CodTorneo "
         txt_sql &= " INNER JOIN Clubes ON TorneosXAño.CodClub = Clubes.CodClub "
-        txt_sql &= " Where TorneoXAño.Año = Year(GETDATE()) "
+        txt_sql &= " Where TorneosXAño.Año = Year(GETDATE()) "
         tabla = acceso.ejecutar(txt_sql)
         If tabla.Rows.Count = 0 Then
             MessageBox.Show("No se han encontrado coincidencias con la busqueda", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -34,15 +34,15 @@
         Dim tabla As Data.DataTable = New Data.DataTable
         Dim tablaAux As Data.DataTable = New Data.DataTable
         If cmb_club.SelectedIndex < 0 Then
-            txt_sql = " Select TORNEOS.Descrip AS 'Torneo' , TorneoXAño.Año, Clubes.Nombre  "
+            txt_sql = " Select TORNEOS.Descrip AS 'Torneo' , TorneosXAño.Año, Clubes.Nombre  "
             txt_sql &= " From TORNEOS INNER JOIN TorneosXAño ON TORNEOS.CodTorneo = TorneosXAño.CodTorneo "
             txt_sql &= " INNER JOIN Clubes ON TorneosXAño.CodClub = Clubes.CodClub "
-            txt_sql &= " Where EspecXCompet.Año = " & year
+            txt_sql &= " Where TorneosXAño.Año = " & year
         Else
-            txt_sql = " Select TORNEOS.Descrip AS 'Torneo' , TorneoXAño.Año, Clubes.Nombre  "
+            txt_sql = " Select TORNEOS.Descrip AS 'Torneo' , TorneosXAño.Año, Clubes.Nombre  "
             txt_sql &= " From TORNEOS INNER JOIN TorneosXAño ON TORNEOS.CodTorneo = TorneosXAño.CodTorneo "
             txt_sql &= " INNER JOIN Clubes ON TorneosXAño.CodClub = Clubes.CodClub "
-            txt_sql &= " Where EspecXCompet.Año = " & year & " AND TorneoXAño.CodClub = " & club
+            txt_sql &= " Where TorneosXAño.Año = " & year & " AND TorneosXAño.CodClub = " & club
         End If
 
         tabla = acceso.ejecutar(txt_sql)

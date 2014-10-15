@@ -126,4 +126,8 @@
     Private Sub cmd_ProfesoresClubAl_Click(sender As System.Object, e As System.EventArgs) Handles cmd_ProfesoresClubAl.Click
         frm_ProfesoresConAlumnosEnClub.ShowDialog()
     End Sub
+
+    Private Sub cmd_torPorAñoClub_Click(sender As System.Object, e As System.EventArgs) Handles cmd_torPorAñoClub.Click
+        frm_TorneoRealizadosEnElAñoEnUnClub.ShowDialog()
+    End Sub
 End Class

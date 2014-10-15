@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class TorneoRealizadosEnElAñoEnUnClub
+Partial Class frm_TorneoRealizadosEnElAñoEnUnClub
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -144,7 +144,7 @@ Partial Class TorneoRealizadosEnElAñoEnUnClub
         '
         Me.ClubesTableAdapter.ClearBeforeFill = True
         '
-        'TorneoRealizadosEnElAñoEnUnClub
+        'frm_TorneoRealizadosEnElAñoEnUnClub
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -158,7 +158,7 @@ Partial Class TorneoRealizadosEnElAñoEnUnClub
         Me.Controls.Add(Me.msk_anio)
         Me.Controls.Add(Me.grd_dgvconsultaTorneoXClub)
         Me.Controls.Add(Me.Label3)
-        Me.Name = "TorneoRealizadosEnElAñoEnUnClub"
+        Me.Name = "frm_TorneoRealizadosEnElAñoEnUnClub"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Consulta Torneo en un Club"
         CType(Me.grd_dgvconsultaTorneoXClub, System.ComponentModel.ISupportInitialize).EndInit()
