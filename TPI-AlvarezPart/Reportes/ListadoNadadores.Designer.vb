@@ -66,7 +66,7 @@ Partial Class frm_ListadoNadadores
         '
         '_cmd_calcular
         '
-        Me._cmd_calcular.Location = New System.Drawing.Point(254, 337)
+        Me._cmd_calcular.Location = New System.Drawing.Point(254, 343)
         Me._cmd_calcular.Name = "_cmd_calcular"
         Me._cmd_calcular.Size = New System.Drawing.Size(75, 23)
         Me._cmd_calcular.TabIndex = 2
@@ -76,7 +76,7 @@ Partial Class frm_ListadoNadadores
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(130, 342)
+        Me.Label2.Location = New System.Drawing.Point(130, 348)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(29, 13)
         Me.Label2.TabIndex = 6
@@ -85,7 +85,7 @@ Partial Class frm_ListadoNadadores
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(13, 342)
+        Me.Label1.Location = New System.Drawing.Point(13, 348)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(34, 13)
         Me.Label1.TabIndex = 5
@@ -93,7 +93,7 @@ Partial Class frm_ListadoNadadores
         '
         '_txt_inicial
         '
-        Me._txt_inicial.Location = New System.Drawing.Point(54, 338)
+        Me._txt_inicial.Location = New System.Drawing.Point(54, 344)
         Me._txt_inicial.Mask = "9999"
         Me._txt_inicial.Name = "_txt_inicial"
         Me._txt_inicial.Size = New System.Drawing.Size(31, 20)
@@ -101,7 +101,7 @@ Partial Class frm_ListadoNadadores
         '
         '_txt_final
         '
-        Me._txt_final.Location = New System.Drawing.Point(165, 339)
+        Me._txt_final.Location = New System.Drawing.Point(165, 345)
         Me._txt_final.Mask = "9999"
         Me._txt_final.Name = "_txt_final"
         Me._txt_final.Size = New System.Drawing.Size(31, 20)
@@ -109,7 +109,7 @@ Partial Class frm_ListadoNadadores
         '
         'cmd_todos
         '
-        Me.cmd_todos.Location = New System.Drawing.Point(499, 337)
+        Me.cmd_todos.Location = New System.Drawing.Point(515, 343)
         Me.cmd_todos.Name = "cmd_todos"
         Me.cmd_todos.Size = New System.Drawing.Size(75, 23)
         Me.cmd_todos.TabIndex = 3
@@ -120,7 +120,7 @@ Partial Class frm_ListadoNadadores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(617, 372)
+        Me.ClientSize = New System.Drawing.Size(617, 387)
         Me.Controls.Add(Me.cmd_todos)
         Me.Controls.Add(Me._txt_final)
         Me.Controls.Add(Me._txt_inicial)

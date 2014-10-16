@@ -10,7 +10,7 @@
         Me.ReportViewer1.RefreshReport()
     End Sub
 
-    Private Sub ProfesoresConAlumnosEnClub_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+    Private Sub frm_listadoNadadores_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         If MessageBox.Show("¿Está seguro que quiere salir del formulario?", "¡Importante!", _
  MessageBoxButtons.OKCancel, MessageBoxIcon.Question) = _
  Windows.Forms.DialogResult.OK Then

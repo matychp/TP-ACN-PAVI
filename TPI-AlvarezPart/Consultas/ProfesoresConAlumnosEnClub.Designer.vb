@@ -59,9 +59,9 @@ Partial Class frm_ProfesoresConAlumnosEnClub
         Me.cmb_club.DisplayMember = "Nombre"
         Me.cmb_club.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_club.FormattingEnabled = True
-        Me.cmb_club.Location = New System.Drawing.Point(50, 22)
+        Me.cmb_club.Location = New System.Drawing.Point(70, 22)
         Me.cmb_club.Name = "cmb_club"
-        Me.cmb_club.Size = New System.Drawing.Size(141, 21)
+        Me.cmb_club.Size = New System.Drawing.Size(121, 21)
         Me.cmb_club.TabIndex = 1
         Me.cmb_club.ValueMember = "CodClub"
         '
@@ -139,11 +139,13 @@ Partial Class frm_ProfesoresConAlumnosEnClub
         '
         'cmd_help
         '
+        Me.cmd_help.BackgroundImage = Global.TPI_PAVI.My.Resources.Resources.help1
+        Me.cmd_help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_help.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmd_help.Location = New System.Drawing.Point(381, 329)
         Me.cmd_help.Name = "cmd_help"
         Me.cmd_help.Size = New System.Drawing.Size(47, 36)
         Me.cmd_help.TabIndex = 8
-        Me.cmd_help.Text = "Help"
         Me.cmd_help.UseVisualStyleBackColor = True
         '
         'frm_ProfesoresConAlumnosEnClub

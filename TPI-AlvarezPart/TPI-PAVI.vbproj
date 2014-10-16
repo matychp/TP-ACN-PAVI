@@ -399,6 +399,8 @@
     <Content Include="Resources\BotonRectangulo.png" />
     <Content Include="Resources\BotonRectanguloFlecha.png" />
     <Content Include="Resources\Cuadro_150x100.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\help.jpg" />
     <None Include="Resources\Cuadro_150x501.png" />
     <None Include="Resources\Cuadro_150x1001.png" />
     <Content Include="Resources\Cuadro_150x50.png" />

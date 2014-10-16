@@ -100,11 +100,13 @@ Partial Class frm_ResultadosCompeXEspe
         '
         'cmd_help
         '
+        Me.cmd_help.BackgroundImage = Global.TPI_PAVI.My.Resources.Resources.help1
+        Me.cmd_help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_help.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmd_help.Location = New System.Drawing.Point(419, 299)
         Me.cmd_help.Name = "cmd_help"
         Me.cmd_help.Size = New System.Drawing.Size(47, 38)
         Me.cmd_help.TabIndex = 4
-        Me.cmd_help.Text = "Help"
         Me.cmd_help.UseVisualStyleBackColor = True
         '
         'Label2

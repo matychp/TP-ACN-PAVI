@@ -133,11 +133,13 @@ Partial Class frm_TorneoRealizadosEnElAñoEnUnClub
         '
         'cmd_help
         '
+        Me.cmd_help.BackgroundImage = Global.TPI_PAVI.My.Resources.Resources.help1
+        Me.cmd_help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_help.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmd_help.Location = New System.Drawing.Point(420, 300)
         Me.cmd_help.Name = "cmd_help"
-        Me.cmd_help.Size = New System.Drawing.Size(47, 38)
+        Me.cmd_help.Size = New System.Drawing.Size(46, 38)
         Me.cmd_help.TabIndex = 9
-        Me.cmd_help.Text = "Help"
         Me.cmd_help.UseVisualStyleBackColor = True
         '
         'ClubesTableAdapter

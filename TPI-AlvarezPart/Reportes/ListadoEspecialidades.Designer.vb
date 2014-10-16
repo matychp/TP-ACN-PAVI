@@ -24,13 +24,23 @@ Partial Class frm_ListadoEspecialidades
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.TPIPAVIDataSet = New TPI_PAVI.TPIPAVIDataSet()
         Me.EspecialidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TPIPAVIDataSet = New TPI_PAVI.TPIPAVIDataSet()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.EspecialidadTableAdapter = New TPI_PAVI.TPIPAVIDataSetTableAdapters.EspecialidadTableAdapter()
-        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EspecialidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'EspecialidadBindingSource
+        '
+        Me.EspecialidadBindingSource.DataMember = "Especialidad"
+        Me.EspecialidadBindingSource.DataSource = Me.TPIPAVIDataSet
+        '
+        'TPIPAVIDataSet
+        '
+        Me.TPIPAVIDataSet.DataSetName = "TPIPAVIDataSet"
+        Me.TPIPAVIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -42,16 +52,6 @@ Partial Class frm_ListadoEspecialidades
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.Size = New System.Drawing.Size(465, 356)
         Me.ReportViewer1.TabIndex = 0
-        '
-        'TPIPAVIDataSet
-        '
-        Me.TPIPAVIDataSet.DataSetName = "TPIPAVIDataSet"
-        Me.TPIPAVIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'EspecialidadBindingSource
-        '
-        Me.EspecialidadBindingSource.DataMember = "Especialidad"
-        Me.EspecialidadBindingSource.DataSource = Me.TPIPAVIDataSet
         '
         'EspecialidadTableAdapter
         '
@@ -65,8 +65,8 @@ Partial Class frm_ListadoEspecialidades
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "frm_ListadoEspecialidades"
         Me.Text = "ListadoEspecialidades"
-        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EspecialidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

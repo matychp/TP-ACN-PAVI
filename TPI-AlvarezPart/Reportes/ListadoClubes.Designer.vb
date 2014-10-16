@@ -24,13 +24,23 @@ Partial Class frm_ListadoClubes
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.TPIPAVIDataSet = New TPI_PAVI.TPIPAVIDataSet()
         Me.ClubesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TPIPAVIDataSet = New TPI_PAVI.TPIPAVIDataSet()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.ClubesTableAdapter = New TPI_PAVI.TPIPAVIDataSetTableAdapters.ClubesTableAdapter()
-        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClubesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'ClubesBindingSource
+        '
+        Me.ClubesBindingSource.DataMember = "Clubes"
+        Me.ClubesBindingSource.DataSource = Me.TPIPAVIDataSet
+        '
+        'TPIPAVIDataSet
+        '
+        Me.TPIPAVIDataSet.DataSetName = "TPIPAVIDataSet"
+        Me.TPIPAVIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -42,16 +52,6 @@ Partial Class frm_ListadoClubes
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.Size = New System.Drawing.Size(533, 352)
         Me.ReportViewer1.TabIndex = 0
-        '
-        'TPIPAVIDataSet
-        '
-        Me.TPIPAVIDataSet.DataSetName = "TPIPAVIDataSet"
-        Me.TPIPAVIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ClubesBindingSource
-        '
-        Me.ClubesBindingSource.DataMember = "Clubes"
-        Me.ClubesBindingSource.DataSource = Me.TPIPAVIDataSet
         '
         'ClubesTableAdapter
         '
@@ -65,8 +65,8 @@ Partial Class frm_ListadoClubes
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "frm_ListadoClubes"
         Me.Text = "ListadoClubes"
-        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClubesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
