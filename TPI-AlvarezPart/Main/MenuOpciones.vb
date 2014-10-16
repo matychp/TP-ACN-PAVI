@@ -18,6 +18,10 @@
         cmd_posicionTiempoNad.Visible = cambiarBoolean(cmd_posicionTiempoNad.Visible)
         cmd_torPorAñoClub.Visible = cambiarBoolean(cmd_torPorAñoClub.Visible)
         cmd_consultaespeXcompe.Visible = cambiarBoolean(cmd_consultaespeXcompe.Visible)
+        cmd_listnadadores.Visible = cambiarBoolean(cmd_listnadadores.Visible)
+        cmd_listadoClubes.Visible = cambiarBoolean(cmd_listadoClubes.Visible)
+        cmd_listadoEspecialidades.Visible = cambiarBoolean(cmd_listadoEspecialidades.Visible)
+        cmd_listadoProfesores.Visible = cambiarBoolean(cmd_listadoProfesores.Visible)
         'Me.cambiarEstadoBotones()
     End Sub
 
@@ -40,6 +44,10 @@
         cmd_posicionTiempoNad.Visible = cambiarBoolean(cmd_posicionTiempoNad.Visible)
         cmd_torPorAñoClub.Visible = cambiarBoolean(cmd_torPorAñoClub.Visible)
         cmd_consultaespeXcompe.Visible = cambiarBoolean(cmd_consultaespeXcompe.Visible)
+        cmd_listnadadores.Visible = cambiarBoolean(cmd_listnadadores.Visible)
+        cmd_listadoClubes.Visible = cambiarBoolean(cmd_listadoClubes.Visible)
+        cmd_listadoEspecialidades.Visible = cambiarBoolean(cmd_listadoEspecialidades.Visible)
+        cmd_listadoProfesores.Visible = cambiarBoolean(cmd_listadoProfesores.Visible)
     End Sub
 
     Private Sub cambiarColorBoton(sender As System.Object, e As System.EventArgs) Handles cmd_abm.Click, cmd_listconsultas.Click, cmd_estadisticas.Click _
@@ -144,5 +152,21 @@
 
     Private Sub cmd_posicionTiempoNad_Click(sender As System.Object, e As System.EventArgs) Handles cmd_posicionTiempoNad.Click
         frm_PosicionTiempoNadadores.ShowDialog()
+    End Sub
+
+    Private Sub cmd_listnadadores_Click(sender As System.Object, e As System.EventArgs) Handles cmd_listnadadores.Click
+        frm_ListadoNadadores.ShowDialog()
+    End Sub
+
+    Private Sub cmd_listadoClubes_Click(sender As System.Object, e As System.EventArgs) Handles cmd_listadoClubes.Click
+        frm_ListadoClubes.ShowDialog()
+    End Sub
+
+    Private Sub cmd_listadoProfesores_Click(sender As System.Object, e As System.EventArgs) Handles cmd_listadoProfesores.Click
+        frm_ListadoProfesores.ShowDialog()
+    End Sub
+
+    Private Sub cmd_listadoEspecialidades_Click(sender As System.Object, e As System.EventArgs) Handles cmd_listadoEspecialidades.Click
+        frm_ListadoEspecialidades.ShowDialog()
     End Sub
 End Class

@@ -64,10 +64,13 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -218,6 +221,30 @@
     <Compile Include="Main\SplashScreen.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\ListadoClubes.Designer.vb">
+      <DependentUpon>ListadoClubes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ListadoClubes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ListadoEspecialidades.Designer.vb">
+      <DependentUpon>ListadoEspecialidades.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ListadoEspecialidades.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ListadoNadadores.Designer.vb">
+      <DependentUpon>ListadoNadadores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ListadoNadadores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ListadoProfesores.Designer.vb">
+      <DependentUpon>ListadoProfesores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ListadoProfesores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TPIPAVIDataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -288,6 +315,22 @@
     <EmbeddedResource Include="Main\SplashScreen.resx">
       <DependentUpon>SplashScreen.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ListadoClubes.resx">
+      <DependentUpon>ListadoClubes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ListadoEspecialidades.resx">
+      <DependentUpon>ListadoEspecialidades.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ListadoNadadores.resx">
+      <DependentUpon>ListadoNadadores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ListadoProfesores.resx">
+      <DependentUpon>ListadoProfesores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\Report2.rdlc" />
+    <EmbeddedResource Include="Reportes\Report3.rdlc" />
+    <EmbeddedResource Include="Reportes\Report4.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
@@ -359,6 +402,9 @@
     <None Include="Resources\Cuadro_150x501.png" />
     <None Include="Resources\Cuadro_150x1001.png" />
     <Content Include="Resources\Cuadro_150x50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Datos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

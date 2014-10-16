@@ -46,6 +46,10 @@ Partial Class MenuOpciones
         Me.cmd_ProfesoresClubAl = New System.Windows.Forms.Button()
         Me.cmd_torPorAñoClub = New System.Windows.Forms.Button()
         Me.cmd_posicionTiempoNad = New System.Windows.Forms.Button()
+        Me.cmd_listnadadores = New System.Windows.Forms.Button()
+        Me.cmd_listadoClubes = New System.Windows.Forms.Button()
+        Me.cmd_listadoProfesores = New System.Windows.Forms.Button()
+        Me.cmd_listadoEspecialidades = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -362,13 +366,73 @@ Partial Class MenuOpciones
         Me.cmd_posicionTiempoNad.Text = "Posicion y Tiempo de Nadadores"
         Me.cmd_posicionTiempoNad.UseVisualStyleBackColor = False
         '
+        'cmd_listnadadores
+        '
+        Me.cmd_listnadadores.BackColor = System.Drawing.Color.White
+        Me.cmd_listnadadores.BackgroundImage = CType(resources.GetObject("cmd_listnadadores.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_listnadadores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_listnadadores.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_listnadadores.Location = New System.Drawing.Point(390, 400)
+        Me.cmd_listnadadores.Margin = New System.Windows.Forms.Padding(1)
+        Me.cmd_listnadadores.Name = "cmd_listnadadores"
+        Me.cmd_listnadadores.Size = New System.Drawing.Size(100, 38)
+        Me.cmd_listnadadores.TabIndex = 15
+        Me.cmd_listnadadores.Text = "Listado Nadadores"
+        Me.cmd_listnadadores.UseVisualStyleBackColor = False
+        '
+        'cmd_listadoClubes
+        '
+        Me.cmd_listadoClubes.BackColor = System.Drawing.Color.White
+        Me.cmd_listadoClubes.BackgroundImage = CType(resources.GetObject("cmd_listadoClubes.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_listadoClubes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_listadoClubes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_listadoClubes.Location = New System.Drawing.Point(390, 440)
+        Me.cmd_listadoClubes.Margin = New System.Windows.Forms.Padding(1)
+        Me.cmd_listadoClubes.Name = "cmd_listadoClubes"
+        Me.cmd_listadoClubes.Size = New System.Drawing.Size(100, 35)
+        Me.cmd_listadoClubes.TabIndex = 16
+        Me.cmd_listadoClubes.Text = "Listado Clubes"
+        Me.cmd_listadoClubes.UseVisualStyleBackColor = False
+        '
+        'cmd_listadoProfesores
+        '
+        Me.cmd_listadoProfesores.BackColor = System.Drawing.Color.White
+        Me.cmd_listadoProfesores.BackgroundImage = CType(resources.GetObject("cmd_listadoProfesores.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_listadoProfesores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_listadoProfesores.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_listadoProfesores.Location = New System.Drawing.Point(390, 477)
+        Me.cmd_listadoProfesores.Margin = New System.Windows.Forms.Padding(1)
+        Me.cmd_listadoProfesores.Name = "cmd_listadoProfesores"
+        Me.cmd_listadoProfesores.Size = New System.Drawing.Size(100, 35)
+        Me.cmd_listadoProfesores.TabIndex = 16
+        Me.cmd_listadoProfesores.Text = "Listado Profesores"
+        Me.cmd_listadoProfesores.UseVisualStyleBackColor = False
+        '
+        'cmd_listadoEspecialidades
+        '
+        Me.cmd_listadoEspecialidades.BackColor = System.Drawing.Color.White
+        Me.cmd_listadoEspecialidades.BackgroundImage = CType(resources.GetObject("cmd_listadoEspecialidades.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_listadoEspecialidades.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_listadoEspecialidades.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_listadoEspecialidades.Location = New System.Drawing.Point(390, 514)
+        Me.cmd_listadoEspecialidades.Margin = New System.Windows.Forms.Padding(1)
+        Me.cmd_listadoEspecialidades.Name = "cmd_listadoEspecialidades"
+        Me.cmd_listadoEspecialidades.Size = New System.Drawing.Size(100, 35)
+        Me.cmd_listadoEspecialidades.TabIndex = 16
+        Me.cmd_listadoEspecialidades.Text = "Listado Especialidades"
+        Me.cmd_listadoEspecialidades.UseVisualStyleBackColor = False
+        '
         'MenuOpciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.TPI_PAVI.My.Resources.Resources.fondo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(679, 480)
+        Me.ClientSize = New System.Drawing.Size(679, 585)
+        Me.Controls.Add(Me.cmd_listadoEspecialidades)
+        Me.Controls.Add(Me.cmd_listadoProfesores)
+        Me.Controls.Add(Me.cmd_listadoClubes)
+        Me.Controls.Add(Me.cmd_listnadadores)
         Me.Controls.Add(Me.cmd_posicionTiempoNad)
         Me.Controls.Add(Me.cmd_torPorAñoClub)
         Me.Controls.Add(Me.cmd_ProfesoresClubAl)
@@ -424,4 +488,8 @@ Partial Class MenuOpciones
     Friend WithEvents cmd_ProfesoresClubAl As System.Windows.Forms.Button
     Friend WithEvents cmd_torPorAñoClub As System.Windows.Forms.Button
     Friend WithEvents cmd_posicionTiempoNad As System.Windows.Forms.Button
+    Friend WithEvents cmd_listnadadores As System.Windows.Forms.Button
+    Friend WithEvents cmd_listadoClubes As System.Windows.Forms.Button
+    Friend WithEvents cmd_listadoProfesores As System.Windows.Forms.Button
+    Friend WithEvents cmd_listadoEspecialidades As System.Windows.Forms.Button
 End Class
