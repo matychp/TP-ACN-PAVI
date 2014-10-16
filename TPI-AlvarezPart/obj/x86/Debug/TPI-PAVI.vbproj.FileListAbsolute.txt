@@ -122,3 +122,4 @@ D:\Documentos\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.exe
 D:\Documentos\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.xml
 D:\Documentos\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.pdb
 C:\Users\Gonzalo\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.frm_TorneoRealizadosEnElAñoEnUnClub.resources
+C:\Users\Gonzalo\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.frm_PosicionTiempoNadadores.resources

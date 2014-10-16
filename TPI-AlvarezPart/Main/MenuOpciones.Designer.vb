@@ -45,6 +45,7 @@ Partial Class MenuOpciones
         Me.cmd_consultaespeXcompe = New System.Windows.Forms.Button()
         Me.cmd_ProfesoresClubAl = New System.Windows.Forms.Button()
         Me.cmd_torPorAñoClub = New System.Windows.Forms.Button()
+        Me.cmd_posicionTiempoNad = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -347,6 +348,20 @@ Partial Class MenuOpciones
         Me.cmd_torPorAñoClub.Text = "Torneos Por Año en Club"
         Me.cmd_torPorAñoClub.UseVisualStyleBackColor = False
         '
+        'cmd_posicionTiempoNad
+        '
+        Me.cmd_posicionTiempoNad.BackColor = System.Drawing.Color.White
+        Me.cmd_posicionTiempoNad.BackgroundImage = CType(resources.GetObject("cmd_posicionTiempoNad.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_posicionTiempoNad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_posicionTiempoNad.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_posicionTiempoNad.Location = New System.Drawing.Point(390, 350)
+        Me.cmd_posicionTiempoNad.Margin = New System.Windows.Forms.Padding(1)
+        Me.cmd_posicionTiempoNad.Name = "cmd_posicionTiempoNad"
+        Me.cmd_posicionTiempoNad.Size = New System.Drawing.Size(100, 48)
+        Me.cmd_posicionTiempoNad.TabIndex = 15
+        Me.cmd_posicionTiempoNad.Text = "Posicion y Tiempo de Nadadores"
+        Me.cmd_posicionTiempoNad.UseVisualStyleBackColor = False
+        '
         'MenuOpciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -354,6 +369,7 @@ Partial Class MenuOpciones
         Me.BackgroundImage = Global.TPI_PAVI.My.Resources.Resources.fondo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(679, 480)
+        Me.Controls.Add(Me.cmd_posicionTiempoNad)
         Me.Controls.Add(Me.cmd_torPorAñoClub)
         Me.Controls.Add(Me.cmd_ProfesoresClubAl)
         Me.Controls.Add(Me.cmd_consultaespeXcompe)
@@ -407,4 +423,5 @@ Partial Class MenuOpciones
     Friend WithEvents cmd_consultaespeXcompe As System.Windows.Forms.Button
     Friend WithEvents cmd_ProfesoresClubAl As System.Windows.Forms.Button
     Friend WithEvents cmd_torPorAñoClub As System.Windows.Forms.Button
+    Friend WithEvents cmd_posicionTiempoNad As System.Windows.Forms.Button
 End Class

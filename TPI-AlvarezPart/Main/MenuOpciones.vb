@@ -14,6 +14,10 @@
         cmd_Inscriptos.Visible = cambiarBoolean(cmd_Inscriptos.Visible)
         cmd_ProfXClub.Visible = cambiarBoolean(cmd_ProfXClub.Visible)
         cmd_espeXCompe.Visible = cambiarBoolean(cmd_espeXCompe.Visible)
+        cmd_ProfesoresClubAl.Visible = cambiarBoolean(cmd_ProfesoresClubAl.Visible)
+        cmd_posicionTiempoNad.Visible = cambiarBoolean(cmd_posicionTiempoNad.Visible)
+        cmd_torPorAñoClub.Visible = cambiarBoolean(cmd_torPorAñoClub.Visible)
+        cmd_consultaespeXcompe.Visible = cambiarBoolean(cmd_consultaespeXcompe.Visible)
         'Me.cambiarEstadoBotones()
     End Sub
 
@@ -29,6 +33,13 @@
         cmd_Inscriptos.Visible = cambiarBoolean(cmd_Inscriptos.Visible)
         cmd_ProfXClub.Visible = cambiarBoolean(cmd_ProfXClub.Visible)
         cmd_espeXCompe.Visible = cambiarBoolean(cmd_espeXCompe.Visible)
+    End Sub
+
+    Private Sub cmd_listconsul_click(sender As System.Object, e As System.EventArgs) Handles cmd_listconsultas.Click
+        cmd_ProfesoresClubAl.Visible = cambiarBoolean(cmd_ProfesoresClubAl.Visible)
+        cmd_posicionTiempoNad.Visible = cambiarBoolean(cmd_posicionTiempoNad.Visible)
+        cmd_torPorAñoClub.Visible = cambiarBoolean(cmd_torPorAñoClub.Visible)
+        cmd_consultaespeXcompe.Visible = cambiarBoolean(cmd_consultaespeXcompe.Visible)
     End Sub
 
     Private Sub cambiarColorBoton(sender As System.Object, e As System.EventArgs) Handles cmd_abm.Click, cmd_listconsultas.Click, cmd_estadisticas.Click _
@@ -58,7 +69,7 @@
         cmd_profesores.Visible = cambiarBoolean(cmd_profesores.Visible)
         cmd_tipodocumento.Visible = cambiarBoolean(cmd_tipodocumento.Visible)
         cmd_torneos.Visible = cambiarBoolean(cmd_torneos.Visible)
-       
+
     End Sub
 
 
@@ -129,5 +140,9 @@
 
     Private Sub cmd_torPorAñoClub_Click(sender As System.Object, e As System.EventArgs) Handles cmd_torPorAñoClub.Click
         frm_TorneoRealizadosEnElAñoEnUnClub.ShowDialog()
+    End Sub
+
+    Private Sub cmd_posicionTiempoNad_Click(sender As System.Object, e As System.EventArgs) Handles cmd_posicionTiempoNad.Click
+        frm_PosicionTiempoNadadores.ShowDialog()
     End Sub
 End Class

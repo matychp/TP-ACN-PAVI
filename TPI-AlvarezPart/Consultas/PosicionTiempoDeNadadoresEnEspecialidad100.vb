@@ -1,10 +1,14 @@
-﻿Public Class PosicionTiempoDeNadadoresEnEspecialidad100
+﻿Public Class frm_PosicionTiempoNadadores
 
     Dim cadena As String = "Data Source=localhost\SQLEXPRESS;Initial Catalog=TPIPAVI;Integrated Security=True"
     Dim acceso As New accesoBD With {._cadenaConexion = cadena, _
                                      ._tipoBaseDatos = accesoBD.BaseDatos.SqlServer}
 
     Private Sub PosicionTiempoDeNadadoresEnEspecialidad100_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.Especialidad' Puede moverla o quitarla según sea necesario.
+        Me.EspecialidadTableAdapter.Fill(Me.TPIPAVIDataSet.Especialidad)
+        'TODO: esta línea de código carga datos en la tabla 'TPIPAVIDataSet.Nadadores' Puede moverla o quitarla según sea necesario.
+        Me.NadadoresTableAdapter.Fill(Me.TPIPAVIDataSet.Nadadores)
         cmb_especialidad.SelectedValue = -1
         cmb_nadador.SelectedValue = -1
     End Sub
@@ -26,13 +30,15 @@
         Dim tabla As New Data.DataTable
         Dim tablaAux As New Data.DataTable
         If cmb_nadador.SelectedIndex < 0 Then
-            txt_sql = " Select Nadadores.Apellido AS 'Nadador', Inscriptos.Posicion AS 'Posicion', Inscriptos.Tiempo AS 'Tiempo', Inscriptos.CodEspe AS 'Especialidad' "
-            txt_sql &= " From Nadadores INNER JOIN Inscriptos ON Nadadores.CodNad = Inscriptos.CodNad "
+            txt_sql = " Select Nadadores.Apellido AS 'Nadador', Inscriptos.Posicion AS 'Posicion', Inscriptos.Tiempo AS 'Tiempo', Especialidad.Descripcion AS 'Especialidad' "
+            txt_sql &= " From Inscriptos INNER JOIN Nadadores ON Inscriptos.CodNad = Nadadores.CodNad "
+            txt_sql &= " INNER JOIN Especialidad ON Especialidad.CodEspe = Inscriptos.CodEspe"
             txt_sql &= " Where Inscriptos.CodEspe = " & especialidad
         Else
-            txt_sql = " Select Nadadores.Apellido AS 'Nadador', Inscriptos.Posicion AS 'Posicion', Inscriptos.Tiempo AS 'Tiempo', Inscriptos.CodEspe AS 'Especialidad' "
-            txt_sql &= " From Nadadores INNER JOIN Inscriptos ON Nadadores.CodNad = Inscriptos.CodNad "
-            txt_sql &= " Where Inscriptos.CodEspe = " & especialidad & "AND Nadador.CodNad = " & nadador
+            txt_sql = " Select Nadadores.Apellido AS 'Nadador', Inscriptos.Posicion AS 'Posicion', Inscriptos.Tiempo AS 'Tiempo', Especialidad.Descripcion AS 'Especialidad' "
+            txt_sql &= " From Inscriptos INNER JOIN Nadadores ON Inscriptos.CodNad = Nadadores.CodNad "
+            txt_sql &= " INNER JOIN Especialidad ON Especialidad.CodEspe = Inscriptos.CodEspe"
+            txt_sql &= " Where Inscriptos.CodEspe = " & especialidad & "AND Nadadores.CodNad = " & nadador
         End If
 
         tabla = acceso.ejecutar(txt_sql)
@@ -54,10 +60,10 @@
         Dim tabla As Data.DataTable = New Data.DataTable
         Dim tablaAux As Data.DataTable = New Data.DataTable
 
-        txt_sql = " Select Nadadores.Apellido AS 'Nadador', Inscriptos.Posicion AS 'Posicion', Inscriptos.Tiempo AS 'Tiempo', Inscriptos.CodEspe AS 'Especialidad' "
-        txt_sql &= " From Inscriptos INNER JOIN Nadadores ON Nadadores.CodNad = Inscriptos.CodNad  "
-        txt_sql &= " INNER JOIN Especialidad.CodEspe = Inscriptos.CodEspe"
-        txt_sql &= " Where Especialidad.Descripcion = '100 mts. Libres" 'No se el contenido de la BD, asi que '100 mts. Libres' hay que verlo si esta igual...
+        txt_sql = " select Nadadores.Apellido AS 'Nadador', Inscriptos.Posicion AS 'Posicion', Inscriptos.Tiempo AS 'Tiempo', Especialidad.Descripcion AS 'Especialidad' "
+        txt_sql &= " from Inscriptos INNER JOIN Nadadores ON Inscriptos.CodNad = Nadadores.CodNad  "
+        txt_sql &= " INNER JOIN Especialidad ON Especialidad.CodEspe = Inscriptos.CodEspe"
+        txt_sql &= " where Especialidad.Descripcion LIKE '100 mts. Libre'" 'No se el contenido de la BD, asi que '100 mts. Libres' hay que verlo si esta igual...
 
         tabla = acceso.ejecutar(txt_sql)
 

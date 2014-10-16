@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class PosicionTiempoDeNadadoresEnEspecialidad100
+Partial Class frm_PosicionTiempoNadadores
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,6 +22,7 @@ Partial Class PosicionTiempoDeNadadoresEnEspecialidad100
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.cmd_ejecutarConsulta = New System.Windows.Forms.Button()
         Me.cmb_nadador = New System.Windows.Forms.ComboBox()
         Me.grd_dgvTiempoPosNad = New System.Windows.Forms.DataGridView()
@@ -31,7 +32,15 @@ Partial Class PosicionTiempoDeNadadoresEnEspecialidad100
         Me.cmd_consultaPerso = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cmd_help = New System.Windows.Forms.Button()
+        Me.TPIPAVIDataSet = New TPI_PAVI.TPIPAVIDataSet()
+        Me.NadadoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.NadadoresTableAdapter = New TPI_PAVI.TPIPAVIDataSetTableAdapters.NadadoresTableAdapter()
+        Me.EspecialidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EspecialidadTableAdapter = New TPI_PAVI.TPIPAVIDataSetTableAdapters.EspecialidadTableAdapter()
         CType(Me.grd_dgvTiempoPosNad, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NadadoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EspecialidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmd_ejecutarConsulta
@@ -45,18 +54,24 @@ Partial Class PosicionTiempoDeNadadoresEnEspecialidad100
         '
         'cmb_nadador
         '
+        Me.cmb_nadador.DataSource = Me.NadadoresBindingSource
+        Me.cmb_nadador.DisplayMember = "Apellido"
         Me.cmb_nadador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_nadador.FormattingEnabled = True
         Me.cmb_nadador.Location = New System.Drawing.Point(85, 16)
         Me.cmb_nadador.Name = "cmb_nadador"
         Me.cmb_nadador.Size = New System.Drawing.Size(121, 21)
         Me.cmb_nadador.TabIndex = 1
+        Me.cmb_nadador.ValueMember = "CodNad"
         '
         'grd_dgvTiempoPosNad
         '
+        Me.grd_dgvTiempoPosNad.AllowUserToAddRows = False
+        Me.grd_dgvTiempoPosNad.AllowUserToDeleteRows = False
         Me.grd_dgvTiempoPosNad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grd_dgvTiempoPosNad.Location = New System.Drawing.Point(12, 112)
         Me.grd_dgvTiempoPosNad.Name = "grd_dgvTiempoPosNad"
+        Me.grd_dgvTiempoPosNad.ReadOnly = True
         Me.grd_dgvTiempoPosNad.Size = New System.Drawing.Size(345, 166)
         Me.grd_dgvTiempoPosNad.TabIndex = 2
         '
@@ -80,12 +95,15 @@ Partial Class PosicionTiempoDeNadadoresEnEspecialidad100
         '
         'cmb_especialidad
         '
+        Me.cmb_especialidad.DataSource = Me.EspecialidadBindingSource
+        Me.cmb_especialidad.DisplayMember = "Descripcion"
         Me.cmb_especialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_especialidad.FormattingEnabled = True
         Me.cmb_especialidad.Location = New System.Drawing.Point(85, 49)
         Me.cmb_especialidad.Name = "cmb_especialidad"
         Me.cmb_especialidad.Size = New System.Drawing.Size(121, 21)
         Me.cmb_especialidad.TabIndex = 1
+        Me.cmb_especialidad.ValueMember = "CodEspe"
         '
         'cmd_consultaPerso
         '
@@ -115,7 +133,30 @@ Partial Class PosicionTiempoDeNadadoresEnEspecialidad100
         Me.cmd_help.Text = "Help"
         Me.cmd_help.UseVisualStyleBackColor = True
         '
-        'PosicionTiempoDeNadadoresEnEspecialidad100
+        'TPIPAVIDataSet
+        '
+        Me.TPIPAVIDataSet.DataSetName = "TPIPAVIDataSet"
+        Me.TPIPAVIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'NadadoresBindingSource
+        '
+        Me.NadadoresBindingSource.DataMember = "Nadadores"
+        Me.NadadoresBindingSource.DataSource = Me.TPIPAVIDataSet
+        '
+        'NadadoresTableAdapter
+        '
+        Me.NadadoresTableAdapter.ClearBeforeFill = True
+        '
+        'EspecialidadBindingSource
+        '
+        Me.EspecialidadBindingSource.DataMember = "Especialidad"
+        Me.EspecialidadBindingSource.DataSource = Me.TPIPAVIDataSet
+        '
+        'EspecialidadTableAdapter
+        '
+        Me.EspecialidadTableAdapter.ClearBeforeFill = True
+        '
+        'frm_PosicionTiempoNadadores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -131,9 +172,12 @@ Partial Class PosicionTiempoDeNadadoresEnEspecialidad100
         Me.Controls.Add(Me.cmd_ejecutarConsulta)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
-        Me.Name = "PosicionTiempoDeNadadoresEnEspecialidad100"
-        Me.Text = "PosicionTiempoDeNadadoresEnEspecialidad100"
+        Me.Name = "frm_PosicionTiempoNadadores"
+        Me.Text = "Posicion y Tiempo de Nadadores"
         CType(Me.grd_dgvTiempoPosNad, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NadadoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EspecialidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -147,4 +191,9 @@ Partial Class PosicionTiempoDeNadadoresEnEspecialidad100
     Friend WithEvents cmd_consultaPerso As System.Windows.Forms.Button
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents cmd_help As System.Windows.Forms.Button
+    Friend WithEvents TPIPAVIDataSet As TPI_PAVI.TPIPAVIDataSet
+    Friend WithEvents NadadoresBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents NadadoresTableAdapter As TPI_PAVI.TPIPAVIDataSetTableAdapters.NadadoresTableAdapter
+    Friend WithEvents EspecialidadBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents EspecialidadTableAdapter As TPI_PAVI.TPIPAVIDataSetTableAdapters.EspecialidadTableAdapter
 End Class
