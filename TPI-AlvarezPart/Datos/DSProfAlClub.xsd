@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSProfAlClub" targetNamespace="http://tempuri.org/DSProfAlClub.xsd" xmlns:mstns="http://tempuri.org/DSProfAlClub.xsd" xmlns="http://tempuri.org/DSProfAlClub.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSProfAlClub" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSProfAlClub" msprop:Generator_UserDSName="DSProfAlClub">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dt_ProfAlClub" msprop:Generator_TableClassName="dt_ProfAlClubDataTable" msprop:Generator_TableVarName="tabledt_ProfAlClub" msprop:Generator_TablePropName="dt_ProfAlClub" msprop:Generator_RowDeletingName="dt_ProfAlClubRowDeleting" msprop:Generator_RowChangingName="dt_ProfAlClubRowChanging" msprop:Generator_RowEvHandlerName="dt_ProfAlClubRowChangeEventHandler" msprop:Generator_RowDeletedName="dt_ProfAlClubRowDeleted" msprop:Generator_UserTableName="dt_ProfAlClub" msprop:Generator_RowChangedName="dt_ProfAlClubRowChanged" msprop:Generator_RowEvArgName="dt_ProfAlClubRowChangeEvent" msprop:Generator_RowClassName="dt_ProfAlClubRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Profesor" msprop:Generator_ColumnVarNameInTable="columnProfesor" msprop:Generator_ColumnPropNameInRow="Profesor" msprop:Generator_ColumnPropNameInTable="ProfesorColumn" msprop:Generator_UserColumnName="Profesor" type="xs:string" minOccurs="0" />
+              <xs:element name="Nadador" msprop:Generator_ColumnVarNameInTable="columnNadador" msprop:Generator_ColumnPropNameInRow="Nadador" msprop:Generator_ColumnPropNameInTable="NadadorColumn" msprop:Generator_UserColumnName="Nadador" type="xs:string" minOccurs="0" />
+              <xs:element name="Club" msprop:Generator_ColumnVarNameInTable="columnClub" msprop:Generator_ColumnPropNameInRow="Club" msprop:Generator_ColumnPropNameInTable="ClubColumn" msprop:Generator_UserColumnName="Club" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

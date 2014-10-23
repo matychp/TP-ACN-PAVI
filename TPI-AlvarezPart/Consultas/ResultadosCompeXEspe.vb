@@ -10,6 +10,7 @@
         Me.cmb_especialidad.SelectedIndex = -1
         Me.tt_consultaestandar.SetToolTip(cmd_ejecutarConsulta, "Consulta la Competencia por Especialidad del año actual")
         Me.tt_consultapersonal.SetToolTip(cmd_ejecutarConsultaPerso, "Consulta la Competencia por Especialidad" & vbCrLf & " con el o los parámetros ingresados arriba (el Año es obligatorio)")
+        Me.ReportViewer1.RefreshReport()
     End Sub
 
     Private Sub resultado()
@@ -24,9 +25,9 @@
         If tabla.Rows.Count = 0 Then
             MessageBox.Show("No se han encontrado coincidencias con la busqueda", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
-            Me.grd_dgvconsultaComXEspe.DataSource = tabla
+            Me.dt_CompeEspeBindingSource.DataSource = tabla
         End If
-
+        ReportViewer1.RefreshReport()
     End Sub
 
     Private Sub resultado(ByVal year As Integer, ByVal especialidad As Integer)
@@ -51,12 +52,12 @@
 
         If tabla.Rows.Count = 0 Then
             MessageBox.Show("No se han encontrado coincidencias con la busqueda", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Me.grd_dgvconsultaComXEspe.DataSource = tablaAux
+            Me.dt_CompeEspeBindingSource.DataSource = tablaAux
         Else
 
-            Me.grd_dgvconsultaComXEspe.DataSource = tabla
+            Me.dt_CompeEspeBindingSource.DataSource = tabla
         End If
-
+        ReportViewer1.RefreshReport()
         msk_anio.Text = ""
         cmb_especialidad.SelectedIndex = -1
     End Sub
@@ -66,7 +67,6 @@
         If Me.msk_anio.Text = "" Then
             MessageBox.Show("Debe ingresar el año a consultar para la Consulta Personalizada", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Me.msk_anio.Focus()
-            Me.grd_dgvconsultaComXEspe.DataSource = tablaAux
             Return False
         End If
         Return True

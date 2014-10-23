@@ -23,7 +23,7 @@ Partial Class frm_ProfesoresConAlumnosEnClub
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.grd_dgvProAlClub = New System.Windows.Forms.DataGridView()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.cmb_club = New System.Windows.Forms.ComboBox()
         Me.ClubesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TPIPAVIDataSet = New TPI_PAVI.TPIPAVIDataSet()
@@ -36,22 +36,15 @@ Partial Class frm_ProfesoresConAlumnosEnClub
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cmd_consultaPerso = New System.Windows.Forms.Button()
         Me.cmd_help = New System.Windows.Forms.Button()
-        CType(Me.grd_dgvProAlClub, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.DSProfAlClub = New TPI_PAVI.DSProfAlClub()
+        Me.dt_ProfAlClubBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.ClubesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NadadoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DSProfAlClub, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dt_ProfAlClubBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'grd_dgvProAlClub
-        '
-        Me.grd_dgvProAlClub.AllowUserToAddRows = False
-        Me.grd_dgvProAlClub.AllowUserToDeleteRows = False
-        Me.grd_dgvProAlClub.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grd_dgvProAlClub.Location = New System.Drawing.Point(12, 161)
-        Me.grd_dgvProAlClub.Name = "grd_dgvProAlClub"
-        Me.grd_dgvProAlClub.ReadOnly = True
-        Me.grd_dgvProAlClub.Size = New System.Drawing.Size(416, 133)
-        Me.grd_dgvProAlClub.TabIndex = 0
         '
         'cmb_club
         '
@@ -148,11 +141,33 @@ Partial Class frm_ProfesoresConAlumnosEnClub
         Me.cmd_help.TabIndex = 8
         Me.cmd_help.UseVisualStyleBackColor = True
         '
+        'ReportViewer1
+        '
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.dt_ProfAlClubBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "TPI_PAVI.profAlumClub.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(16, 148)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.Size = New System.Drawing.Size(412, 173)
+        Me.ReportViewer1.TabIndex = 9
+        '
+        'DSProfAlClub
+        '
+        Me.DSProfAlClub.DataSetName = "DSProfAlClub"
+        Me.DSProfAlClub.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'dt_ProfAlClubBindingSource
+        '
+        Me.dt_ProfAlClubBindingSource.DataMember = "dt_ProfAlClub"
+        Me.dt_ProfAlClubBindingSource.DataSource = Me.DSProfAlClub
+        '
         'frm_ProfesoresConAlumnosEnClub
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(440, 375)
+        Me.ClientSize = New System.Drawing.Size(441, 375)
+        Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.cmd_help)
         Me.Controls.Add(Me.cmd_consultaPerso)
         Me.Controls.Add(Me.Label3)
@@ -160,18 +175,17 @@ Partial Class frm_ProfesoresConAlumnosEnClub
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cmb_club)
-        Me.Controls.Add(Me.grd_dgvProAlClub)
         Me.Name = "frm_ProfesoresConAlumnosEnClub"
         Me.Text = "ProfesoresConAlumnosEnClub"
-        CType(Me.grd_dgvProAlClub, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClubesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NadadoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DSProfAlClub, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dt_ProfAlClubBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents grd_dgvProAlClub As System.Windows.Forms.DataGridView
     Friend WithEvents cmb_club As System.Windows.Forms.ComboBox
     Friend WithEvents TPIPAVIDataSet As TPI_PAVI.TPIPAVIDataSet
     Friend WithEvents ClubesBindingSource As System.Windows.Forms.BindingSource
@@ -184,4 +198,7 @@ Partial Class frm_ProfesoresConAlumnosEnClub
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents cmd_consultaPerso As System.Windows.Forms.Button
     Friend WithEvents cmd_help As System.Windows.Forms.Button
+    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents dt_ProfAlClubBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents DSProfAlClub As TPI_PAVI.DSProfAlClub
 End Class

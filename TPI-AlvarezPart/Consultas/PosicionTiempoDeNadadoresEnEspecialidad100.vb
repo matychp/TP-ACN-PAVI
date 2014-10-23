@@ -11,6 +11,7 @@
         Me.NadadoresTableAdapter.Fill(Me.TPIPAVIDataSet.Nadadores)
         cmb_especialidad.SelectedValue = -1
         cmb_nadador.SelectedValue = -1
+        Me.rp_nadPosTiempo.RefreshReport()
     End Sub
 
     Private Sub PosicionTiempoDeNadador100_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
@@ -30,12 +31,12 @@
         Dim tabla As New Data.DataTable
         Dim tablaAux As New Data.DataTable
         If cmb_nadador.SelectedIndex < 0 Then
-            txt_sql = " Select Nadadores.Apellido AS 'Nadador', Inscriptos.Posicion AS 'Posicion', Inscriptos.Tiempo AS 'Tiempo', Especialidad.Descripcion AS 'Especialidad' "
+            txt_sql = " Select Nadadores.Apellido , Inscriptos.Posicion, Inscriptos.Tiempo, Especialidad.Descripcion "
             txt_sql &= " From Inscriptos INNER JOIN Nadadores ON Inscriptos.CodNad = Nadadores.CodNad "
             txt_sql &= " INNER JOIN Especialidad ON Especialidad.CodEspe = Inscriptos.CodEspe"
             txt_sql &= " Where Inscriptos.CodEspe = " & especialidad
         Else
-            txt_sql = " Select Nadadores.Apellido AS 'Nadador', Inscriptos.Posicion AS 'Posicion', Inscriptos.Tiempo AS 'Tiempo', Especialidad.Descripcion AS 'Especialidad' "
+            txt_sql = " Select Nadadores.Apellido, Inscriptos.Posicion, Inscriptos.Tiempo, Especialidad.Descripcion "
             txt_sql &= " From Inscriptos INNER JOIN Nadadores ON Inscriptos.CodNad = Nadadores.CodNad "
             txt_sql &= " INNER JOIN Especialidad ON Especialidad.CodEspe = Inscriptos.CodEspe"
             txt_sql &= " Where Inscriptos.CodEspe = " & especialidad & "AND Nadadores.CodNad = " & nadador
@@ -45,14 +46,14 @@
 
         If tabla.Rows.Count = 0 Then
             MessageBox.Show("No se han encontrado coincidencias con la busqueda", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Me.grd_dgvTiempoPosNad.DataSource = tablaAux
+            Me.DSPosTiempoNad1BindingSource.DataSource = tablaAux
         Else
-            Me.grd_dgvTiempoPosNad.DataSource = tabla
+            Me.DSPosTiempoNad1BindingSource.DataSource = tabla
         End If
 
         cmb_especialidad.SelectedIndex = -1
         cmb_nadador.SelectedIndex = -1
-
+        Me.rp_nadPosTiempo.RefreshReport()
     End Sub
 
     Private Sub resultado()
@@ -60,7 +61,7 @@
         Dim tabla As Data.DataTable = New Data.DataTable
         Dim tablaAux As Data.DataTable = New Data.DataTable
 
-        txt_sql = " select Nadadores.Apellido AS 'Nadador', Inscriptos.Posicion AS 'Posicion', Inscriptos.Tiempo AS 'Tiempo', Especialidad.Descripcion AS 'Especialidad' "
+        txt_sql = " select Nadadores.Apellido, Inscriptos.Posicion, Inscriptos.Tiempo, Especialidad.Descripcion "
         txt_sql &= " from Inscriptos INNER JOIN Nadadores ON Inscriptos.CodNad = Nadadores.CodNad  "
         txt_sql &= " INNER JOIN Especialidad ON Especialidad.CodEspe = Inscriptos.CodEspe"
         txt_sql &= " where Especialidad.Descripcion LIKE '100 mts. Libre'" 'No se el contenido de la BD, asi que '100 mts. Libres' hay que verlo si esta igual...
@@ -69,14 +70,15 @@
 
         If tabla.Rows.Count = 0 Then
             MessageBox.Show("No se han encontrado coincidencias con la busqueda.", "¡Importante!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Me.grd_dgvTiempoPosNad.DataSource = tablaAux
+            Me.DSPosTiempoNad1BindingSource.DataSource = tablaAux
         Else
-
-            Me.grd_dgvTiempoPosNad.DataSource = tabla
+            'Me.grd_dgvTiempoPosNad.DataSource = tabla
+            Me.DSPosTiempoNad1BindingSource.DataSource = tabla
         End If
 
         cmb_nadador.SelectedIndex = -1
         cmb_especialidad.SelectedIndex = -1
+        Me.rp_nadPosTiempo.RefreshReport()
     End Sub
 
 
@@ -87,7 +89,7 @@
         If Me.cmb_especialidad.SelectedIndex = -1 Then
             MessageBox.Show("Debe ingresar una Especialidad para realizar la consulta.", "¡Importante!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Me.cmb_especialidad.Focus()
-            Me.grd_dgvTiempoPosNad.DataSource = tablaAux
+            DSPosTiempoNad1BindingSource.DataSource = tablaAux
             Return False
         End If
 

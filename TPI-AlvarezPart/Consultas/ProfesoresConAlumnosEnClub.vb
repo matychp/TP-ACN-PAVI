@@ -23,6 +23,7 @@
         cmb_club.SelectedIndex = -1
         cmb_nadador.SelectedIndex = -1
 
+        Me.ReportViewer1.RefreshReport()
     End Sub
 
     'Private Sub resultado()
@@ -61,12 +62,12 @@
 
         If tabla.Rows.Count = 0 Then
             MessageBox.Show("No se han encontrado coincidencias con la busqueda", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Me.grd_dgvProAlClub.DataSource = tablaAux
+            Me.dt_ProfAlClubBindingSource.DataSource = tablaAux
         Else
 
-            Me.grd_dgvProAlClub.DataSource = tabla
+            Me.dt_ProfAlClubBindingSource.DataSource = tabla
         End If
-
+        ReportViewer1.RefreshReport()
         cmb_club.SelectedIndex = -1
         cmb_nadador.SelectedIndex = -1
     End Sub
@@ -76,7 +77,6 @@
         If Me.cmb_club.SelectedIndex = -1 Then
             MessageBox.Show("Debe ingresar un club para realizar la consulta", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Me.cmb_club.Focus()
-            Me.grd_dgvProAlClub.DataSource = tablaAux
             Return False
         End If
         Return True

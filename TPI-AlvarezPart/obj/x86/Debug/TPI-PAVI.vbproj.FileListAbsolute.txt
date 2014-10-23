@@ -123,7 +123,6 @@ D:\Documentos\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.xml
 D:\Documentos\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.pdb
 C:\Users\Gonzalo\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.frm_TorneoRealizadosEnElAñoEnUnClub.resources
 C:\Users\Gonzalo\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.frm_PosicionTiempoNadadores.resources
-C:\Users\Gonzalo\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI-PAVI.vbprojResolveAssemblyReference.cache
 C:\Users\Gonzalo\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.frm_ListadoNadadores.resources
 C:\Users\Gonzalo\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\RdlCompile.cache
 C:\Users\Gonzalo\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\RdlCompile.compiled

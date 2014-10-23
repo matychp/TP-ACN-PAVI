@@ -6,7 +6,71 @@ TPI_PAVI
 </name>
 </assembly>
 <members>
-<member name="P:TPI_PAVI.My.Resources.Resources.ResourceManager">
+<member name="T:TPI_PAVI.DStorneosAño.dt_torneosAñoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.DStorneosAño.dt_torneosAñoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.DStorneosAño.dt_torneosAñoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.DStorneosAño">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:TPI_PAVI.dsCompeEspe.dt_CompeEspeDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.dsCompeEspe.dt_CompeEspeRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.dsCompeEspe.dt_CompeEspeRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.dsCompeEspe">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:TPI_PAVI.DSProfAlClub.dt_ProfAlClubDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.DSProfAlClub.dt_ProfAlClubRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.DSProfAlClub.dt_ProfAlClubRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.DSProfAlClub">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:TPI_PAVI.DSPosTiempoNad.DT_posNadDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.DSPosTiempoNad.DT_posNadRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.DSPosTiempoNad.DT_posNadRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.DSPosTiempoNad">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="P:TPI_PAVI.My.Resources.Resources.ResourceManager">
 	<summary>
   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
 </summary>

@@ -121,6 +121,32 @@
     <Compile Include="Consultas\TorneoRealizadosEnElAñoEnUnClub.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Datos\dsCompeEspe.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCompeEspe.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\DSPosTiempoNad.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSPosTiempoNad.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\DSPosTiempoNad.vb">
+      <DependentUpon>DSPosTiempoNad.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\DSProfAlClub.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSProfAlClub.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\DSProfAlClub.vb">
+      <DependentUpon>DSProfAlClub.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\DStorneosAño.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DStorneosAño.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Procesos\EspecialidadXCompetencia.Designer.vb">
       <DependentUpon>EspecialidadXCompetencia.vb</DependentUpon>
     </Compile>
@@ -315,6 +341,7 @@
     <EmbeddedResource Include="Main\SplashScreen.resx">
       <DependentUpon>SplashScreen.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\compeEspe.rdlc" />
     <EmbeddedResource Include="Reportes\ListadoClubes.resx">
       <DependentUpon>ListadoClubes.vb</DependentUpon>
     </EmbeddedResource>
@@ -327,12 +354,59 @@
     <EmbeddedResource Include="Reportes\ListadoProfesores.resx">
       <DependentUpon>ListadoProfesores.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\posTiempoNad.rdlc" />
+    <EmbeddedResource Include="Reportes\profAlumClub.rdlc" />
     <EmbeddedResource Include="Reportes\Report1.rdlc" />
     <EmbeddedResource Include="Reportes\Report2.rdlc" />
     <EmbeddedResource Include="Reportes\Report3.rdlc" />
     <EmbeddedResource Include="Reportes\Report4.rdlc" />
+    <EmbeddedResource Include="Reportes\reportTorneosAÑo.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Datos\dsCompeEspe.xsc">
+      <DependentUpon>dsCompeEspe.xsd</DependentUpon>
+    </None>
+    <None Include="Datos\dsCompeEspe.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCompeEspe.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datos\dsCompeEspe.xss">
+      <DependentUpon>dsCompeEspe.xsd</DependentUpon>
+    </None>
+    <None Include="Datos\DSPosTiempoNad.xsc">
+      <DependentUpon>DSPosTiempoNad.xsd</DependentUpon>
+    </None>
+    <None Include="Datos\DSPosTiempoNad.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSPosTiempoNad.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datos\DSPosTiempoNad.xss">
+      <DependentUpon>DSPosTiempoNad.xsd</DependentUpon>
+    </None>
+    <None Include="Datos\DSProfAlClub.xsc">
+      <DependentUpon>DSProfAlClub.xsd</DependentUpon>
+    </None>
+    <None Include="Datos\DSProfAlClub.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSProfAlClub.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datos\DSProfAlClub.xss">
+      <DependentUpon>DSProfAlClub.xsd</DependentUpon>
+    </None>
+    <None Include="Datos\DStorneosAño.xsc">
+      <DependentUpon>DStorneosAño.xsd</DependentUpon>
+    </None>
+    <None Include="Datos\DStorneosAño.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DStorneosAño.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datos\DStorneosAño.xss">
+      <DependentUpon>DStorneosAño.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -405,9 +479,7 @@
     <None Include="Resources\Cuadro_150x1001.png" />
     <Content Include="Resources\Cuadro_150x50.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Datos\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -11,12 +11,13 @@
         Me.tt_consultaestandar.SetToolTip(cmd_ejecutarConsulta, "Consulta el Torneo realizado en un Club en el año actual")
         Me.tt_consultapersonal.SetToolTip(cmd_ejecutarConsultaPerso, "Consulta el Torneo realizado en un Club" & vbCrLf & " con el o los parámetros ingresados arriba (el Año es obligatorio)")
 
+        Me.ReportViewer1.RefreshReport()
     End Sub
 
     Private Sub resultado()
         Dim txt_sql As String
         Dim tabla As Data.DataTable
-        txt_sql = " Select TORNEOS.Descrip AS 'Torneo' , TorneosXAño.Año, Clubes.Nombre  "
+        txt_sql = " Select TORNEOS.Descrip AS 'Torneo' , TorneosXAño.Año, Clubes.Nombre AS 'Club' "
         txt_sql &= " From TORNEOS INNER JOIN TorneosXAño ON TORNEOS.CodTorneo = TorneosXAño.CodTorneo "
         txt_sql &= " INNER JOIN Clubes ON TorneosXAño.CodClub = Clubes.CodClub "
         txt_sql &= " Where TorneosXAño.Año = Year(GETDATE()) "
@@ -24,9 +25,9 @@
         If tabla.Rows.Count = 0 Then
             MessageBox.Show("No se han encontrado coincidencias con la busqueda", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
-            Me.grd_dgvconsultaTorneoXClub.DataSource = tabla
+            Me.dt_torneosAñoBindingSource.DataSource = tabla
         End If
-
+        Me.ReportViewer1.RefreshReport()
     End Sub
 
     Private Sub resultado(ByVal year As Integer, ByVal club As Integer)
@@ -34,12 +35,12 @@
         Dim tabla As Data.DataTable = New Data.DataTable
         Dim tablaAux As Data.DataTable = New Data.DataTable
         If cmb_club.SelectedIndex < 0 Then
-            txt_sql = " Select TORNEOS.Descrip AS 'Torneo' , TorneosXAño.Año, Clubes.Nombre  "
+            txt_sql = " Select TORNEOS.Descrip AS 'Torneo' , TorneosXAño.Año, Clubes.Nombre AS 'Club' "
             txt_sql &= " From TORNEOS INNER JOIN TorneosXAño ON TORNEOS.CodTorneo = TorneosXAño.CodTorneo "
             txt_sql &= " INNER JOIN Clubes ON TorneosXAño.CodClub = Clubes.CodClub "
             txt_sql &= " Where TorneosXAño.Año = " & year
         Else
-            txt_sql = " Select TORNEOS.Descrip AS 'Torneo' , TorneosXAño.Año, Clubes.Nombre  "
+            txt_sql = " Select TORNEOS.Descrip AS 'Torneo' , TorneosXAño.Año, Clubes.Nombre AS 'Club' "
             txt_sql &= " From TORNEOS INNER JOIN TorneosXAño ON TORNEOS.CodTorneo = TorneosXAño.CodTorneo "
             txt_sql &= " INNER JOIN Clubes ON TorneosXAño.CodClub = Clubes.CodClub "
             txt_sql &= " Where TorneosXAño.Año = " & year & " AND TorneosXAño.CodClub = " & club
@@ -49,12 +50,12 @@
 
         If tabla.Rows.Count = 0 Then
             MessageBox.Show("No se han encontrado coincidencias con la busqueda", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Me.grd_dgvconsultaTorneoXClub.DataSource = tablaAux
+            Me.dt_torneosAñoBindingSource.DataSource = tablaAux
         Else
 
-            Me.grd_dgvconsultaTorneoXClub.DataSource = tabla
+            Me.dt_torneosAñoBindingSource.DataSource = tabla
         End If
-
+        Me.ReportViewer1.RefreshReport()
         msk_anio.Text = ""
         cmb_club.SelectedIndex = -1
     End Sub
@@ -64,7 +65,7 @@
         If Me.msk_anio.Text = "" Then
             MessageBox.Show("Debe ingresar el año a consultar para la Consulta Personalizada", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Me.msk_anio.Focus()
-            Me.grd_dgvconsultaTorneoXClub.DataSource = tablaAux
+            Me.dt_torneosAñoBindingSource.DataSource = tablaAux
             Return False
         End If
         Return True

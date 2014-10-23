@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DStorneosAño" targetNamespace="http://tempuri.org/torneosAño.xsd" xmlns:mstns="http://tempuri.org/torneosAño.xsd" xmlns="http://tempuri.org/torneosAño.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DStorneosAño" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DStorneosAño" msprop:Generator_UserDSName="DStorneosAño">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dt_torneosAño" msprop:Generator_TableClassName="dt_torneosAñoDataTable" msprop:Generator_TableVarName="tabledt_torneosAño" msprop:Generator_TablePropName="dt_torneosAño" msprop:Generator_RowDeletingName="dt_torneosAñoRowDeleting" msprop:Generator_RowChangingName="dt_torneosAñoRowChanging" msprop:Generator_RowEvHandlerName="dt_torneosAñoRowChangeEventHandler" msprop:Generator_RowDeletedName="dt_torneosAñoRowDeleted" msprop:Generator_UserTableName="dt_torneosAño" msprop:Generator_RowChangedName="dt_torneosAñoRowChanged" msprop:Generator_RowEvArgName="dt_torneosAñoRowChangeEvent" msprop:Generator_RowClassName="dt_torneosAñoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Torneo" msprop:Generator_ColumnVarNameInTable="columnTorneo" msprop:Generator_ColumnPropNameInRow="Torneo" msprop:Generator_ColumnPropNameInTable="TorneoColumn" msprop:Generator_UserColumnName="Torneo" type="xs:string" minOccurs="0" />
+              <xs:element name="Año" msprop:Generator_ColumnVarNameInTable="columnAño" msprop:Generator_ColumnPropNameInRow="Año" msprop:Generator_ColumnPropNameInTable="AñoColumn" msprop:Generator_UserColumnName="Año" type="xs:string" minOccurs="0" />
+              <xs:element name="Club" msprop:Generator_ColumnVarNameInTable="columnClub" msprop:Generator_ColumnPropNameInRow="Club" msprop:Generator_ColumnPropNameInTable="ClubColumn" msprop:Generator_UserColumnName="Club" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

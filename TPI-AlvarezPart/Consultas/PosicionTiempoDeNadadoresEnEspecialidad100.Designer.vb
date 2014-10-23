@@ -23,11 +23,13 @@ Partial Class frm_PosicionTiempoNadadores
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.DSPosTiempoNad1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DSPosTiempoNad1 = New TPI_PAVI.DSPosTiempoNad()
         Me.cmd_ejecutarConsulta = New System.Windows.Forms.Button()
         Me.cmb_nadador = New System.Windows.Forms.ComboBox()
         Me.NadadoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TPIPAVIDataSet = New TPI_PAVI.TPIPAVIDataSet()
-        Me.grd_dgvTiempoPosNad = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cmb_especialidad = New System.Windows.Forms.ComboBox()
@@ -37,11 +39,23 @@ Partial Class frm_PosicionTiempoNadadores
         Me.cmd_help = New System.Windows.Forms.Button()
         Me.NadadoresTableAdapter = New TPI_PAVI.TPIPAVIDataSetTableAdapters.NadadoresTableAdapter()
         Me.EspecialidadTableAdapter = New TPI_PAVI.TPIPAVIDataSetTableAdapters.EspecialidadTableAdapter()
+        Me.rp_nadPosTiempo = New Microsoft.Reporting.WinForms.ReportViewer()
+        CType(Me.DSPosTiempoNad1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DSPosTiempoNad1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NadadoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.grd_dgvTiempoPosNad, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EspecialidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'DSPosTiempoNad1BindingSource
+        '
+        Me.DSPosTiempoNad1BindingSource.DataSource = Me.DSPosTiempoNad1
+        Me.DSPosTiempoNad1BindingSource.Position = 0
+        '
+        'DSPosTiempoNad1
+        '
+        Me.DSPosTiempoNad1.DataSetName = "DSPosTiempoNad"
+        Me.DSPosTiempoNad1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'cmd_ejecutarConsulta
         '
@@ -73,17 +87,6 @@ Partial Class frm_PosicionTiempoNadadores
         '
         Me.TPIPAVIDataSet.DataSetName = "TPIPAVIDataSet"
         Me.TPIPAVIDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'grd_dgvTiempoPosNad
-        '
-        Me.grd_dgvTiempoPosNad.AllowUserToAddRows = False
-        Me.grd_dgvTiempoPosNad.AllowUserToDeleteRows = False
-        Me.grd_dgvTiempoPosNad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grd_dgvTiempoPosNad.Location = New System.Drawing.Point(12, 112)
-        Me.grd_dgvTiempoPosNad.Name = "grd_dgvTiempoPosNad"
-        Me.grd_dgvTiempoPosNad.ReadOnly = True
-        Me.grd_dgvTiempoPosNad.Size = New System.Drawing.Size(345, 166)
-        Me.grd_dgvTiempoPosNad.TabIndex = 2
         '
         'Label1
         '
@@ -144,7 +147,7 @@ Partial Class frm_PosicionTiempoNadadores
         Me.cmd_help.BackgroundImage = Global.TPI_PAVI.My.Resources.Resources.help1
         Me.cmd_help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.cmd_help.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmd_help.Location = New System.Drawing.Point(307, 284)
+        Me.cmd_help.Location = New System.Drawing.Point(411, 284)
         Me.cmd_help.Name = "cmd_help"
         Me.cmd_help.Size = New System.Drawing.Size(50, 41)
         Me.cmd_help.TabIndex = 0
@@ -158,15 +161,26 @@ Partial Class frm_PosicionTiempoNadadores
         '
         Me.EspecialidadTableAdapter.ClearBeforeFill = True
         '
+        'rp_nadPosTiempo
+        '
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.DSPosTiempoNad1BindingSource
+        Me.rp_nadPosTiempo.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.rp_nadPosTiempo.LocalReport.ReportEmbeddedResource = "TPI_PAVI.posTiempoNad.rdlc"
+        Me.rp_nadPosTiempo.Location = New System.Drawing.Point(12, 112)
+        Me.rp_nadPosTiempo.Name = "rp_nadPosTiempo"
+        Me.rp_nadPosTiempo.Size = New System.Drawing.Size(449, 166)
+        Me.rp_nadPosTiempo.TabIndex = 7
+        '
         'frm_PosicionTiempoNadadores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(370, 333)
+        Me.ClientSize = New System.Drawing.Size(473, 333)
+        Me.Controls.Add(Me.rp_nadPosTiempo)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.grd_dgvTiempoPosNad)
         Me.Controls.Add(Me.cmb_especialidad)
         Me.Controls.Add(Me.cmb_nadador)
         Me.Controls.Add(Me.cmd_help)
@@ -176,9 +190,10 @@ Partial Class frm_PosicionTiempoNadadores
         Me.MaximizeBox = False
         Me.Name = "frm_PosicionTiempoNadadores"
         Me.Text = "Posicion y Tiempo de Nadadores"
+        CType(Me.DSPosTiempoNad1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DSPosTiempoNad1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NadadoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.grd_dgvTiempoPosNad, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EspecialidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -186,7 +201,6 @@ Partial Class frm_PosicionTiempoNadadores
     End Sub
     Friend WithEvents cmd_ejecutarConsulta As System.Windows.Forms.Button
     Friend WithEvents cmb_nadador As System.Windows.Forms.ComboBox
-    Friend WithEvents grd_dgvTiempoPosNad As System.Windows.Forms.DataGridView
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents cmb_especialidad As System.Windows.Forms.ComboBox
@@ -198,4 +212,7 @@ Partial Class frm_PosicionTiempoNadadores
     Friend WithEvents NadadoresTableAdapter As TPI_PAVI.TPIPAVIDataSetTableAdapters.NadadoresTableAdapter
     Friend WithEvents EspecialidadBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents EspecialidadTableAdapter As TPI_PAVI.TPIPAVIDataSetTableAdapters.EspecialidadTableAdapter
+    Friend WithEvents rp_nadPosTiempo As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents DSPosTiempoNad1BindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents DSPosTiempoNad1 As TPI_PAVI.DSPosTiempoNad
 End Class

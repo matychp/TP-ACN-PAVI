@@ -23,7 +23,7 @@ Partial Class frm_ResultadosCompeXEspe
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.grd_dgvconsultaComXEspe = New System.Windows.Forms.DataGridView()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.msk_anio = New System.Windows.Forms.MaskedTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmb_especialidad = New System.Windows.Forms.ComboBox()
@@ -37,22 +37,14 @@ Partial Class frm_ResultadosCompeXEspe
         Me.cmd_ejecutarConsulta = New System.Windows.Forms.Button()
         Me.tt_consultaestandar = New System.Windows.Forms.ToolTip(Me.components)
         Me.tt_consultapersonal = New System.Windows.Forms.ToolTip(Me.components)
-        CType(Me.grd_dgvconsultaComXEspe, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.dsCompeEspe = New TPI_PAVI.dsCompeEspe()
+        Me.dt_CompeEspeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.EspecialidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dsCompeEspe, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dt_CompeEspeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'grd_dgvconsultaComXEspe
-        '
-        Me.grd_dgvconsultaComXEspe.AllowUserToAddRows = False
-        Me.grd_dgvconsultaComXEspe.AllowUserToDeleteRows = False
-        Me.grd_dgvconsultaComXEspe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grd_dgvconsultaComXEspe.Enabled = False
-        Me.grd_dgvconsultaComXEspe.Location = New System.Drawing.Point(12, 111)
-        Me.grd_dgvconsultaComXEspe.Name = "grd_dgvconsultaComXEspe"
-        Me.grd_dgvconsultaComXEspe.ReadOnly = True
-        Me.grd_dgvconsultaComXEspe.Size = New System.Drawing.Size(454, 173)
-        Me.grd_dgvconsultaComXEspe.TabIndex = 0
         '
         'msk_anio
         '
@@ -146,11 +138,33 @@ Partial Class frm_ResultadosCompeXEspe
         Me.cmd_ejecutarConsulta.Text = "Ejecutar Consulta Estándar"
         Me.cmd_ejecutarConsulta.UseVisualStyleBackColor = True
         '
+        'ReportViewer1
+        '
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.dt_CompeEspeBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "TPI_PAVI.compeEspe.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(16, 99)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.Size = New System.Drawing.Size(450, 181)
+        Me.ReportViewer1.TabIndex = 6
+        '
+        'dsCompeEspe
+        '
+        Me.dsCompeEspe.DataSetName = "dsCompeEspe"
+        Me.dsCompeEspe.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'dt_CompeEspeBindingSource
+        '
+        Me.dt_CompeEspeBindingSource.DataMember = "dt_CompeEspe"
+        Me.dt_CompeEspeBindingSource.DataSource = Me.dsCompeEspe
+        '
         'frm_ResultadosCompeXEspe
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(478, 368)
+        Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.cmd_ejecutarConsulta)
         Me.Controls.Add(Me.cmd_ejecutarConsultaPerso)
         Me.Controls.Add(Me.cmd_help)
@@ -159,18 +173,17 @@ Partial Class frm_ResultadosCompeXEspe
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.msk_anio)
-        Me.Controls.Add(Me.grd_dgvconsultaComXEspe)
         Me.Name = "frm_ResultadosCompeXEspe"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Consulta Competencia por Especialidad"
-        CType(Me.grd_dgvconsultaComXEspe, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EspecialidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dsCompeEspe, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dt_CompeEspeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents grd_dgvconsultaComXEspe As System.Windows.Forms.DataGridView
     Friend WithEvents msk_anio As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents cmb_especialidad As System.Windows.Forms.ComboBox
@@ -184,4 +197,7 @@ Partial Class frm_ResultadosCompeXEspe
     Friend WithEvents cmd_ejecutarConsulta As System.Windows.Forms.Button
     Friend WithEvents tt_consultaestandar As System.Windows.Forms.ToolTip
     Friend WithEvents tt_consultapersonal As System.Windows.Forms.ToolTip
+    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents dt_CompeEspeBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents dsCompeEspe As TPI_PAVI.dsCompeEspe
 End Class

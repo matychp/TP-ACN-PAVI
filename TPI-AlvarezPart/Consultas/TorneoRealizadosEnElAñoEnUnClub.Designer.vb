@@ -23,8 +23,8 @@ Partial Class frm_TorneoRealizadosEnElAñoEnUnClub
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.grd_dgvconsultaTorneoXClub = New System.Windows.Forms.DataGridView()
         Me.cmb_club = New System.Windows.Forms.ComboBox()
         Me.ClubesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TPIPAVIDataSet = New TPI_PAVI.TPIPAVIDataSet()
@@ -37,9 +37,13 @@ Partial Class frm_TorneoRealizadosEnElAñoEnUnClub
         Me.tt_consultaestandar = New System.Windows.Forms.ToolTip(Me.components)
         Me.tt_consultapersonal = New System.Windows.Forms.ToolTip(Me.components)
         Me.ClubesTableAdapter = New TPI_PAVI.TPIPAVIDataSetTableAdapters.ClubesTableAdapter()
-        CType(Me.grd_dgvconsultaTorneoXClub, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.DStorneosAño = New TPI_PAVI.DStorneosAño()
+        Me.dt_torneosAñoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.ClubesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DStorneosAño, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dt_torneosAñoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label3
@@ -51,18 +55,6 @@ Partial Class frm_TorneoRealizadosEnElAñoEnUnClub
         Me.Label3.Size = New System.Drawing.Size(245, 24)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Resultado de la consulta:"
-        '
-        'grd_dgvconsultaTorneoXClub
-        '
-        Me.grd_dgvconsultaTorneoXClub.AllowUserToAddRows = False
-        Me.grd_dgvconsultaTorneoXClub.AllowUserToDeleteRows = False
-        Me.grd_dgvconsultaTorneoXClub.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grd_dgvconsultaTorneoXClub.Enabled = False
-        Me.grd_dgvconsultaTorneoXClub.Location = New System.Drawing.Point(12, 111)
-        Me.grd_dgvconsultaTorneoXClub.Name = "grd_dgvconsultaTorneoXClub"
-        Me.grd_dgvconsultaTorneoXClub.ReadOnly = True
-        Me.grd_dgvconsultaTorneoXClub.Size = New System.Drawing.Size(454, 173)
-        Me.grd_dgvconsultaTorneoXClub.TabIndex = 4
         '
         'cmb_club
         '
@@ -146,11 +138,33 @@ Partial Class frm_TorneoRealizadosEnElAñoEnUnClub
         '
         Me.ClubesTableAdapter.ClearBeforeFill = True
         '
+        'ReportViewer1
+        '
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.dt_torneosAñoBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "TPI_PAVI.reportTorneosAÑo.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(12, 113)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.Size = New System.Drawing.Size(454, 171)
+        Me.ReportViewer1.TabIndex = 12
+        '
+        'DStorneosAño
+        '
+        Me.DStorneosAño.DataSetName = "DStorneosAño"
+        Me.DStorneosAño.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'dt_torneosAñoBindingSource
+        '
+        Me.dt_torneosAñoBindingSource.DataMember = "dt_torneosAño"
+        Me.dt_torneosAñoBindingSource.DataSource = Me.DStorneosAño
+        '
         'frm_TorneoRealizadosEnElAñoEnUnClub
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(482, 372)
+        Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.cmd_ejecutarConsulta)
         Me.Controls.Add(Me.cmd_ejecutarConsultaPerso)
         Me.Controls.Add(Me.cmd_help)
@@ -158,20 +172,19 @@ Partial Class frm_TorneoRealizadosEnElAñoEnUnClub
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.msk_anio)
-        Me.Controls.Add(Me.grd_dgvconsultaTorneoXClub)
         Me.Controls.Add(Me.Label3)
         Me.Name = "frm_TorneoRealizadosEnElAñoEnUnClub"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Consulta Torneo en un Club"
-        CType(Me.grd_dgvconsultaTorneoXClub, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClubesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TPIPAVIDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DStorneosAño, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dt_torneosAñoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents grd_dgvconsultaTorneoXClub As System.Windows.Forms.DataGridView
     Friend WithEvents cmb_club As System.Windows.Forms.ComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -184,4 +197,7 @@ Partial Class frm_TorneoRealizadosEnElAñoEnUnClub
     Friend WithEvents TPIPAVIDataSet As TPI_PAVI.TPIPAVIDataSet
     Friend WithEvents ClubesBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents ClubesTableAdapter As TPI_PAVI.TPIPAVIDataSetTableAdapters.ClubesTableAdapter
+    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents dt_torneosAñoBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents DStorneosAño As TPI_PAVI.DStorneosAño
 End Class
