@@ -147,6 +147,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DStorneosAño.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datos\Estadistica1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Estadistica1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\Estadistica1.vb">
+      <DependentUpon>Estadistica1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\EstProfClub.Designer.vb">
+      <DependentUpon>EstProfClub.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\EstProfClub.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\EstTorneosAño.Designer.vb">
+      <DependentUpon>EstTorneosAño.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\EstTorneosAño.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Procesos\EspecialidadXCompetencia.Designer.vb">
       <DependentUpon>EspecialidadXCompetencia.vb</DependentUpon>
     </Compile>
@@ -296,6 +316,14 @@
     <EmbeddedResource Include="Consultas\TorneoRealizadosEnElAñoEnUnClub.resx">
       <DependentUpon>TorneoRealizadosEnElAñoEnUnClub.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\estadisticaProfClub.rdlc" />
+    <EmbeddedResource Include="Estadisticas\estadisticaTorAño.rdlc" />
+    <EmbeddedResource Include="Estadisticas\EstProfClub.resx">
+      <DependentUpon>EstProfClub.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\EstTorneosAño.resx">
+      <DependentUpon>EstTorneosAño.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Procesos\EspecialidadXCompetencia.resx">
       <DependentUpon>EspecialidadXCompetencia.vb</DependentUpon>
     </EmbeddedResource>
@@ -406,6 +434,17 @@
     </None>
     <None Include="Datos\DStorneosAño.xss">
       <DependentUpon>DStorneosAño.xsd</DependentUpon>
+    </None>
+    <None Include="Datos\Estadistica1.xsc">
+      <DependentUpon>Estadistica1.xsd</DependentUpon>
+    </None>
+    <None Include="Datos\Estadistica1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Estadistica1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datos\Estadistica1.xss">
+      <DependentUpon>Estadistica1.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

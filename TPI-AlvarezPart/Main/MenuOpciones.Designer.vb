@@ -50,6 +50,8 @@ Partial Class MenuOpciones
         Me.cmd_listadoClubes = New System.Windows.Forms.Button()
         Me.cmd_listadoProfesores = New System.Windows.Forms.Button()
         Me.cmd_listadoEspecialidades = New System.Windows.Forms.Button()
+        Me.cmd_frm_EstTorneosAño = New System.Windows.Forms.Button()
+        Me.cmd_estadisticaProfeClub = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -422,6 +424,34 @@ Partial Class MenuOpciones
         Me.cmd_listadoEspecialidades.Text = "Listado Especialidades"
         Me.cmd_listadoEspecialidades.UseVisualStyleBackColor = False
         '
+        'cmd_frm_EstTorneosAño
+        '
+        Me.cmd_frm_EstTorneosAño.BackColor = System.Drawing.Color.White
+        Me.cmd_frm_EstTorneosAño.BackgroundImage = CType(resources.GetObject("cmd_frm_EstTorneosAño.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_frm_EstTorneosAño.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_frm_EstTorneosAño.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_frm_EstTorneosAño.Location = New System.Drawing.Point(569, 214)
+        Me.cmd_frm_EstTorneosAño.Margin = New System.Windows.Forms.Padding(1)
+        Me.cmd_frm_EstTorneosAño.Name = "cmd_frm_EstTorneosAño"
+        Me.cmd_frm_EstTorneosAño.Size = New System.Drawing.Size(100, 50)
+        Me.cmd_frm_EstTorneosAño.TabIndex = 15
+        Me.cmd_frm_EstTorneosAño.Text = "Estadisticas Torneos cada Año"
+        Me.cmd_frm_EstTorneosAño.UseVisualStyleBackColor = False
+        '
+        'cmd_estadisticaProfeClub
+        '
+        Me.cmd_estadisticaProfeClub.BackColor = System.Drawing.Color.White
+        Me.cmd_estadisticaProfeClub.BackgroundImage = CType(resources.GetObject("cmd_estadisticaProfeClub.BackgroundImage"), System.Drawing.Image)
+        Me.cmd_estadisticaProfeClub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.cmd_estadisticaProfeClub.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cmd_estadisticaProfeClub.Location = New System.Drawing.Point(571, 266)
+        Me.cmd_estadisticaProfeClub.Margin = New System.Windows.Forms.Padding(1)
+        Me.cmd_estadisticaProfeClub.Name = "cmd_estadisticaProfeClub"
+        Me.cmd_estadisticaProfeClub.Size = New System.Drawing.Size(100, 50)
+        Me.cmd_estadisticaProfeClub.TabIndex = 15
+        Me.cmd_estadisticaProfeClub.Text = "Estadisticas Profesores por Club"
+        Me.cmd_estadisticaProfeClub.UseVisualStyleBackColor = False
+        '
         'MenuOpciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -435,6 +465,8 @@ Partial Class MenuOpciones
         Me.Controls.Add(Me.cmd_listnadadores)
         Me.Controls.Add(Me.cmd_posicionTiempoNad)
         Me.Controls.Add(Me.cmd_torPorAñoClub)
+        Me.Controls.Add(Me.cmd_estadisticaProfeClub)
+        Me.Controls.Add(Me.cmd_frm_EstTorneosAño)
         Me.Controls.Add(Me.cmd_ProfesoresClubAl)
         Me.Controls.Add(Me.cmd_consultaespeXcompe)
         Me.Controls.Add(Me.cmd_espeXCompe)
@@ -492,4 +524,6 @@ Partial Class MenuOpciones
     Friend WithEvents cmd_listadoClubes As System.Windows.Forms.Button
     Friend WithEvents cmd_listadoProfesores As System.Windows.Forms.Button
     Friend WithEvents cmd_listadoEspecialidades As System.Windows.Forms.Button
+    Friend WithEvents cmd_frm_EstTorneosAño As System.Windows.Forms.Button
+    Friend WithEvents cmd_estadisticaProfeClub As System.Windows.Forms.Button
 End Class

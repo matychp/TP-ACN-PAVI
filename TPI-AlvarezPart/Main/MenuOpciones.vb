@@ -22,6 +22,8 @@
         cmd_listadoClubes.Visible = cambiarBoolean(cmd_listadoClubes.Visible)
         cmd_listadoEspecialidades.Visible = cambiarBoolean(cmd_listadoEspecialidades.Visible)
         cmd_listadoProfesores.Visible = cambiarBoolean(cmd_listadoProfesores.Visible)
+        cmd_frm_EstTorneosAño.Visible = cambiarBoolean(cmd_frm_EstTorneosAño.Visible)
+        cmd_estadisticaProfeClub.Visible = cambiarBoolean(cmd_estadisticaProfeClub.Visible)
         'Me.cambiarEstadoBotones()
     End Sub
 
@@ -50,14 +52,9 @@
         cmd_listadoProfesores.Visible = cambiarBoolean(cmd_listadoProfesores.Visible)
     End Sub
 
-    Private Sub cambiarColorBoton(sender As System.Object, e As System.EventArgs) Handles cmd_abm.Click, cmd_listconsultas.Click, cmd_estadisticas.Click _
-                                            , cmd_procesos.Click
-        If sender.BackColor = Color.GreenYellow Then
-            sender.BackColor = Color.White
-        Else
-            sender.BackColor = Color.GreenYellow
-        End If
-    End Sub
+
+
+  
 
 
     Private Function cambiarBoolean(ByVal var As Boolean)
@@ -168,5 +165,19 @@
 
     Private Sub cmd_listadoEspecialidades_Click(sender As System.Object, e As System.EventArgs) Handles cmd_listadoEspecialidades.Click
         frm_ListadoEspecialidades.ShowDialog()
+    End Sub
+
+    Private Sub cmd_frm_EstTorneosAño_Click(sender As System.Object, e As System.EventArgs) Handles cmd_frm_EstTorneosAño.Click
+        frm_EstTorneosAño.ShowDialog()
+    End Sub
+
+    Private Sub cmd_estadisticaProfeClub_Click(sender As System.Object, e As System.EventArgs) Handles cmd_estadisticaProfeClub.Click
+        frm_EstProfClub.ShowDialog()
+    End Sub
+
+    Private Sub cmd_estadisticas_Click(sender As System.Object, e As System.EventArgs) Handles cmd_estadisticas.Click
+
+        cmd_frm_EstTorneosAño.Visible = cambiarBoolean(cmd_frm_EstTorneosAño.Visible)
+        cmd_estadisticaProfeClub.Visible = cambiarBoolean(cmd_estadisticaProfeClub.Visible)
     End Sub
 End Class

@@ -6,19 +6,31 @@ TPI_PAVI
 </name>
 </assembly>
 <members>
-<member name="T:TPI_PAVI.DStorneosAño.dt_torneosAñoDataTable">
+<member name="T:TPI_PAVI.Estadistica1.dtEstadisticasDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:TPI_PAVI.DStorneosAño.dt_torneosAñoRow">
+</member><member name="T:TPI_PAVI.Estadistica1.DataTable1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.Estadistica1.dtEstadisticasRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:TPI_PAVI.DStorneosAño.dt_torneosAñoRowChangeEvent">
+</member><member name="T:TPI_PAVI.Estadistica1.DataTable1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.Estadistica1.dtEstadisticasRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:TPI_PAVI.DStorneosAño">
+</member><member name="T:TPI_PAVI.Estadistica1.DataTable1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.Estadistica1">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
@@ -38,22 +50,6 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:TPI_PAVI.DSProfAlClub.dt_ProfAlClubDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:TPI_PAVI.DSProfAlClub.dt_ProfAlClubRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:TPI_PAVI.DSProfAlClub.dt_ProfAlClubRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:TPI_PAVI.DSProfAlClub">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
 </member><member name="T:TPI_PAVI.DSPosTiempoNad.DT_posNadDataTable">
 	<summary>
 Represents the strongly named DataTable class.
@@ -67,6 +63,22 @@ Represents strongly named DataRow class.
 Row event argument class
 </summary>
 </member><member name="T:TPI_PAVI.DSPosTiempoNad">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:TPI_PAVI.DSProfAlClub.dt_ProfAlClubDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.DSProfAlClub.dt_ProfAlClubRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.DSProfAlClub.dt_ProfAlClubRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.DSProfAlClub">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
@@ -122,6 +134,22 @@ Represents a strongly typed in-memory cache of data.
 </member><member name="T:TPI_PAVI.My.Resources.Resources">
 	<summary>
   Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member><member name="T:TPI_PAVI.DStorneosAño.dt_torneosAñoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.DStorneosAño.dt_torneosAñoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.DStorneosAño.dt_torneosAñoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.DStorneosAño">
+	<summary>
+Represents a strongly typed in-memory cache of data.
 </summary>
 </member><member name="T:TPI_PAVI.TPIPAVIDataSet.ClubesDataTable">
 	<summary>
