@@ -302,6 +302,8 @@
     End Sub
 
     Private Sub cancelar()
+        cmd_nuevo.Enabled = True
+        cmd_eliminar.Enabled = True
         cmd_cancelar.Enabled = False
         cmd_guardar.Enabled = False
         For Each objeto As System.Windows.Forms.Control In Me.Controls

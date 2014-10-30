@@ -6,35 +6,7 @@ TPI_PAVI
 </name>
 </assembly>
 <members>
-<member name="T:TPI_PAVI.Estadistica1.dtEstadisticasDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:TPI_PAVI.Estadistica1.DataTable1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:TPI_PAVI.Estadistica1.dtEstadisticasRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:TPI_PAVI.Estadistica1.DataTable1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:TPI_PAVI.Estadistica1.dtEstadisticasRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:TPI_PAVI.Estadistica1.DataTable1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:TPI_PAVI.Estadistica1">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:TPI_PAVI.dsCompeEspe.dt_CompeEspeDataTable">
+<member name="T:TPI_PAVI.dsCompeEspe.dt_CompeEspeDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -148,6 +120,34 @@ Represents strongly named DataRow class.
 Row event argument class
 </summary>
 </member><member name="T:TPI_PAVI.DStorneosAño">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:TPI_PAVI.Estadistica1.dtEstadisticasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.Estadistica1.DataTable1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI_PAVI.Estadistica1.dtEstadisticasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.Estadistica1.DataTable1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI_PAVI.Estadistica1.dtEstadisticasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.Estadistica1.DataTable1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI_PAVI.Estadistica1">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
