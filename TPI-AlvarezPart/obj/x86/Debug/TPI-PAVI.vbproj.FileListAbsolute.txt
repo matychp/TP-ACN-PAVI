@@ -163,3 +163,6 @@ D:\Documentos\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\RdlCompile.compil
 C:\Users\Gonzalo\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.frm_EstTorneosAño.resources
 C:\Users\Gonzalo\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.frm_EstProfClub.resources
 C:\Users\Gonzalo\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI-PAVI.vbprojResolveAssemblyReference.cache
+C:\Users\Matias\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.exe
+C:\Users\Matias\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.xml
+C:\Users\Matias\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\obj\x86\Debug\TPI_PAVI.pdb

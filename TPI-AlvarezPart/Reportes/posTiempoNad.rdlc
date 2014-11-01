@@ -1,69 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
-  <DataSources>
-    <DataSource Name="DSPosTiempoNad">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>eb1ee89a-5dee-483b-9679-89f349a87438</rd:DataSourceID>
-    </DataSource>
-  </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet1">
-      <Fields>
-        <Field Name="Apellido">
-          <DataField>Apellido</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Posicion">
-          <DataField>Posicion</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Tiempo">
-          <DataField>Tiempo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Descripcion">
-          <DataField>Descripcion</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>DSPosTiempoNad</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <rd:DataSetInfo>
-        <rd:DataSetName>DSPosTiempoNad</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Gonzalo\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\Datos\DSPosTiempoNad.xsd</rd:SchemaPath>
-        <rd:TableName>DT_posNad</rd:TableName>
-        <rd:TableAdapterFillMethod />
-        <rd:TableAdapterGetDataMethod />
-        <rd:TableAdapterName />
-      </rd:DataSetInfo>
-    </DataSet>
-  </DataSets>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
       <Tablix Name="Tablix2">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.98425in</Width>
+              <Width>4.1275cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.98425in</Width>
+              <Width>4.1275cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.98425in</Width>
+              <Width>4.1275cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.98425in</Width>
+              <Width>4.1275cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.23622in</Height>
+              <Height>0.74083cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -188,7 +145,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.23622in</Height>
+              <Height>4.33917cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -333,10 +290,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.78528cm</Top>
-        <Left>0.28258cm</Left>
-        <Height>1.2cm</Height>
-        <Width>10cm</Width>
+        <Height>5.08cm</Height>
+        <Width>16.51cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -358,6 +313,50 @@
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>
-  <rd:ReportID>4459bda7-76b0-4c8c-af8c-1c5db6856fd9</rd:ReportID>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DSPosTiempoNad">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>eb1ee89a-5dee-483b-9679-89f349a87438</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>DSPosTiempoNad</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Apellido">
+          <DataField>Apellido</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Posicion">
+          <DataField>Posicion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Tiempo">
+          <DataField>Tiempo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Descripcion">
+          <DataField>Descripcion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DSPosTiempoNad</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Gonzalo\Documents\GitHub\TP-ACN-PAVI\TPI-AlvarezPart\Datos\DSPosTiempoNad.xsd</rd:SchemaPath>
+        <rd:TableName>DT_posNad</rd:TableName>
+        <rd:TableAdapterFillMethod />
+        <rd:TableAdapterGetDataMethod />
+        <rd:TableAdapterName />
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>4459bda7-76b0-4c8c-af8c-1c5db6856fd9</rd:ReportID>
 </Report>
